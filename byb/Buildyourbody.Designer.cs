@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buildyourbody));
             this.panelSlideMenu = new System.Windows.Forms.Panel();
-            this.Logo = new System.Windows.Forms.PictureBox();
             this.buttonKieg = new System.Windows.Forms.Button();
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.buttonEdzes = new System.Windows.Forms.Button();
             this.buttonAdat = new System.Windows.Forms.Button();
             this.buttonKezdolap = new System.Windows.Forms.Button();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,16 +58,6 @@
             this.panelSlideMenu.Name = "panelSlideMenu";
             this.panelSlideMenu.Size = new System.Drawing.Size(45, 538);
             this.panelSlideMenu.TabIndex = 0;
-            // 
-            // Logo
-            // 
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(-17, -32);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(234, 195);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Logo.TabIndex = 5;
-            this.Logo.TabStop = false;
             // 
             // buttonKieg
             // 
@@ -154,6 +144,16 @@
             this.buttonKezdolap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonKezdolap.UseVisualStyleBackColor = true;
             this.buttonKezdolap.Click += new System.EventHandler(this.buttonKezdolap_Click);
+            // 
+            // Logo
+            // 
+            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
+            this.Logo.Location = new System.Drawing.Point(-17, -32);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(234, 195);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.TabIndex = 5;
+            this.Logo.TabStop = false;
             // 
             // button5
             // 

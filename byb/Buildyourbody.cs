@@ -1,4 +1,5 @@
-﻿using System;
+﻿using byb.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,10 @@ namespace byb
         }
         public void formIndulaskor()
         {
+            
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             Logo.Visible = false;
+            
         }
         private void button5_Click(object sender, EventArgs e)
         {

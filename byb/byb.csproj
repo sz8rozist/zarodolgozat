@@ -62,10 +62,10 @@
     <Compile Include="Buildyourbody.Designer.cs">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\ConnectionString.cs" />
-    <Compile Include="Database\CreateDatabase.cs" />
-    <Compile Include="Database\CreateDatabaseException.cs" />
-    <Compile Include="Database\DatabaseSQL.cs" />
+    <Compile Include="Modell\Database\ConnectionString.cs" />
+    <Compile Include="Modell\Database\CreateDatabase.cs" />
+    <Compile Include="Modell\Database\CreateDatabaseException.cs" />
+    <Compile Include="Modell\Database\LoginCheck.cs" />
     <Compile Include="FormLoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +78,7 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modell\Vendeg.cs" />
+    <Compile Include="Modell\Felhasznalo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Buildyourbody.resx">
@@ -114,7 +114,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\buildyourbody.sql" />
+    <Content Include="Modell\Database\buildyourbody.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

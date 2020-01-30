@@ -20,6 +20,7 @@ namespace byb
             InitializeComponent();
             db.createDataBase();
             db.createDataBaseTable();
+            db.tesztadatokFeltoltese();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
