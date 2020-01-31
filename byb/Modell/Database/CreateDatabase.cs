@@ -166,7 +166,7 @@ namespace byb.Database
             try
             {
                 con.Open();
-                string TesztAdatokFelhasznalok = "INSERT INTO `felhasznalok` (`f_id`, `fname`, `jelszo`, `teljesnev`, `email`, `tsuly`, `tmagassag`) VALUES" +
+                string TesztAdatokFelhasznalok = "INSERT  INTO `felhasznalok` (`f_id`, `fname`, `jelszo`, `teljesnev`, `email`, `tsuly`, `tmagassag`) VALUES" +
                     "(NULL, 'sz8rozist', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '196')," +
                     "(NULL, 'admin', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '196')," +
                     "(NULL, 'Valami', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '193')," +

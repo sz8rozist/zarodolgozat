@@ -22,6 +22,7 @@ namespace byb
             Thread.Sleep(7000);
             InitializeComponent();
             trd.Abort();
+            pwd.PasswordChar = '*';
         }
 
         private void formRun()
@@ -31,10 +32,8 @@ namespace byb
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoginCheck lc = new LoginCheck();
-            lc.uname = username.Text;
-            lc.pwd = pwd.Text;
-            if(lc.loginCheck() == true)
+            Felhasznalo fl = new Felhasznalo(username.Text, pwd.Text);
+            if(fl.loginCheck() == true)
             {
                 Buildyourbody b = new Buildyourbody();
                 b.Show();

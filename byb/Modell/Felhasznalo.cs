@@ -1,4 +1,6 @@
-﻿using System;
+﻿using byb.Database;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,10 @@ namespace byb.Modell
 {
     class Felhasznalo
     {
+        ConnectionString cs = new ConnectionString();
+        private  string connectionString;
+        public string uname;
+        public string pwd;
         /// <summary>
         /// A felhasználó adatai
         /// </summary>
@@ -43,7 +49,29 @@ namespace byb.Modell
             this.fname = fname;
             this.jelszo = jelszo;
         }
-       //Set metódusok
+        /// <summary>
+        /// Belépés ellenőrzése
+        /// </summary>
+        /// <returns>true ha sikeres a belépés, false ha sikertelen</returns>
+        public bool loginCheck()
+        {
+            connectionString = cs.getConnectionString();
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
+            string query = "SELECT * FROM felhasznalok WHERE fname = '" + fname + "' AND jelszo = '" + jelszo + "'; ";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            MySqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Set metódusok
         public void setId(int id)
         {
             this.id = id;
