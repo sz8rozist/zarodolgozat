@@ -12,8 +12,6 @@ namespace byb.Modell
     {
         ConnectionString cs = new ConnectionString();
         private  string connectionString;
-        public string uname;
-        public string pwd;
         /// <summary>
         /// A felhasználó adatai
         /// </summary>

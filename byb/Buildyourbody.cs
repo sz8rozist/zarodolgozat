@@ -17,10 +17,11 @@ namespace byb
         {
             InitializeComponent();
             formIndulaskor();
+            label2.Text = FormLogin.islogged;
         }
         public void formIndulaskor()
         {
-            
+            home1.BringToFront();
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             Logo.Visible = false;
             
@@ -43,26 +44,17 @@ namespace byb
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
+            home1.BringToFront();
             buttonKezdolap.BackColor = Color.DarkSlateGray;
-            buttonAdat.BackColor = Color.FromArgb(27, 32, 49);
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
             buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
             buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
         }
 
-        private void buttonAdat_Click(object sender, EventArgs e)
-        {
-            buttonAdat.BackColor = Color.DarkSlateGray;
-            buttonEdzes.BackColor = Color.FromArgb(27,32,49);
-            buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
-        }
 
         private void buttonEdzes_Click(object sender, EventArgs e)
         {
             buttonEdzes.BackColor = Color.DarkSlateGray;
-            buttonAdat.BackColor = Color.FromArgb(27, 32, 49);
             buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
             buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
             buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
@@ -72,7 +64,6 @@ namespace byb
         {
             buttonEtrend.BackColor = Color.DarkSlateGray;
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
-            buttonAdat.BackColor = Color.FromArgb(27, 32, 49);
             buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
             buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
         }
@@ -82,7 +73,6 @@ namespace byb
             buttonKieg.BackColor = Color.DarkSlateGray;
             buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
-            buttonAdat.BackColor = Color.FromArgb(27, 32, 49);
             buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
         }
 

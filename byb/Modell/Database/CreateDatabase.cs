@@ -10,7 +10,7 @@ namespace byb.Database
 {
     class CreateDatabase
     {
-        ConnectionString dbc = new ConnectionString();
+        
         private readonly string connectionString;
         private readonly string createString;
         /// <summary>
@@ -18,6 +18,7 @@ namespace byb.Database
         /// </summary>
         public CreateDatabase()
         {
+            ConnectionString dbc = new ConnectionString();
             connectionString = dbc.getConnectionString();
             createString = dbc.getCreateString();
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.labelHibauzenet = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +40,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -146,12 +150,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Belépés";
             // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(61, 406);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(273, 10);
+            this.panel4.TabIndex = 15;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Green;
+            this.panel5.Location = new System.Drawing.Point(61, 406);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(40, 10);
+            this.panel5.TabIndex = 16;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 7;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(406, 461);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelHibauzenet);
@@ -186,5 +212,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Timer timer1;
     }
 }

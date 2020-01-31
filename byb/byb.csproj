@@ -63,6 +63,12 @@
     <Compile Include="Buildyourbody.Designer.cs">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </Compile>
+    <Compile Include="Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modell\Database\ConnectionString.cs" />
     <Compile Include="Modell\Database\CreateDatabase.cs" />
     <Compile Include="Modell\Database\CreateDatabaseException.cs" />
@@ -90,6 +96,9 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Modell\Database\buildyourbody.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
