@@ -21,7 +21,7 @@ namespace byb
         }
         public void formIndulaskor()
         {
-            home1.BringToFront();
+            home2.BringToFront();
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             Logo.Visible = false;
             
@@ -44,7 +44,7 @@ namespace byb
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            home1.BringToFront();
+            home2.BringToFront();
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
             buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);

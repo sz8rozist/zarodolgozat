@@ -41,7 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.home1 = new byb.Home();
+            this.home2 = new byb.Home();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -134,10 +134,10 @@
             // Logo
             // 
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(-17, -32);
+            this.Logo.Location = new System.Drawing.Point(3, -27);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(234, 195);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.Size = new System.Drawing.Size(200, 200);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Logo.TabIndex = 5;
             this.Logo.TabStop = false;
             // 
@@ -205,20 +205,20 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.home1);
+            this.panel1.Controls.Add(this.home2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(974, 577);
             this.panel1.TabIndex = 2;
             // 
-            // home1
+            // home2
             // 
-            this.home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.home1.Location = new System.Drawing.Point(45, 39);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(929, 538);
-            this.home1.TabIndex = 0;
+            this.home2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.home2.Location = new System.Drawing.Point(45, 39);
+            this.home2.Name = "home2";
+            this.home2.Size = new System.Drawing.Size(929, 538);
+            this.home2.TabIndex = 0;
             // 
             // Buildyourbody
             // 
@@ -234,6 +234,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buildyourbody";
             this.panelSlideMenu.ResumeLayout(false);
+            this.panelSlideMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
@@ -254,8 +255,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
-        private Home home1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Home home2;
     }
 }

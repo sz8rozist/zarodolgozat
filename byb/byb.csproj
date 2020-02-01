@@ -117,8 +117,6 @@
   <ItemGroup>
     <Content Include="Modell\Database\buildyourbody.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
