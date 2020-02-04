@@ -149,6 +149,31 @@ namespace byb.Database
                 cmdkiegadatok.ExecuteNonQuery();
 
 
+                string fkeyEdzesek = "ALTER TABLE `edzesek`" +
+  "ADD CONSTRAINT `edzesek_ibfk_1` FOREIGN KEY(`f_id`) REFERENCES `felhasznalok` (`f_id`)," +
+  "ADD CONSTRAINT `edzesek_ibfk_2` FOREIGN KEY(`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
+                MySqlCommand fkeyEdzesekcmd = new MySqlCommand(fkeyEdzesek, con);
+                fkeyEdzesekcmd.ExecuteNonQuery();
+
+
+                string fkeyEdzesterv = "ALTER TABLE `edzesterv`"+
+  "ADD CONSTRAINT `edzesterv_ibfk_1` FOREIGN KEY(`edzesek_id`) REFERENCES `edzesek` (`edzesek_id`),"+
+  "ADD CONSTRAINT `edzesterv_ibfk_2` FOREIGN KEY(`gyakorlatok_id`) REFERENCES `gyakorlatok` (`gyakorlatok_id`); ";
+                MySqlCommand fkeyEdzestervcmd = new MySqlCommand(fkeyEdzesterv, con);
+                fkeyEdzestervcmd.ExecuteNonQuery();
+
+
+                string fkeyEdtkezesek = "ALTER TABLE `etkezesek`"+
+  "ADD CONSTRAINT `etkezesek_ibfk_1` FOREIGN KEY(`etel_id`) REFERENCES `etelek` (`etel_id`),"+
+  "ADD CONSTRAINT `etkezesek_ibfk_2` FOREIGN KEY(`f_id`) REFERENCES `felhasznalok` (`f_id`); ";
+                MySqlCommand fkeyEtkezesekcmd = new MySqlCommand(fkeyEdtkezesek, con);
+                fkeyEtkezesekcmd.ExecuteNonQuery();
+
+                string fkeyKieg = "ALTER TABLE `kiegeszitok`"+
+  "ADD CONSTRAINT `kiegeszitok_ibfk_1` FOREIGN KEY(`f_id`) REFERENCES `felhasznalok` (`f_id`),"+
+  "ADD CONSTRAINT `kiegeszitok_ibfk_2` FOREIGN KEY(`k_id`) REFERENCES `kiegeszitok_adatai` (`k_id`); ";
+                MySqlCommand fkeyKiegcmd = new MySqlCommand(fkeyKieg, con);
+                fkeyKiegcmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (CreateDatabaseException cde)
@@ -222,6 +247,58 @@ namespace byb.Database
                 con.Close();   
                 Debug.WriteLine(e.Message);
                 throw new CreateDatabaseException("Tesztadatok feltöltése sikertelen!");
+            }
+        }
+        public void deleteAllRecordEveryTable()
+        {
+            MySqlConnection con = new MySqlConnection(connectionString);
+
+            try
+            {
+                con.Open();
+                string torolEdzesekTable = "DELETE FROM edzesek";
+                MySqlCommand tetcmd = new MySqlCommand(torolEdzesekTable,con);
+                tetcmd.ExecuteNonQuery();
+
+                string torolEdzestervTable = "DELETE FROM edzesterv";
+                MySqlCommand tedtcmd = new MySqlCommand(torolEdzestervTable, con);
+                tedtcmd.ExecuteNonQuery();
+
+                string torolEtelekTable = "DELETE FROM etelek";
+                MySqlCommand tetelekcmd = new MySqlCommand(torolEtelekTable, con);
+                tetelekcmd.ExecuteNonQuery();
+
+                string torolEtkezesekTable = "DELETE FROM etkezesek";
+                MySqlCommand tetkezesekcmd = new MySqlCommand(torolEtkezesekTable, con);
+                tetkezesekcmd.ExecuteNonQuery();
+
+                string torolFelhasznalokTable = "DELETE FROM felhasznalok";
+                MySqlCommand tfelhasznalokcmd = new MySqlCommand(torolFelhasznalokTable, con);
+                tfelhasznalokcmd.ExecuteNonQuery();
+
+                string torolGyakorlatokTable = "DELETE FROM gyakorlatok";
+                MySqlCommand tgyakorlatokcmd = new MySqlCommand(torolGyakorlatokTable, con);
+                tgyakorlatokcmd.ExecuteNonQuery();
+
+                string torolIzomcsoportokTable = "DELETE FROM izomcsoportok";
+                MySqlCommand tizomcsoportokcmd = new MySqlCommand(torolIzomcsoportokTable, con);
+                tizomcsoportokcmd.ExecuteNonQuery();
+
+                string torolKiegeszitokTable = "DELETE FROM kiegeszitok";
+                MySqlCommand tkiegcmd = new MySqlCommand(torolKiegeszitokTable, con);
+                tkiegcmd.ExecuteNonQuery();
+
+                string torolkieg_adataiTable = "DELETE FROM kiegeszitok_adatai";
+                MySqlCommand tkiegadatokcmd = new MySqlCommand(torolkieg_adataiTable, con);
+                tkiegadatokcmd.ExecuteNonQuery();
+
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                con.Close();
+                Debug.WriteLine(ex.Message);
+                throw new CreateDatabaseException("Az adatok törlése sikertelen!");
             }
         }
     }

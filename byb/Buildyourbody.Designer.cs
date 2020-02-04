@@ -41,7 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.home2 = new byb.Home();
+            this.home1 = new byb.Home();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -59,7 +59,7 @@
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 39);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(45, 538);
+            this.panelSlideMenu.Size = new System.Drawing.Size(45, 511);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // buttonKieg
@@ -151,7 +151,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(974, 39);
+            this.panelHeader.Size = new System.Drawing.Size(790, 39);
             this.panelHeader.TabIndex = 1;
             // 
             // label2
@@ -195,7 +195,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(931, 0);
+            this.button1.Location = new System.Drawing.Point(747, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(43, 40);
             this.button1.TabIndex = 2;
@@ -205,27 +205,27 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.home2);
+            this.panel1.Controls.Add(this.home1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(974, 577);
+            this.panel1.Size = new System.Drawing.Size(790, 550);
             this.panel1.TabIndex = 2;
             // 
-            // home2
+            // home1
             // 
-            this.home2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.home2.Location = new System.Drawing.Point(45, 39);
-            this.home2.Name = "home2";
-            this.home2.Size = new System.Drawing.Size(929, 538);
-            this.home2.TabIndex = 0;
+            this.home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.home1.Location = new System.Drawing.Point(46, 39);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(741, 511);
+            this.home1.TabIndex = 0;
             // 
             // Buildyourbody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(974, 577);
+            this.ClientSize = new System.Drawing.Size(790, 550);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panel1);
@@ -257,6 +257,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Home home2;
+        private Home home1;
     }
 }
