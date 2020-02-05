@@ -41,7 +41,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.home1 = new byb.Home();
+            this.home2 = new byb.Home();
+            this.etrend1 = new byb.Etrend();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -205,20 +206,29 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.home1);
+            this.panel1.Controls.Add(this.etrend1);
+            this.panel1.Controls.Add(this.home2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(790, 550);
             this.panel1.TabIndex = 2;
             // 
-            // home1
+            // home2
             // 
-            this.home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.home1.Location = new System.Drawing.Point(46, 39);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(741, 511);
-            this.home1.TabIndex = 0;
+            this.home2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.home2.Location = new System.Drawing.Point(46, 39);
+            this.home2.Name = "home2";
+            this.home2.Size = new System.Drawing.Size(741, 511);
+            this.home2.TabIndex = 0;
+            // 
+            // etrend1
+            // 
+            this.etrend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.etrend1.Location = new System.Drawing.Point(49, 39);
+            this.etrend1.Name = "etrend1";
+            this.etrend1.Size = new System.Drawing.Size(741, 511);
+            this.etrend1.TabIndex = 1;
             // 
             // Buildyourbody
             // 
@@ -257,6 +267,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Home home1;
+        private Home home2;
+        private Etrend etrend1;
     }
 }

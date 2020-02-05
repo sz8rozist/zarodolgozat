@@ -24,7 +24,7 @@ namespace byb
         {
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             Logo.Visible = false;
-            home1.BringToFront();
+            home2.BringToFront();
         }
         private void button5_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace byb
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            home1.BringToFront();
+            home2.BringToFront();
             buttonKezdolap.BackColor = Color.DarkSlateGray;
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
             buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
@@ -62,6 +62,7 @@ namespace byb
 
         private void buttonEtrend_Click(object sender, EventArgs e)
         {
+            etrend1.BringToFront();
             buttonEtrend.BackColor = Color.DarkSlateGray;
             buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
             buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
@@ -79,7 +80,7 @@ namespace byb
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            cd.deleteAllRecordEveryTable();
+            //cd.deleteAllRecordEveryTable();
         }
 
     }

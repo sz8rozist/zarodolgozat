@@ -249,7 +249,8 @@ namespace byb.Database
                 throw new CreateDatabaseException("Tesztadatok feltöltése sikertelen!");
             }
         }
-        public void deleteAllRecordEveryTable()
+        
+        /*public void deleteAllRecordEveryTable()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
 
@@ -300,6 +301,6 @@ namespace byb.Database
                 Debug.WriteLine(ex.Message);
                 throw new CreateDatabaseException("Az adatok törlése sikertelen!");
             }
-        }
+        }*/
     }
 }
