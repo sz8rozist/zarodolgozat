@@ -15,20 +15,29 @@ namespace byb.Repository
     {
         private readonly string connectionString;
         ConnectionString cs = new ConnectionString();
+        //Ételek Lista
         List<Etel> etelek;
         public Etelek()
         {
+            //Lista példányosítása
             etelek = new List<Etel>();
+            //ConectionString
             connectionString = cs.getConnectionString();
         }
+        //Get metódus ami visszaadja a lista tartalmát
         public List<Etel> getEtelek()
         {
             return etelek;
         }
+        //Set metódus
         public void setEtelek(List<Etel> etelek)
         {
             this.etelek = etelek;
         }
+        /// <summary>
+        /// Az ételek listához hozzáadja a rekordokat az adatbázisból
+        /// </summary>
+        /// <returns>etelek lista</returns>
         public List<Etel> getEtelekAdatbazisbol()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
@@ -62,6 +71,10 @@ namespace byb.Repository
             return etelek;
 
         }
+        /// <summary>
+        /// Listából készít DataTablet a view-n való megjelenítéshez DGV-ben
+        /// </summary>
+        /// <returns>etelekDT - DataTable</returns>
         public DataTable getListabolDataTable()
         {
             DataTable etelekDT = new DataTable();

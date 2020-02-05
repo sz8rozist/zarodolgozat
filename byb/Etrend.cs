@@ -25,7 +25,9 @@ namespace byb
         {
             //Repoban lévő lista feltöltése adatbázis adatokkal
             etelekRepo.setEtelek(etelekRepo.getEtelekAdatbazisbol());
+            //DGV adatainak frissítése
             frissitDGVEtelek();
+            //DGV beállítása
             beallitEtelekDGV();
             
         }
