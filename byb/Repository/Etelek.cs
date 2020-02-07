@@ -66,7 +66,7 @@ namespace byb.Repository
             {
                 con.Close();
                 Debug.WriteLine(e.Message);
-                throw new RepositoryException("A kiegészítők adatainak kiolvasása sikertelen");
+                throw new RepositoryException("Az ételek adatainak kiolvasása sikertelen");
             }
             return etelek;
 

@@ -69,6 +69,10 @@ namespace byb.Modell
                 return false;
             }
         }
+        public static string getUsersAllRecord()
+        {
+            return "SELECT * FROM felhasznalok";
+        }
         //Set metódusok
         public void setId(int id)
         {

@@ -22,59 +22,36 @@ namespace byb
         }
         public void formIndulaskor()
         {
-            buttonKezdolap.BackColor = Color.DarkSlateGray;
-            Logo.Visible = false;
-            home2.BringToFront();
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (panelSlideMenu.Height == 511 && panelSlideMenu.Width == 45)
-            {
-                panelSlideMenu.Height = 511;
-                panelSlideMenu.Width = 218;
-                Logo.Visible = true;
-            }
-            else
-            {
-                panelSlideMenu.Height = 511;
-                panelSlideMenu.Width = 45;
-                Logo.Visible = false;
-            }
+            home1.BringToFront();
+            Slidepanel.Height = buttonKezdolap.Height;
+            Slidepanel.Top = buttonKezdolap.Top;
         }
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            home2.BringToFront();
-            buttonKezdolap.BackColor = Color.DarkSlateGray;
-            buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
-            buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
+            Slidepanel.Height = buttonKezdolap.Height;
+            Slidepanel.Top = buttonKezdolap.Top;
+            home1.BringToFront();
         }
 
 
         private void buttonEdzes_Click(object sender, EventArgs e)
         {
-            buttonEdzes.BackColor = Color.DarkSlateGray;
-            buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
+            Slidepanel.Height = buttonEdzes.Height;
+            Slidepanel.Top = buttonEdzes.Top;
         }
 
         private void buttonEtrend_Click(object sender, EventArgs e)
         {
+            Slidepanel.Height = buttonEtrend.Height;
+            Slidepanel.Top = buttonEtrend.Top;
             etrend1.BringToFront();
-            buttonEtrend.BackColor = Color.DarkSlateGray;
-            buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKieg.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
         }
 
         private void buttonKieg_Click(object sender, EventArgs e)
         {
-            buttonKieg.BackColor = Color.DarkSlateGray;
-            buttonEtrend.BackColor = Color.FromArgb(27, 32, 49);
-            buttonEdzes.BackColor = Color.FromArgb(27, 32, 49);
-            buttonKezdolap.BackColor = Color.FromArgb(27, 32, 49);
+            Slidepanel.Height = buttonKieg.Height;
+            Slidepanel.Top = buttonKieg.Top;
         }
 
         private void button1_Click(object sender, EventArgs e)

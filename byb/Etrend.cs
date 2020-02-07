@@ -19,26 +19,27 @@ namespace byb
         public Etrend()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Repoban lévő lista feltöltése adatbázis adatokkal
-            etelekRepo.setEtelek(etelekRepo.getEtelekAdatbazisbol());
-            //DGV adatainak frissítése
-            frissitDGVEtelek();
-            //DGV beállítása
-            beallitEtelekDGV();
-            
+            dataGridViewEtelek.Visible = false;
+            listViewEtkezesek.Visible = false;
         }
         public void frissitDGVEtelek()
         {
+            etelekDT = etelekRepo.getListabolDataTable();
             dataGridViewEtelek.DataSource = null;
             dataGridViewEtelek.DataSource = etelekDT;
-            etelekDT = etelekRepo.getListabolDataTable();
+            
             
         }
-        private void beallitEtelekDGV()
+        public void beallitListViewEtkezesek()
+        {
+            listViewEtkezesek.GridLines = true;
+            listViewEtkezesek.View = View.Details;
+            listViewEtkezesek.FullRowSelect = true;
+
+            listViewEtkezesek.Columns.Add("Időpont");
+            listViewEtkezesek.Columns.Add("Étel");
+        }
+        public void beallitEtelekDGV()
         {
             etelekDT.Columns[0].ColumnName = "Név";
             etelekDT.Columns[1].ColumnName = "Kalória";
@@ -66,6 +67,25 @@ namespace byb
             dataGridViewEtelek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void buttonEtelek_Click(object sender, EventArgs e)
+        {
+            dataGridViewEtelek.Visible = true;
+            listViewEtkezesek.Visible = false;
+            //Repoban lévő lista feltöltése adatbázis adatokkal
+            etelekRepo.setEtelek(etelekRepo.getEtelekAdatbazisbol());
+            //DGV adatainak frissítése
+            frissitDGVEtelek();
+            //DGV beállítása
+            beallitEtelekDGV();
+        }
+
+        private void buttonEtkezesek_Click(object sender, EventArgs e)
+        {
+            listViewEtkezesek.Visible = true;
+            dataGridViewEtelek.Visible = false;
+            beallitListViewEtkezesek();
         }
     }
 }

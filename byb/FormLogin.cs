@@ -1,5 +1,6 @@
 ﻿using byb.Database;
 using byb.Modell;
+using byb.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,6 @@ namespace byb
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             Felhasznalo fl = new Felhasznalo(username.Text, pwd.Text);
             if(fl.loginCheck() == true)
             {
