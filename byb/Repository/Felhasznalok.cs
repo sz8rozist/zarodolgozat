@@ -59,6 +59,7 @@ namespace byb.Repository
                     int tmagassag = Convert.ToInt32(dr["tmagassag"]);
                     Felhasznalo f = new Felhasznalo(id, fname, pw, teljesnev, email, tsuly, tmagassag);
                     users.Add(f);
+                    
                 }
                 con.Close();
             }

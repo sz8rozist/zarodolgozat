@@ -37,6 +37,7 @@ namespace byb
 
         private void button1_Click(object sender, EventArgs e)
         {
+            errorProviderLogin.Clear();
             Felhasznalo fl = new Felhasznalo(username.Text, pwd.Text);
             if(fl.loginCheck() == true)
             {
@@ -46,7 +47,8 @@ namespace byb
             }
             else
             {
-                MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                errorProviderLogin.SetError(button1, "Sikertelen Belépés!");
+                //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 panel5.Visible = false;
             }
             
@@ -66,6 +68,11 @@ namespace byb
 
             }
             
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
