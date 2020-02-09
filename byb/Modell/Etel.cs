@@ -49,13 +49,6 @@ namespace byb.Modell
         public int Szenhidrat { get => szenhidrat; set => szenhidrat = value; }
         public string Mennyiseg { get => mennyiseg; set => mennyiseg = value; }
 
-        /// <summary>
-        /// Ételek adatainak lekérdezése adatbázisból
-        /// </summary>
-        /// <returns>Minden adat az etelek táblából</returns>
-        public static string getAllEtelekRecord()
-        {
-            return "SELECT * FROM etelek";
-        }
+
     }
 }

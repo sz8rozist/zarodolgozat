@@ -1,5 +1,6 @@
 ﻿using byb.Database;
 using byb.Modell;
+using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,9 @@ using System.Threading.Tasks;
 
 namespace byb.Repository
 {
-    class Taplalekkiegeszitok
+    partial class Repo
     {
-        private readonly string connectionString;
-        ConnectionString cs = new ConnectionString();
         List<Taplalekkiegeszito> tkiegek;
-
-        public Taplalekkiegeszitok()
-        {
-            tkiegek = new List<Taplalekkiegeszito>();
-            connectionString = cs.getConnectionString();
-        }
        public List<Taplalekkiegeszito> getTkiegek()
         {
             return tkiegek;
@@ -35,7 +28,7 @@ namespace byb.Repository
             try
             {
                 con.Open();
-                string query = Taplalekkiegeszito.getAllTkiegRecord();
+                string query = Sql.getAllTkiegRecord();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();

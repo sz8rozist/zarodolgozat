@@ -50,9 +50,6 @@ namespace byb.Modell
         /// Táplálékkiegészítő adatainak lekérdezése adatbázisból
         /// </summary>
         /// <returns>Minden adat a kiegeszitok táblából</returns>
-        public static string getAllTkiegRecord()
-        {
-            return "SELECT * FROM kiegeszitok";
-        }
+
     }
 }

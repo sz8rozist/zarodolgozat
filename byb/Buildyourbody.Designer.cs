@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buildyourbody));
             this.panelSlideMenu = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Slidepanel = new System.Windows.Forms.Panel();
             this.buttonKieg = new System.Windows.Forms.Button();
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.buttonEdzes = new System.Windows.Forms.Button();
             this.buttonKezdolap = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Slidepanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.home1 = new byb.Home();
             this.etrend1 = new byb.Etrend();
             this.panelSlideMenu.SuspendLayout();
@@ -61,6 +61,25 @@
             this.panelSlideMenu.Name = "panelSlideMenu";
             this.panelSlideMenu.Size = new System.Drawing.Size(213, 550);
             this.panelSlideMenu.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(192, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Build - Your - Body";
+            // 
+            // Slidepanel
+            // 
+            this.Slidepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.Slidepanel.Location = new System.Drawing.Point(0, 111);
+            this.Slidepanel.Name = "Slidepanel";
+            this.Slidepanel.Size = new System.Drawing.Size(10, 52);
+            this.Slidepanel.TabIndex = 0;
             // 
             // buttonKieg
             // 
@@ -138,6 +157,17 @@
             this.panelHeader.Size = new System.Drawing.Size(777, 27);
             this.panelHeader.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "belepve";
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -152,17 +182,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "belepve";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -173,25 +192,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(777, 550);
             this.panel1.TabIndex = 2;
-            // 
-            // Slidepanel
-            // 
-            this.Slidepanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
-            this.Slidepanel.Location = new System.Drawing.Point(0, 111);
-            this.Slidepanel.Name = "Slidepanel";
-            this.Slidepanel.Size = new System.Drawing.Size(10, 52);
-            this.Slidepanel.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Build - Your - Body";
             // 
             // home1
             // 

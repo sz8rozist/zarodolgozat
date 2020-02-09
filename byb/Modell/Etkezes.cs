@@ -10,10 +10,10 @@ namespace byb.Modell
     {
         private int etkezesid;
         private string idopont;
-        private string etelid;
-        private string fid;
+        private int etelid;
+        private int fid;
 
-        public Etkezes(int etkezesid, string idopont, string etelid, string fid)
+        public Etkezes(int etkezesid, string idopont, int etelid, int fid)
         {
             this.etkezesid = etkezesid;
             this.idopont = idopont;
@@ -23,7 +23,7 @@ namespace byb.Modell
 
         public int Etkezesid { get => etkezesid; set => etkezesid = value; }
         public string Idopont { get => idopont; set => idopont = value; }
-        public string Etelid { get => etelid; set => etelid = value; }
-        public string Fid { get => fid; set => fid = value; }
+        public int Etelid { get => etelid; set => etelid = value; }
+        public int Fid { get => fid; set => fid = value; }
     }
 }

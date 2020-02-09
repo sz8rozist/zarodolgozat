@@ -250,57 +250,5 @@ namespace byb.Database
             }
         }
         
-        /*public void deleteAllRecordEveryTable()
-        {
-            MySqlConnection con = new MySqlConnection(connectionString);
-
-            try
-            {
-                con.Open();
-                string torolEdzesekTable = "DELETE FROM edzesek";
-                MySqlCommand tetcmd = new MySqlCommand(torolEdzesekTable,con);
-                tetcmd.ExecuteNonQuery();
-
-                string torolEdzestervTable = "DELETE FROM edzesterv";
-                MySqlCommand tedtcmd = new MySqlCommand(torolEdzestervTable, con);
-                tedtcmd.ExecuteNonQuery();
-
-                string torolEtelekTable = "DELETE FROM etelek";
-                MySqlCommand tetelekcmd = new MySqlCommand(torolEtelekTable, con);
-                tetelekcmd.ExecuteNonQuery();
-
-                string torolEtkezesekTable = "DELETE FROM etkezesek";
-                MySqlCommand tetkezesekcmd = new MySqlCommand(torolEtkezesekTable, con);
-                tetkezesekcmd.ExecuteNonQuery();
-
-                string torolFelhasznalokTable = "DELETE FROM felhasznalok";
-                MySqlCommand tfelhasznalokcmd = new MySqlCommand(torolFelhasznalokTable, con);
-                tfelhasznalokcmd.ExecuteNonQuery();
-
-                string torolGyakorlatokTable = "DELETE FROM gyakorlatok";
-                MySqlCommand tgyakorlatokcmd = new MySqlCommand(torolGyakorlatokTable, con);
-                tgyakorlatokcmd.ExecuteNonQuery();
-
-                string torolIzomcsoportokTable = "DELETE FROM izomcsoportok";
-                MySqlCommand tizomcsoportokcmd = new MySqlCommand(torolIzomcsoportokTable, con);
-                tizomcsoportokcmd.ExecuteNonQuery();
-
-                string torolKiegeszitokTable = "DELETE FROM kiegeszitok";
-                MySqlCommand tkiegcmd = new MySqlCommand(torolKiegeszitokTable, con);
-                tkiegcmd.ExecuteNonQuery();
-
-                string torolkieg_adataiTable = "DELETE FROM kiegeszitok_adatai";
-                MySqlCommand tkiegadatokcmd = new MySqlCommand(torolkieg_adataiTable, con);
-                tkiegadatokcmd.ExecuteNonQuery();
-
-                con.Close();
-            }
-            catch(Exception ex)
-            {
-                con.Close();
-                Debug.WriteLine(ex.Message);
-                throw new CreateDatabaseException("Az adatok törlése sikertelen!");
-            }
-        }*/
     }
 }

@@ -1,5 +1,6 @@
 ﻿using byb.Database;
 using byb.Modell;
+using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,10 @@ using System.Threading.Tasks;
 
 namespace byb.Repository
 {
-    class Etelek
+    partial class Repo
     {
-        private readonly string connectionString;
-        ConnectionString cs = new ConnectionString();
         //Ételek Lista
         List<Etel> etelek;
-        public Etelek()
-        {
-            //Lista példányosítása
-            etelek = new List<Etel>();
-            //ConectionString
-            connectionString = cs.getConnectionString();
-        }
         //Get metódus ami visszaadja a lista tartalmát
         public List<Etel> getEtelek()
         {
@@ -44,7 +36,7 @@ namespace byb.Repository
             try
             {
                 con.Open();
-                string query = Etel.getAllEtelekRecord();
+                string query = Sql.getAllEtelekRecord();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
@@ -89,6 +81,37 @@ namespace byb.Repository
                 etelekDT.Rows.Add(e.Nev, e.Kaloria, e.Feherje, e.Szenhidrat, e.Zsir, e.Mennyiseg);
             }
             return etelekDT;
+        }
+        public void torolEtelListabol(string nev)
+        {
+            Etel e = etelek.Find(x => x.Nev == nev);
+            if (e != null)
+            {
+                etelek.Remove(e);
+            }
+            else
+            {
+                throw new RepositoryException("Sikertelen etel törlés a listából!");
+            }
+        }
+        public void torolEtelAdatbazisbol(string nev)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM etelek WHERE enev=" +nev;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(nev + " idéjű etel törlése nem sikerült.");
+                throw new RepositoryException("Sikertelen törlés az adatbázisból.");
+            }
         }
     }
 }

@@ -81,14 +81,19 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modell\Database\Sql.cs" />
     <Compile Include="Modell\Etel.cs" />
     <Compile Include="Modell\Etkezes.cs" />
     <Compile Include="Modell\Felhasznalo.cs" />
+    <Compile Include="Modell\Login.cs" />
     <Compile Include="Modell\Taplalekkiegeszito.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />
+    <Compile Include="Repository\Etkezesek.cs" />
     <Compile Include="Repository\Felhasznalok.cs" />
+    <Compile Include="Repository\Logins.cs" />
+    <Compile Include="Repository\Repo.cs" />
     <Compile Include="Repository\RepositoryException.cs" />
     <Compile Include="Repository\Taplalekkiegeszitok.cs" />
     <EmbeddedResource Include="Buildyourbody.resx">

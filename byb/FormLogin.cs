@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace byb
     public partial class FormLogin : Form
     {
         public static string islogged = "";
+        Repo repo = new Repo();
         public FormLogin()
         {
             Thread trd = new Thread(new ThreadStart(formRun));
@@ -34,16 +36,17 @@ namespace byb
         {
             Application.Run(new FormLoad());
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             errorProviderLogin.Clear();
-            Felhasznalo fl = new Felhasznalo(username.Text, pwd.Text);
-            if(fl.loginCheck() == true)
+            
+            Login l = new Login(username.Text, pwd.Text);
+            if(l.loginCheck() == true)
             {
                 panel5.Visible = true;
                 timer1.Start();
-                islogged = fl.getFname();
+                islogged = l.getUsername();
+
             }
             else
             {
@@ -51,6 +54,7 @@ namespace byb
                 //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 panel5.Visible = false;
             }
+            
             
             
         }

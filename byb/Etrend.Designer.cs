@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
-            this.listViewEtkezesek = new System.Windows.Forms.ListView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
+            this.panelEtelek = new System.Windows.Forms.Panel();
+            this.buttonTorolEtel = new System.Windows.Forms.Button();
+            this.errorProviderEtelTorles = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewEtkezesek = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
+            this.panelEtelek.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEtelTorles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonEtelek
@@ -55,21 +62,12 @@
             // 
             this.dataGridViewEtelek.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEtelek.Location = new System.Drawing.Point(83, 84);
+            this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(593, 283);
             this.dataGridViewEtelek.TabIndex = 1;
-            // 
-            // listViewEtkezesek
-            // 
-            this.listViewEtkezesek.HideSelection = false;
-            this.listViewEtkezesek.Location = new System.Drawing.Point(83, 84);
-            this.listViewEtkezesek.Name = "listViewEtkezesek";
-            this.listViewEtkezesek.Size = new System.Drawing.Size(593, 283);
-            this.listViewEtkezesek.TabIndex = 2;
-            this.listViewEtkezesek.UseCompatibleStateImageBehavior = false;
             // 
             // buttonEtkezesek
             // 
@@ -87,18 +85,57 @@
             this.buttonEtkezesek.UseVisualStyleBackColor = false;
             this.buttonEtkezesek.Click += new System.EventHandler(this.buttonEtkezesek_Click);
             // 
+            // panelEtelek
+            // 
+            this.panelEtelek.Controls.Add(this.buttonTorolEtel);
+            this.panelEtelek.Controls.Add(this.dataGridViewEtelek);
+            this.panelEtelek.Location = new System.Drawing.Point(16, 69);
+            this.panelEtelek.Name = "panelEtelek";
+            this.panelEtelek.Size = new System.Drawing.Size(709, 344);
+            this.panelEtelek.TabIndex = 4;
+            // 
+            // buttonTorolEtel
+            // 
+            this.buttonTorolEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonTorolEtel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonTorolEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTorolEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTorolEtel.ForeColor = System.Drawing.Color.White;
+            this.buttonTorolEtel.Location = new System.Drawing.Point(12, 305);
+            this.buttonTorolEtel.Name = "buttonTorolEtel";
+            this.buttonTorolEtel.Size = new System.Drawing.Size(84, 32);
+            this.buttonTorolEtel.TabIndex = 5;
+            this.buttonTorolEtel.Text = "Törlés";
+            this.buttonTorolEtel.UseVisualStyleBackColor = false;
+            this.buttonTorolEtel.Click += new System.EventHandler(this.buttonTorolEtel_Click);
+            // 
+            // errorProviderEtelTorles
+            // 
+            this.errorProviderEtelTorles.ContainerControl = this;
+            // 
+            // dataGridViewEtkezesek
+            // 
+            this.dataGridViewEtkezesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEtkezesek.Location = new System.Drawing.Point(78, 372);
+            this.dataGridViewEtkezesek.Name = "dataGridViewEtkezesek";
+            this.dataGridViewEtkezesek.Size = new System.Drawing.Size(591, 150);
+            this.dataGridViewEtkezesek.TabIndex = 5;
+            // 
             // Etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.dataGridViewEtkezesek);
+            this.Controls.Add(this.panelEtelek);
             this.Controls.Add(this.buttonEtkezesek);
-            this.Controls.Add(this.listViewEtkezesek);
-            this.Controls.Add(this.dataGridViewEtelek);
             this.Controls.Add(this.buttonEtelek);
             this.Name = "Etrend";
             this.Size = new System.Drawing.Size(777, 525);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).EndInit();
+            this.panelEtelek.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEtelTorles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -107,7 +144,10 @@
 
         private System.Windows.Forms.Button buttonEtelek;
         private System.Windows.Forms.DataGridView dataGridViewEtelek;
-        private System.Windows.Forms.ListView listViewEtkezesek;
         private System.Windows.Forms.Button buttonEtkezesek;
+        private System.Windows.Forms.Panel panelEtelek;
+        private System.Windows.Forms.Button buttonTorolEtel;
+        private System.Windows.Forms.ErrorProvider errorProviderEtelTorles;
+        private System.Windows.Forms.DataGridView dataGridViewEtkezesek;
     }
 }

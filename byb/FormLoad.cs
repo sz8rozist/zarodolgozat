@@ -1,4 +1,5 @@
 ﻿using byb.Database;
+using byb.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace byb
     public partial class FormLoad : Form
     {
         CreateDatabase db = new CreateDatabase();
+        Repo repo = new Repo();
         public int move = 2;
         public FormLoad()
         {
@@ -21,6 +23,7 @@ namespace byb
             db.createDataBase();
             db.createDataBaseTable();
             db.tesztadatokFeltoltese();
+            repo.setFelhasznalok(repo.getFelhasznalokAdatbazisbol());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -39,6 +42,9 @@ namespace byb
         private void FormLoad_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            
+            
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

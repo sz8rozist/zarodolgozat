@@ -10,8 +10,7 @@ namespace byb.Modell
 {
     class Felhasznalo
     {
-        ConnectionString cs = new ConnectionString();
-        private  string connectionString;
+
         /// <summary>
         /// A felhasználó adatai
         /// </summary>
@@ -41,37 +40,6 @@ namespace byb.Modell
             this.email = email;
             this.tsuly = tsuly;
             this.tmagassag = tmagassag;
-        }
-        public Felhasznalo(string fname,string jelszo)
-        {
-            this.fname = fname;
-            this.jelszo = jelszo;
-        }
-        /// <summary>
-        /// Belépés ellenőrzése
-        /// </summary>
-        /// <returns>true ha sikeres a belépés, false ha sikertelen</returns>
-        public bool loginCheck()
-        {
-            connectionString = cs.getConnectionString();
-            MySqlConnection con = new MySqlConnection(connectionString);
-            con.Open();
-            string query = "SELECT * FROM felhasznalok WHERE fname = '" + fname + "' AND jelszo = '" + jelszo + "'; ";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            MySqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public static string getUsersAllRecord()
-        {
-            return "SELECT * FROM felhasznalok";
         }
         //Set metódusok
         public void setId(int id)

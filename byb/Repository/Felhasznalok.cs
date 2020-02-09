@@ -1,5 +1,6 @@
 ﻿using byb.Database;
 using byb.Modell;
+using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,10 @@ using System.Threading.Tasks;
 
 namespace byb.Repository
 {
-    class Felhasznalok
+    partial class Repo
     {
-        private readonly string connectionString;
-        ConnectionString cs = new ConnectionString();
         //Ételek Lista
         List<Felhasznalo> users;
-        public Felhasznalok()
-        {
-            //Lista példányosítása
-            users = new List<Felhasznalo>();
-            //ConectionString
-            connectionString = cs.getConnectionString();
-        }
         //Get metódus ami visszaadja a lista tartalmát
         public List<Felhasznalo> getFelhasznalok()
         {
@@ -44,7 +36,7 @@ namespace byb.Repository
             try
             {
                 con.Open();
-                string query = Felhasznalo.getUsersAllRecord();
+                string query = Sql.getUsersAllRecord();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
