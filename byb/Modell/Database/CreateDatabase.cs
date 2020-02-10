@@ -150,28 +150,28 @@ namespace byb.Database
 
 
                 string fkeyEdzesek = "ALTER TABLE `edzesek`" +
-  "ADD CONSTRAINT `edzesek_ibfk_1` FOREIGN KEY IF NOT EXISTS(`f_id`) REFERENCES `felhasznalok` (`f_id`)," +
-  "ADD CONSTRAINT `edzesek_ibfk_2` FOREIGN KEY IF NOT EXISTS(`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
+  "ADD CONSTRAINT `edzesek_ibfk_1` FOREIGN KEY IF NOT EXISTS (`f_id`) REFERENCES `felhasznalok` (`f_id`)," +
+  "ADD CONSTRAINT `edzesek_ibfk_2` FOREIGN KEY IF NOT EXISTS (`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
                 MySqlCommand fkeyEdzesekcmd = new MySqlCommand(fkeyEdzesek, con);
                 fkeyEdzesekcmd.ExecuteNonQuery();
 
 
                 string fkeyEdzesterv = "ALTER TABLE `edzesterv`"+
-  "ADD CONSTRAINT `edzesterv_ibfk_1` FOREIGN KEY IF NOT EXISTS(`edzesek_id`) REFERENCES `edzesek` (`edzesek_id`),"+
-  "ADD CONSTRAINT `edzesterv_ibfk_2` FOREIGN KEY IF NOT EXISTS(`gyakorlatok_id`) REFERENCES `gyakorlatok` (`gyakorlatok_id`); ";
+  "ADD CONSTRAINT `edzesterv_ibfk_1` FOREIGN KEY IF NOT EXISTS (`edzesek_id`) REFERENCES `edzesek` (`edzesek_id`),"+
+  "ADD CONSTRAINT `edzesterv_ibfk_2` FOREIGN KEY IF NOT EXISTS (`gyakorlatok_id`) REFERENCES `gyakorlatok` (`gyakorlatok_id`); ";
                 MySqlCommand fkeyEdzestervcmd = new MySqlCommand(fkeyEdzesterv, con);
                 fkeyEdzestervcmd.ExecuteNonQuery();
 
 
                 string fkeyEdtkezesek = "ALTER TABLE `etkezesek`"+
-  "ADD CONSTRAINT `etkezesek_ibfk_1` FOREIGN KEY IF NOT EXISTS(`etel_id`) REFERENCES `etelek` (`etel_id`),"+
-  "ADD CONSTRAINT `etkezesek_ibfk_2` FOREIGN KEY IF NOT EXISTS(`f_id`) REFERENCES `felhasznalok` (`f_id`); ";
+  "ADD CONSTRAINT `etkezesek_ibfk_1` FOREIGN KEY IF NOT EXISTS (`etel_id`) REFERENCES `etelek` (`etel_id`),"+
+  "ADD CONSTRAINT `etkezesek_ibfk_2` FOREIGN KEY IF NOT EXISTS (`f_id`) REFERENCES `felhasznalok` (`f_id`); ";
                 MySqlCommand fkeyEtkezesekcmd = new MySqlCommand(fkeyEdtkezesek, con);
                 fkeyEtkezesekcmd.ExecuteNonQuery();
 
                 string fkeyKieg = "ALTER TABLE `kiegeszitok`"+
-  "ADD CONSTRAINT `kiegeszitok_ibfk_1` FOREIGN KEY IF NOT EXISTS(`f_id`) REFERENCES `felhasznalok` (`f_id`),"+
-  "ADD CONSTRAINT `kiegeszitok_ibfk_2` FOREIGN KEY IF NOT EXISTS(`k_id`) REFERENCES `kiegeszitok_adatai` (`k_id`); ";
+  "ADD CONSTRAINT `kiegeszitok_ibfk_1` FOREIGN KEY IF NOT EXISTS (`f_id`) REFERENCES `felhasznalok` (`f_id`),"+
+  "ADD CONSTRAINT `kiegeszitok_ibfk_2` FOREIGN KEY IF NOT EXISTS (`k_id`) REFERENCES `kiegeszitok_adatai` (`k_id`); ";
                 MySqlCommand fkeyKiegcmd = new MySqlCommand(fkeyKieg, con);
                 fkeyKiegcmd.ExecuteNonQuery();
                 con.Close();

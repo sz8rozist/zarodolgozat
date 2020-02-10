@@ -18,6 +18,7 @@ namespace byb
     public partial class FormLogin : Form
     {
         public static string islogged = "";
+        public static int loggedID = 0;
         Repo repo = new Repo();
         public FormLogin()
         {
@@ -46,6 +47,7 @@ namespace byb
                 panel5.Visible = true;
                 timer1.Start();
                 islogged = l.getUsername();
+                loggedID = l.getLoginId();
 
             }
             else

@@ -1,4 +1,5 @@
 ﻿using byb.Database;
+using byb.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace byb
     public partial class Buildyourbody : Form
     {
         CreateDatabase cd = new CreateDatabase();
+        Repo r = new Repo();
         public Buildyourbody()
         {
             InitializeComponent();

@@ -14,6 +14,7 @@ namespace byb.Modell
         private string connectionString;
         private string username;
         private string password;
+        private int id;
 
         public string getUsername()
         {
@@ -23,13 +24,9 @@ namespace byb.Modell
         {
             return password;
         }
-        public void setUsername(string username)
+        public int getLoginId()
         {
-            this.username = username;
-        }
-        public void setPassword(string password)
-        {
-            this.password = password;
+            return id;
         }
         public Login(string username, string password)
         {
@@ -52,6 +49,7 @@ namespace byb.Modell
             MySqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
+                id = Convert.ToInt32(dr["f_id"]);
                  return true;
             }
             else
