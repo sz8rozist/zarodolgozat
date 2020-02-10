@@ -67,10 +67,8 @@ namespace byb
         }
         public void beallitEtkezesekDGV()
         {
-            etkezesekDT.Columns[0].ColumnName = "Etkezes ID";
-            etkezesekDT.Columns[1].ColumnName = "Időpont";
-            etkezesekDT.Columns[2].ColumnName = "Étel ID";
-            etkezesekDT.Columns[3].ColumnName = "F ID";
+            etkezesekDT.Columns[0].ColumnName = "Időpont";
+            etkezesekDT.Columns[1].ColumnName = "Étel ID";
 
             dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEtkezesek.ReadOnly = true;

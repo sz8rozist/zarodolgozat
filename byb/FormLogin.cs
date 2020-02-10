@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace byb
 {
-    public partial class FormLogin : Form
+    public  partial class FormLogin : Form
     {
         public static string islogged = "";
         public static int loggedID = 0;

@@ -35,11 +35,9 @@ namespace byb.Repository
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    int id = Convert.ToInt32(dr["etkezesek_id"]);
                     string idopont = dr["idopont"].ToString();
                     int etelid = Convert.ToInt32(dr["etel_id"]);
-                    int fid = Convert.ToInt32(dr["f_id"]);
-                    Etkezes etkezes = new Etkezes(id,idopont,etelid,fid);
+                    Etkezes etkezes = new Etkezes(idopont,etelid);
                     etkezesek.Add(etkezes);
                 }
                 con.Close();
@@ -56,13 +54,11 @@ namespace byb.Repository
         public DataTable getEtkezesDTListabol()
         {
             DataTable etkezesDT = new DataTable();
-            etkezesDT.Columns.Add("etkezesek_id", typeof(int));
             etkezesDT.Columns.Add("idopont", typeof(string));
             etkezesDT.Columns.Add("etel_id", typeof(int));
-            etkezesDT.Columns.Add("f_id", typeof(int));
             foreach (Etkezes etkezes in etkezesek)
             {
-                etkezesDT.Rows.Add(etkezes.Etkezesid,etkezes.Idopont,etkezes.Etelid,etkezes.Fid);
+                etkezesDT.Rows.Add(etkezes.Idopont,etkezes.Etelid);
             }
             return etkezesDT;
         }
