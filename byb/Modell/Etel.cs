@@ -39,6 +39,30 @@ namespace byb.Modell
             this.mennyiseg = mennyiseg;
         }
         /// <summary>
+        /// Insert into SQL lekérdezés
+        /// </summary>
+        /// <returns>Hozzáadás az etelek táblához</returns>
+        public  string getInsertEtelek()
+        {
+            return "INSERT INTO `etelek" +
+                "`(`etel_id`, `enev`, `kaloria`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`)" +
+                " VALUES ('" +
+                id +
+                "', '" +
+                Nev +
+                "', '" +
+                Kaloria +
+                "', '" +
+                Feherje +
+                "', '" +
+                Zsir +
+                "', '" +
+                Szenhidrat +
+                "', '" +
+                Mennyiseg +
+                "');";
+        }
+        /// <summary>
         /// set - get metódusok
         /// </summary>
         public int Id { get => id; set => id = value; }

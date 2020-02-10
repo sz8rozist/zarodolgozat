@@ -82,6 +82,72 @@ namespace byb.Repository
             }
             return etelekDT;
         }
+        /// <summary>
+        /// Új étel hozzáadása az adatbázishoz (insert into)
+        /// </summary>
+        /// <param name="ujetel">Az új étel</param>
+        public void AddEtelAdatbazishoz(Etel ujetel)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = ujetel.getInsertEtelek();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(ujetel + "etel hozzáadása nem sikerült.");
+                throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
+            }
+        }
+        /// <summary>
+        /// Metóduos az étel nevek lekérdezéséhez
+        /// </summary>
+        /// <returns>Étel nevek</returns>
+        public List<string> getEtelNevek()
+        {
+            List<string> etelName = new List<string>();
+            foreach(Etel e in etelek)
+            {
+                etelName.Add(e.Nev);
+            }
+            return etelName;
+        }
+        /// <summary>
+        /// Metódus új étel adathoz, ha az ételek lista üres akkor 1 es id vel tér vissza ha nem akkor megkeressük a legnagyobb id-t és hozzáadunk egyet
+        /// </summary>
+        /// <returns>A max id- hez hozzáadott plusz 1</returns>
+        public int getKovetkezoEtelID()
+        {
+            if (etelek.Count == 0)
+                return 1;
+            else
+                return etelek.Max(x => x.Id) + 1;
+        }
+        /// <summary>
+        /// Új étel hozzáadása listához
+        /// </summary>
+        /// <param name="ujetel">Az új étel</param>
+        public void AddEtelListahoz(Etel ujetel)
+        {
+            try
+            {
+                etelek.Add(ujetel);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Az étel hozzáadása nem sikerült.");
+            }
+        }
+        /// <summary>
+        /// Lista törlése kapott paraméter alapján
+        /// </summary>
+        /// <param name="nev">A kapott paraméter ami alapján törlünk</param>
         public void torolEtelListabol(string nev)
         {
             Etel e = etelek.Find(x => x.Nev == nev);
@@ -94,6 +160,10 @@ namespace byb.Repository
                 throw new RepositoryException("Sikertelen etel törlés a listából!");
             }
         }
+        /// <summary>
+        /// Étel törlése adatbázisból kapott paraméter alapján
+        /// </summary>
+        /// <param name="nev">A paraméter ami alapján törlünk</param>
         public void torolEtelAdatbazisbol(string nev)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

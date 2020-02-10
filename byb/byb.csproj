@@ -92,7 +92,6 @@
     <Compile Include="Repository\Etelek.cs" />
     <Compile Include="Repository\Etkezesek.cs" />
     <Compile Include="Repository\Felhasznalok.cs" />
-    <Compile Include="Repository\Logins.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Repository\RepositoryException.cs" />
     <Compile Include="Repository\Taplalekkiegeszitok.cs" />

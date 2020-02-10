@@ -22,6 +22,19 @@ namespace byb
         {
             InitializeComponent();
             panelEtelek.Visible = false;
+            panelUjEtel.Visible = false;
+            panelEtkezesek.Visible = false;
+            panelUjEtkezes.Visible = false;
+
+        }
+        private void Etrend_Load(object sender, EventArgs e)
+        {
+            repo.setEtkezesek(repo.getEtkezesekAdatbazisbol());
+            repo.setEtelek(repo.getEtelekAdatbazisbol());
+        }
+        public void feltoltComboboxEtelNevekkel()
+        {
+            comboBoxEtelNev.DataSource = repo.getEtelNevek();
         }
         public void frissitDGVEtelek()
         {
@@ -34,6 +47,7 @@ namespace byb
             etkezesekDT = repo.getEtkezesDTListabol();
             dataGridViewEtkezesek.DataSource = null;
             dataGridViewEtkezesek.DataSource = etkezesekDT;
+            beallitEtkezesekDGV();
         }
 
         public void beallitEtelekDGV()
@@ -67,9 +81,10 @@ namespace byb
         }
         public void beallitEtkezesekDGV()
         {
-            etkezesekDT.Columns[0].ColumnName = "Időpont";
-            etkezesekDT.Columns[1].ColumnName = "Étel ID";
-
+            etkezesekDT.Columns[0].ColumnName = "Étkezés ID";
+            etkezesekDT.Columns[1].ColumnName = "Időpont";
+            etkezesekDT.Columns[2].ColumnName = "Étel Név";
+            dataGridViewEtkezesek.Columns[0].Visible = false;
             dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEtkezesek.ReadOnly = true;
             dataGridViewEtkezesek.AllowUserToDeleteRows = false;
@@ -93,7 +108,7 @@ namespace byb
         private void buttonEtelek_Click(object sender, EventArgs e)
         {
             panelEtelek.Visible = true;
-            repo.setEtelek(repo.getEtelekAdatbazisbol());
+            panelEtkezesek.Visible = false;
             //DGV adatainak frissítése
             frissitDGVEtelek();
             //DGV beállítása
@@ -103,9 +118,11 @@ namespace byb
         private void buttonEtkezesek_Click(object sender, EventArgs e)
         {
             panelEtelek.Visible = false;
-            repo.setEtkezesek(repo.getEtkezesekAdatbazisbol());
+            panelEtkezesek.Visible = true;
+            feltoltComboboxEtelNevekkel();
             frissitDGVEtkezesek();
             beallitEtkezesekDGV();
+
         }
 
         private void buttonTorolEtel_Click(object sender, EventArgs e)
@@ -113,8 +130,6 @@ namespace byb
             if ((dataGridViewEtelek.Rows == null) ||
                 (dataGridViewEtelek.Rows.Count == 0))
                 return;
-            //A felhasználó által kiválasztott sor a DataGridView-ban            
-            int sor = dataGridViewEtelek.SelectedRows[0].Index;
             if (MessageBox.Show(
                 "Valóban törölni akarja a sort?",
                 "Törlés",
@@ -147,6 +162,101 @@ namespace byb
                 frissitDGVEtelek();
 
             }
+        }
+
+        private void buttonHozzaad_Click(object sender, EventArgs e)
+        {
+            panelUjEtel.Visible = true;
+        }
+
+        private void buttonUjMentes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Etel ujetel = new Etel(
+                    repo.getKovetkezoEtelID(),
+                    EtelNev.Text,
+                    Convert.ToInt32(textBoxKaloria.Text),
+                    Convert.ToInt32(textBoxFeherje.Text),
+                    Convert.ToInt32(textBoxSzenhidrat.Text),
+                    Convert.ToInt32(textBoxZsir.Text),
+                    textBoxMennyiseg.Text
+                    );
+                //hozzáadás listához
+                repo.AddEtelListahoz(ujetel);
+                //hozzáadás adatbázishoz
+                repo.AddEtelAdatbazishoz(ujetel);
+                //DGV frissítés
+                EtelNev.Text = string.Empty;
+                textBoxKaloria.Text = string.Empty;
+                textBoxFeherje.Text = string.Empty;
+                textBoxSzenhidrat.Text = string.Empty;
+                textBoxZsir.Text = string.Empty;
+                textBoxMennyiseg.Text = string.Empty;
+                frissitDGVEtelek();
+                
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("Új Étel hozzáadás sikertelen");
+            }
+        }
+
+        private void buttonMegse_Click(object sender, EventArgs e)
+        {
+            panelUjEtel.Visible = false;
+        }
+
+        private void buttonTorolEtkezes_Click(object sender, EventArgs e)
+        {
+            if ((dataGridViewEtkezesek.Rows == null) ||
+                (dataGridViewEtkezesek.Rows.Count == 0))
+                return;
+            if (MessageBox.Show(
+                "Valóban törölni akarja a sort?",
+                "Törlés",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                //1. törölni kell a listából
+                //DGV - be kijelölt sor első cellájának az értéke (név) ami alapján törlünk.
+                int id = Convert.ToInt32(dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value.ToString());
+
+                try
+                {
+                    repo.torolEtkezesListabol(id);
+                }
+                catch (RepositoryException rex)
+                {
+                    Debug.WriteLine(rex.Message);
+                    Debug.WriteLine("Az étkezés törlése nem sikerült.");
+                }
+                //2. törölni kell az adatbázisból
+                try
+                {
+                    repo.torolEtkezesAdatbazisbol(id);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                //3. frissíteni kell a DataGridView-t  
+                frissitDGVEtkezesek();
+
+            }
+        }
+
+
+
+        private void buttonUjEtkezes_Click(object sender, EventArgs e)
+        {
+            panelUjEtkezes.Visible = true;
+        }
+
+        private void buttonEtkezesMegse_Click(object sender, EventArgs e)
+        {
+            panelUjEtkezes.Visible = false;
         }
     }
 }

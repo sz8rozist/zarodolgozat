@@ -10,12 +10,14 @@ namespace byb.Modell
 {
     class Login
     {
+        //Connection string az adatbázishoz való csatlakozáshoz
         ConnectionString cs = new ConnectionString();
         private string connectionString;
+        //Bejelentkezés adatai username - password és egy id
         private string username;
         private string password;
         private int id;
-
+        //get metódusok
         public string getUsername()
         {
             return username;
@@ -28,6 +30,7 @@ namespace byb.Modell
         {
             return id;
         }
+        //konstruktor a view-n való bejelentkezéshez username és password paraméterekkel
         public Login(string username, string password)
         {
             this.username = username;
@@ -36,7 +39,7 @@ namespace byb.Modell
         /// <summary>
         /// Belépés ellenőrzése
         /// </summary>
-        /// <returns>true ha sikeres a belépés, false ha sikertelen</returns>
+        /// <returns>true ha sikeres a belépés és az id-be elmentjük az adatbázisból az f_id-t, false ha sikertelen</returns>
         public bool loginCheck()
         {
             

@@ -34,7 +34,7 @@ namespace byb.Modell.Database
         }
         public static string getEtkezesekAllRecord()
         {
-            return "SELECT idopont, etel_id FROM etkezesek WHERE f_id= "+FormLogin.loggedID;
+            return "SELECT etelek.enev, etkezesek.idopont, etkezesek.etkezesek_id FROM etelek, etkezesek WHERE etelek.etel_id = etkezesek.etel_id AND etkezesek.f_id = " + FormLogin.loggedID;
         }
     }
 }

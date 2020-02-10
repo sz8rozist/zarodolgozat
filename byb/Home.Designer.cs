@@ -168,7 +168,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(777, 525);
+            this.Size = new System.Drawing.Size(727, 579);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

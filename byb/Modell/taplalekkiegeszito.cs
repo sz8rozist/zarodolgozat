@@ -46,10 +46,5 @@ namespace byb.Modell
         public int Kiszereles { get => kiszereles; set => kiszereles = value; }
         public string Kme { get => kme; set => kme = value; }
 
-        /// <summary>
-        /// Táplálékkiegészítő adatainak lekérdezése adatbázisból
-        /// </summary>
-        /// <returns>Minden adat a kiegeszitok táblából</returns>
-
     }
 }

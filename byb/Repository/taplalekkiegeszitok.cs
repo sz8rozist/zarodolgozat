@@ -13,7 +13,9 @@ namespace byb.Repository
 {
     partial class Repo
     {
+        //tkiegek lista
         List<Taplalekkiegeszito> tkiegek;
+        //lista set - get metódusok
        public List<Taplalekkiegeszito> getTkiegek()
         {
             return tkiegek;
@@ -22,6 +24,7 @@ namespace byb.Repository
         {
             this.tkiegek = tkiegek;
         }
+        //Adatbázis rekordok hozzáadása listához
         public List<Taplalekkiegeszito> getTaplalekkiegeszitokAdatbazisbol()
         {
             MySqlConnection con = new MySqlConnection(connectionString);

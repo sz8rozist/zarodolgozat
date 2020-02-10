@@ -14,7 +14,9 @@ namespace byb.Repository
 {
     partial class Repo
     {
+        //étkezések lista
         List<Etkezes> etkezesek;
+        //lista set-get metódusok
         public List<Etkezes> getEtkezesek()
         {
             return etkezesek;
@@ -23,6 +25,10 @@ namespace byb.Repository
         {
             this.etkezesek = etkezesek;
         }
+        /// <summary>
+        /// Étkezés rekordok hozzáadása listához adatbázisból
+        /// </summary>
+        /// <returns>etkezesek lista</returns>
         public List<Etkezes> getEtkezesekAdatbazisbol()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
@@ -35,9 +41,10 @@ namespace byb.Repository
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
+                    int id = Convert.ToInt32(dr["etkezesek_id"]);
                     string idopont = dr["idopont"].ToString();
-                    int etelid = Convert.ToInt32(dr["etel_id"]);
-                    Etkezes etkezes = new Etkezes(idopont,etelid);
+                    string enev = dr["enev"].ToString();
+                    Etkezes etkezes = new Etkezes(id,idopont,enev);
                     etkezesek.Add(etkezes);
                 }
                 con.Close();
@@ -51,16 +58,54 @@ namespace byb.Repository
             return etkezesek;
 
         }
+        /// <summary>
+        /// Listából készít dataTable-t
+        /// </summary>
+        /// <returns>Data Table</returns>
         public DataTable getEtkezesDTListabol()
         {
             DataTable etkezesDT = new DataTable();
+            etkezesDT.Columns.Add("etkezesek_id", typeof(int));
             etkezesDT.Columns.Add("idopont", typeof(string));
-            etkezesDT.Columns.Add("etel_id", typeof(int));
+            etkezesDT.Columns.Add("enev", typeof(string));
             foreach (Etkezes etkezes in etkezesek)
             {
-                etkezesDT.Rows.Add(etkezes.Idopont,etkezes.Etelid);
+                etkezesDT.Rows.Add(etkezes.Etkezesid,etkezes.Idopont,etkezes.Enev);
             }
             return etkezesDT;
+        }
+        //Id alapján töröl a listából
+        public void torolEtkezesListabol(int id)
+        {
+            Etkezes etkezes = etkezesek.Find(x => x.Etkezesid == id);
+            if (etkezes != null)
+            {
+                etkezesek.Remove(etkezes);
+            }
+            else
+            {
+                throw new RepositoryException("Sikertelen etkezes törlés a listából!");
+            }
+        }
+        //id alapján töröl az adatbázisból
+        public void torolEtkezesAdatbazisbol(int id)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM etkezesek WHERE etkezesek_id=" + id;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(id + " idjű etkezes törlése nem sikerült.");
+                throw new RepositoryException("Sikertelen törlés az adatbázisból.");
+            }
         }
     }
 }

@@ -14,9 +14,10 @@ namespace byb.Repository
         ConnectionString cs = new ConnectionString();
         public Repo()
         {
+            //Repositoryban connectionString példányosítása
             connectionString = cs.getConnectionString();
+            //Listák példányosítása a repoban
             users = new List<Felhasznalo>();
-            logins = new List<Login>();
             etkezesek = new List<Etkezes>();
             etelek = new List<Etel>();
             tkiegek = new List<Taplalekkiegeszito>();

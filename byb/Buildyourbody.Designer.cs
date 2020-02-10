@@ -59,7 +59,7 @@
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(213, 550);
+            this.panelSlideMenu.Size = new System.Drawing.Size(213, 604);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // label1
@@ -154,7 +154,7 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(213, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(777, 27);
+            this.panelHeader.Size = new System.Drawing.Size(727, 27);
             this.panelHeader.TabIndex = 1;
             // 
             // label2
@@ -174,7 +174,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(744, 0);
+            this.button1.Location = new System.Drawing.Point(694, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 27);
             this.button1.TabIndex = 2;
@@ -190,7 +190,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(213, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 550);
+            this.panel1.Size = new System.Drawing.Size(727, 604);
             this.panel1.TabIndex = 2;
             // 
             // home1
@@ -198,7 +198,7 @@
             this.home1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.home1.Location = new System.Drawing.Point(0, 25);
             this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(777, 525);
+            this.home1.Size = new System.Drawing.Size(727, 579);
             this.home1.TabIndex = 0;
             // 
             // etrend1
@@ -206,7 +206,7 @@
             this.etrend1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.etrend1.Location = new System.Drawing.Point(0, 25);
             this.etrend1.Name = "etrend1";
-            this.etrend1.Size = new System.Drawing.Size(777, 525);
+            this.etrend1.Size = new System.Drawing.Size(727, 579);
             this.etrend1.TabIndex = 1;
             // 
             // Buildyourbody
@@ -214,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(990, 550);
+            this.ClientSize = new System.Drawing.Size(940, 604);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSlideMenu);
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Slidepanel;
         private System.Windows.Forms.Label label1;
-        private Home home1;
         private Etrend etrend1;
+        private Home home1;
     }
 }
