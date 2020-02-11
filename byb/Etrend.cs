@@ -13,12 +13,11 @@ using byb.Repository;
 
 namespace byb
 {
-    public partial class Etrend : UserControl
+    public partial class etrend : UserControl
     {
         Repo repo = new Repo();
-        private DataTable etkezesekDT = new DataTable();
         private DataTable etelekDT = new DataTable();
-        public Etrend()
+        public etrend()
         {
             InitializeComponent();
             panelEtelek.Visible = false;
@@ -42,14 +41,7 @@ namespace byb
             dataGridViewEtelek.DataSource = null;
             dataGridViewEtelek.DataSource = etelekDT;
         }
-        public void frissitDGVEtkezesek()
-        {
-            etkezesekDT = repo.getEtkezesDTListabol();
-            dataGridViewEtkezesek.DataSource = null;
-            dataGridViewEtkezesek.DataSource = etkezesekDT;
-            beallitEtkezesekDGV();
-        }
-
+       
         public void beallitEtelekDGV()
         {
             etelekDT.Columns[0].ColumnName = "Név";
@@ -79,12 +71,20 @@ namespace byb
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
-        public void beallitEtkezesekDGV()
+        public void feltoltDGVEtkezesekEtrendekkel()
         {
-            etkezesekDT.Columns[0].ColumnName = "Étkezés ID";
-            etkezesekDT.Columns[1].ColumnName = "Időpont";
-            etkezesekDT.Columns[2].ColumnName = "Étel Név";
-            dataGridViewEtkezesek.Columns[0].Visible = false;
+            dataGridViewEtkezesek.DataSource = null;
+
+            int azon = FormLogin.loggedID;
+
+            Etrendek etrend = new Etrendek(
+                azon,
+                repo.getEtelek(),
+                repo.getEtkezesek()
+                );
+            dataGridViewEtkezesek.DataSource = etrend.getEtrendDT();
+            dataGridViewEtkezesek.Columns["idopont"].HeaderText = "Időpont";
+            dataGridViewEtkezesek.Columns["enev"].HeaderText = "Étel";
             dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEtkezesek.ReadOnly = true;
             dataGridViewEtkezesek.AllowUserToDeleteRows = false;
@@ -120,8 +120,7 @@ namespace byb
             panelEtelek.Visible = false;
             panelEtkezesek.Visible = true;
             feltoltComboboxEtelNevekkel();
-            frissitDGVEtkezesek();
-            beallitEtkezesekDGV();
+            feltoltDGVEtkezesekEtrendekkel();
 
         }
 
@@ -202,7 +201,10 @@ namespace byb
                 Debug.WriteLine("Új Étel hozzáadás sikertelen");
             }
         }
+        private void buttonMentesEtkezes_Click(object sender, EventArgs e)
+        {
 
+        }
         private void buttonMegse_Click(object sender, EventArgs e)
         {
             panelUjEtel.Visible = false;
@@ -210,41 +212,7 @@ namespace byb
 
         private void buttonTorolEtkezes_Click(object sender, EventArgs e)
         {
-            if ((dataGridViewEtkezesek.Rows == null) ||
-                (dataGridViewEtkezesek.Rows.Count == 0))
-                return;
-            if (MessageBox.Show(
-                "Valóban törölni akarja a sort?",
-                "Törlés",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                //1. törölni kell a listából
-                //DGV - be kijelölt sor első cellájának az értéke (név) ami alapján törlünk.
-                int id = Convert.ToInt32(dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value.ToString());
-
-                try
-                {
-                    repo.torolEtkezesListabol(id);
-                }
-                catch (RepositoryException rex)
-                {
-                    Debug.WriteLine(rex.Message);
-                    Debug.WriteLine("Az étkezés törlése nem sikerült.");
-                }
-                //2. törölni kell az adatbázisból
-                try
-                {
-                    repo.torolEtkezesAdatbazisbol(id);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-                //3. frissíteni kell a DataGridView-t  
-                frissitDGVEtkezesek();
-
-            }
+            
         }
 
 
@@ -258,5 +226,7 @@ namespace byb
         {
             panelUjEtkezes.Visible = false;
         }
+
+
     }
 }

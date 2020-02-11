@@ -41,7 +41,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.home1 = new byb.Home();
-            this.etrend1 = new byb.Etrend();
+            this.etrend1 = new byb.etrend();
             this.panelSlideMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Slidepanel;
         private System.Windows.Forms.Label label1;
-        private Etrend etrend1;
+        private etrend etrend1;
         private Home home1;
     }
 }

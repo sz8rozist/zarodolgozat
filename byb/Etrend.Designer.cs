@@ -1,6 +1,6 @@
 ﻿namespace byb
 {
-    partial class Etrend
+    partial class etrend
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
@@ -90,8 +90,8 @@
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewEtelek.TabIndex = 1;
             // 
@@ -362,6 +362,7 @@
             this.buttonMentesEtkezes.TabIndex = 14;
             this.buttonMentesEtkezes.Text = "Mentés";
             this.buttonMentesEtkezes.UseVisualStyleBackColor = false;
+            this.buttonMentesEtkezes.Click += new System.EventHandler(this.buttonMentesEtkezes_Click);
             // 
             // dateTimePicker1
             // 

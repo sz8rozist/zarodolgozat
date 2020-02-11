@@ -54,11 +54,11 @@
     <Compile Include="Buildyourbody.Designer.cs">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </Compile>
-    <Compile Include="Etrend.cs">
+    <Compile Include="etrend.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Etrend.Designer.cs">
-      <DependentUpon>Etrend.cs</DependentUpon>
+    <Compile Include="etrend.Designer.cs">
+      <DependentUpon>etrend.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>UserControl</SubType>
@@ -84,6 +84,7 @@
     <Compile Include="Modell\Database\Sql.cs" />
     <Compile Include="Modell\Etel.cs" />
     <Compile Include="Modell\Etkezes.cs" />
+    <Compile Include="Modell\Etrend.cs" />
     <Compile Include="Modell\Felhasznalo.cs" />
     <Compile Include="Modell\Login.cs" />
     <Compile Include="Modell\Taplalekkiegeszito.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />
     <Compile Include="Repository\Etkezesek.cs" />
+    <Compile Include="Repository\Etrendek.cs" />
     <Compile Include="Repository\Felhasznalok.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Repository\RepositoryException.cs" />
@@ -98,8 +100,8 @@
     <EmbeddedResource Include="Buildyourbody.resx">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Etrend.resx">
-      <DependentUpon>Etrend.cs</DependentUpon>
+    <EmbeddedResource Include="etrend.resx">
+      <DependentUpon>etrend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoad.resx">
       <DependentUpon>FormLoad.cs</DependentUpon>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace byb.Modell
 {
-    class Login
+    public class Login
     {
         //Connection string az adatbázishoz való csatlakozáshoz
         ConnectionString cs = new ConnectionString();
