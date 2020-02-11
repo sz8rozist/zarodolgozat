@@ -118,6 +118,7 @@ namespace byb.Repository
             }
             return etelName;
         }
+
         /// <summary>
         /// Metódus új étel adathoz, ha az ételek lista üres akkor 1 es id vel tér vissza ha nem akkor megkeressük a legnagyobb id-t és hozzáadunk egyet
         /// </summary>

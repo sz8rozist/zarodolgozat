@@ -104,6 +104,7 @@ namespace byb
             dataGridViewEtkezesek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewEtkezesek.Columns["idopont"].DefaultCellStyle.Format = "yyyy / MM /";
         }
         private void buttonEtelek_Click(object sender, EventArgs e)
         {
@@ -121,6 +122,7 @@ namespace byb
             panelEtkezesek.Visible = true;
             feltoltComboboxEtelNevekkel();
             feltoltDGVEtkezesekEtrendekkel();
+            
 
         }
 
@@ -203,7 +205,9 @@ namespace byb
         }
         private void buttonMentesEtkezes_Click(object sender, EventArgs e)
         {
-
+            int etelID = repo.getEtelID(comboBoxEtelNev.Text);
+            UjEtkezes(etelID);
+            feltoltDGVEtkezesekEtrendekkel();
         }
         private void buttonMegse_Click(object sender, EventArgs e)
         {
@@ -212,14 +216,68 @@ namespace byb
 
         private void buttonTorolEtkezes_Click(object sender, EventArgs e)
         {
-            
+            int azon = repo.getEtelID(dataGridViewEtkezesek.Columns[1].ToString());
+            if ((dataGridViewEtkezesek.Rows == null) ||
+                (dataGridViewEtkezesek.Rows.Count == 0))
+                return;
+            if (MessageBox.Show(
+                "Valóban törölni akarja a sort?",
+                "Törlés",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                //1. törölni kell a listából
+                //DGV - be kijelölt sor első cellájának az értéke (időpont) ami alapján törlünk.
+                string idopont = dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value.ToString();
+
+                try
+                {
+                    repo.torolEtkezesListabol(idopont);
+                }
+                catch (RepositoryException rex)
+                {
+                    Debug.WriteLine(rex.Message);
+                    Debug.WriteLine("Az étel törlése nem sikerült.");
+                }
+                //2. törölni kell az adatbázisból
+                try
+                {
+                    repo.torolEtkezesAdatbazisbol(azon);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+                //3. frissíteni kell a DataGridView-t  
+                feltoltDGVEtkezesekEtrendekkel();
+
+            }
         }
 
 
-
+        public void UjEtkezes(int etelID)
+        {
+            try
+            {
+                Etkezes ujetkezes = new Etkezes(
+                    repo.getKovetkezoEtkezesID(),
+                    dateTimePicker1.Text,
+                    etelID,
+                    FormLogin.loggedID
+                    );
+                repo.AddEtkezesAdatbazishoz(ujetkezes);
+                repo.AddEtkezesListahoz(ujetkezes);
+            }
+            catch(Exception ex)
+            {
+                Debug.Write(ex.Message);
+            }
+        }
         private void buttonUjEtkezes_Click(object sender, EventArgs e)
         {
             panelUjEtkezes.Visible = true;
+
+
         }
 
         private void buttonEtkezesMegse_Click(object sender, EventArgs e)
@@ -227,6 +285,9 @@ namespace byb
             panelUjEtkezes.Visible = false;
         }
 
-
+        private void comboBoxEtelNev_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

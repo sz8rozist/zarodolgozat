@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
@@ -90,8 +90,8 @@
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewEtelek.TabIndex = 1;
             // 
@@ -400,6 +400,7 @@
             this.comboBoxEtelNev.Name = "comboBoxEtelNev";
             this.comboBoxEtelNev.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEtelNev.TabIndex = 12;
+            this.comboBoxEtelNev.SelectedIndexChanged += new System.EventHandler(this.comboBoxEtelNev_SelectedIndexChanged);
             // 
             // buttonUjEtkezes
             // 

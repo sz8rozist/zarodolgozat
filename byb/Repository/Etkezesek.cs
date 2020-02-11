@@ -77,9 +77,9 @@ namespace byb.Repository
             return etkezesDT;
         }
         //Id alapján töröl a listából
-        public void torolEtkezesListabol(int id)
+        public void torolEtkezesListabol(string idopont)
         {
-            Etkezes etkezes = etkezesek.Find(x => x.Etkezesid == id);
+            Etkezes etkezes = etkezesek.Find(x => x.Idopont == idopont);
             if (etkezes != null)
             {
                 etkezesek.Remove(etkezes);
@@ -90,13 +90,13 @@ namespace byb.Repository
             }
         }
         //id alapján töröl az adatbázisból
-        public void torolEtkezesAdatbazisbol(int id)
+        public void torolEtkezesAdatbazisbol(int etelid)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = "DELETE FROM etkezesek WHERE etkezesek_id=" + id;
+                string query = "DELETE FROM etkezesek WHERE etel_id =" + etelid;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -105,7 +105,7 @@ namespace byb.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(id + " idjű etkezes törlése nem sikerült.");
+                Debug.WriteLine(etelid + " étel idjű etkezes törlése nem sikerült.");
                 throw new RepositoryException("Sikertelen törlés az adatbázisból.");
             }
         }
@@ -120,12 +120,35 @@ namespace byb.Repository
                 throw new RepositoryException("Az étkezés hozzáadása nem sikerült.");
             }
         }
+        public void AddEtkezesAdatbazishoz(Etkezes ujetkezes)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = ujetkezes.getInsertEtkezes();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(ujetkezes + "étkezés hozzáadása nem sikerült.");
+                throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
+            }
+        }
         public int getKovetkezoEtkezesID()
         {
             if (etkezesek.Count == 0)
                 return 1;
             else
                 return etkezesek.Max(x => x.Etkezesid) + 1;
+        }
+        public int getEtelID(string nev)
+        {
+            return etelek.Find(x => x.Nev == nev).Id;
         }
     }
 }

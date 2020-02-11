@@ -28,5 +28,10 @@ namespace byb.Modell
         public string Idopont { get => idopont; set => idopont = value; }
         public int Etelid { get => etelid; set => etelid = value; }
         public int Fid { get => fid; set => fid = value; }
+
+        public string getInsertEtkezes()
+        {
+            return "INSERT INTO `etkezesek`(`etkezesek_id`, `idopont`, `etel_id`, `f_id`) VALUES ('"+Etkezesid+"', '"+Idopont+"', '"+Etelid+"', '"+Fid+"')";
+        }
     }
 }
