@@ -49,7 +49,7 @@
             // 
             // panelSlideMenu
             // 
-            this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
+            this.panelSlideMenu.BackColor = System.Drawing.Color.Teal;
             this.panelSlideMenu.Controls.Add(this.label1);
             this.panelSlideMenu.Controls.Add(this.Slidepanel);
             this.panelSlideMenu.Controls.Add(this.buttonKieg);
@@ -83,7 +83,7 @@
             // 
             // buttonKieg
             // 
-            this.buttonKieg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
+            this.buttonKieg.BackColor = System.Drawing.Color.Teal;
             this.buttonKieg.FlatAppearance.BorderSize = 0;
             this.buttonKieg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKieg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -148,7 +148,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.panelHeader.BackColor = System.Drawing.Color.Teal;
             this.panelHeader.Controls.Add(this.label2);
             this.panelHeader.Controls.Add(this.button1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -244,7 +244,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel Slidepanel;
         private System.Windows.Forms.Label label1;
-        private etrend etrend1;
         private Home home1;
+        private etrend etrend1;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             // 
             // buttonEtelek
             // 
-            this.buttonEtelek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonEtelek.BackColor = System.Drawing.Color.Teal;
             this.buttonEtelek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEtelek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtelek.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -90,14 +90,14 @@
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewEtelek.TabIndex = 1;
             // 
             // buttonEtkezesek
             // 
-            this.buttonEtkezesek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonEtkezesek.BackColor = System.Drawing.Color.Teal;
             this.buttonEtkezesek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEtkezesek.FlatAppearance.BorderSize = 0;
             this.buttonEtkezesek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -124,7 +124,7 @@
             // 
             // buttonHozzaad
             // 
-            this.buttonHozzaad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonHozzaad.BackColor = System.Drawing.Color.Teal;
             this.buttonHozzaad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonHozzaad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHozzaad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -160,7 +160,7 @@
             // 
             // buttonMegse
             // 
-            this.buttonMegse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonMegse.BackColor = System.Drawing.Color.Teal;
             this.buttonMegse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonMegse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMegse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -175,7 +175,7 @@
             // 
             // buttonUjMentes
             // 
-            this.buttonUjMentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonUjMentes.BackColor = System.Drawing.Color.Teal;
             this.buttonUjMentes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonUjMentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUjMentes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -286,7 +286,7 @@
             // 
             // buttonTorolEtel
             // 
-            this.buttonTorolEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonTorolEtel.BackColor = System.Drawing.Color.Teal;
             this.buttonTorolEtel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonTorolEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTorolEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -334,7 +334,7 @@
             // 
             // buttonEtkezesMegse
             // 
-            this.buttonEtkezesMegse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonEtkezesMegse.BackColor = System.Drawing.Color.Teal;
             this.buttonEtkezesMegse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEtkezesMegse.FlatAppearance.BorderSize = 0;
             this.buttonEtkezesMegse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -350,7 +350,7 @@
             // 
             // buttonMentesEtkezes
             // 
-            this.buttonMentesEtkezes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonMentesEtkezes.BackColor = System.Drawing.Color.Teal;
             this.buttonMentesEtkezes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonMentesEtkezes.FlatAppearance.BorderSize = 0;
             this.buttonMentesEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -403,7 +403,7 @@
             // 
             // buttonUjEtkezes
             // 
-            this.buttonUjEtkezes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonUjEtkezes.BackColor = System.Drawing.Color.Teal;
             this.buttonUjEtkezes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonUjEtkezes.FlatAppearance.BorderSize = 0;
             this.buttonUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -419,7 +419,7 @@
             // 
             // buttonTorolEtkezes
             // 
-            this.buttonTorolEtkezes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(138)))), ((int)(((byte)(12)))));
+            this.buttonTorolEtkezes.BackColor = System.Drawing.Color.Teal;
             this.buttonTorolEtkezes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonTorolEtkezes.FlatAppearance.BorderSize = 0;
             this.buttonTorolEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -433,7 +433,7 @@
             this.buttonTorolEtkezes.UseVisualStyleBackColor = false;
             this.buttonTorolEtkezes.Click += new System.EventHandler(this.buttonTorolEtkezes_Click);
             // 
-            // Etrend
+            // etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -442,7 +442,7 @@
             this.Controls.Add(this.buttonEtkezesek);
             this.Controls.Add(this.buttonEtelek);
             this.Controls.Add(this.panelEtelek);
-            this.Name = "Etrend";
+            this.Name = "etrend";
             this.Size = new System.Drawing.Size(727, 579);
             this.Load += new System.EventHandler(this.Etrend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).EndInit();
