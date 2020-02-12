@@ -19,6 +19,7 @@ namespace byb.Repository
             {
                 Etel etel = etelek.Find(x => x.Id == e.Etelid);
                 Etrend etrend = new Etrend(
+                    e.Etkezesid,
                     azon,
                     e.Idopont,
                     etel.Nev
@@ -29,12 +30,13 @@ namespace byb.Repository
         public DataTable getEtrendDT()
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("etkezesek_id",typeof(int));
             dt.Columns.Add("idopont",typeof(string));
             dt.Columns.Add("enev",typeof(string));
 
             foreach(Etrend etrend in etrendek)
             {
-                dt.Rows.Add(etrend.Idopont, etrend.Etelnev);
+                dt.Rows.Add(etrend.Etkezesid,etrend.Idopont, etrend.Etelnev);
             }
             return dt;
         }

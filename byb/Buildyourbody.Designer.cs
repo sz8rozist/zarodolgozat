@@ -40,8 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.home1 = new byb.Home();
             this.etrend1 = new byb.etrend();
+            this.home1 = new byb.Home();
             this.panelSlideMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             // panelSlideMenu
             // 
-            this.panelSlideMenu.BackColor = System.Drawing.Color.Teal;
+            this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.panelSlideMenu.Controls.Add(this.label1);
             this.panelSlideMenu.Controls.Add(this.Slidepanel);
             this.panelSlideMenu.Controls.Add(this.buttonKieg);
@@ -83,7 +83,7 @@
             // 
             // buttonKieg
             // 
-            this.buttonKieg.BackColor = System.Drawing.Color.Teal;
+            this.buttonKieg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.buttonKieg.FlatAppearance.BorderSize = 0;
             this.buttonKieg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKieg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -148,7 +148,7 @@
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.Teal;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.panelHeader.Controls.Add(this.label2);
             this.panelHeader.Controls.Add(this.button1);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -193,14 +193,6 @@
             this.panel1.Size = new System.Drawing.Size(727, 604);
             this.panel1.TabIndex = 2;
             // 
-            // home1
-            // 
-            this.home1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.home1.Location = new System.Drawing.Point(0, 25);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(727, 579);
-            this.home1.TabIndex = 0;
-            // 
             // etrend1
             // 
             this.etrend1.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -208,6 +200,14 @@
             this.etrend1.Name = "etrend1";
             this.etrend1.Size = new System.Drawing.Size(727, 579);
             this.etrend1.TabIndex = 1;
+            // 
+            // home1
+            // 
+            this.home1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.home1.Location = new System.Drawing.Point(0, 25);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(727, 579);
+            this.home1.TabIndex = 0;
             // 
             // Buildyourbody
             // 

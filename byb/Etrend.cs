@@ -84,7 +84,9 @@ namespace byb
                 );
             dataGridViewEtkezesek.DataSource = etrend.getEtrendDT();
             dataGridViewEtkezesek.Columns["idopont"].HeaderText = "Időpont";
+            dataGridViewEtkezesek.Columns["etkezesek_id"].HeaderText = "Étkezés ID";
             dataGridViewEtkezesek.Columns["enev"].HeaderText = "Étel";
+            dataGridViewEtkezesek.Columns[0].Visible = false;
             dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEtkezesek.ReadOnly = true;
             dataGridViewEtkezesek.AllowUserToDeleteRows = false;
@@ -104,7 +106,7 @@ namespace byb
             dataGridViewEtkezesek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewEtkezesek.Columns["idopont"].DefaultCellStyle.Format = "yyyy / MM /";
+            dataGridViewEtkezesek.Columns["idopont"].DefaultCellStyle.Format = "yyyy / MM / dd";
         }
         private void buttonEtelek_Click(object sender, EventArgs e)
         {
@@ -216,7 +218,6 @@ namespace byb
 
         private void buttonTorolEtkezes_Click(object sender, EventArgs e)
         {
-            int azon = repo.getEtelID(dataGridViewEtkezesek.Columns[1].ToString());
             if ((dataGridViewEtkezesek.Rows == null) ||
                 (dataGridViewEtkezesek.Rows.Count == 0))
                 return;
@@ -228,11 +229,11 @@ namespace byb
             {
                 //1. törölni kell a listából
                 //DGV - be kijelölt sor első cellájának az értéke (időpont) ami alapján törlünk.
-                string idopont = dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value.ToString();
+                int etkezesID = Convert.ToInt32(dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value);
 
                 try
                 {
-                    repo.torolEtkezesListabol(idopont);
+                    repo.torolEtkezesListabol(etkezesID);
                 }
                 catch (RepositoryException rex)
                 {
@@ -242,7 +243,7 @@ namespace byb
                 //2. törölni kell az adatbázisból
                 try
                 {
-                    repo.torolEtkezesAdatbazisbol(azon);
+                    repo.torolEtkezesAdatbazisbol(etkezesID);
                 }
                 catch (Exception ex)
                 {

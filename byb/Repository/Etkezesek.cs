@@ -77,9 +77,9 @@ namespace byb.Repository
             return etkezesDT;
         }
         //Id alapján töröl a listából
-        public void torolEtkezesListabol(string idopont)
+        public void torolEtkezesListabol(int etkezesID)
         {
-            Etkezes etkezes = etkezesek.Find(x => x.Idopont == idopont);
+            Etkezes etkezes = etkezesek.Find(x => x.Etkezesid == etkezesID);
             if (etkezes != null)
             {
                 etkezesek.Remove(etkezes);
@@ -90,13 +90,13 @@ namespace byb.Repository
             }
         }
         //id alapján töröl az adatbázisból
-        public void torolEtkezesAdatbazisbol(int etelid)
+        public void torolEtkezesAdatbazisbol(int etkezesekID)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = "DELETE FROM etkezesek WHERE etel_id =" + etelid;
+                string query = "DELETE FROM etkezesek WHERE etkezesek_id =" + etkezesekID;
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
@@ -105,7 +105,7 @@ namespace byb.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(etelid + " étel idjű etkezes törlése nem sikerült.");
+                Debug.WriteLine(etkezesekID + " étkezés idjű etkezes törlése nem sikerült.");
                 throw new RepositoryException("Sikertelen törlés az adatbázisból.");
             }
         }
