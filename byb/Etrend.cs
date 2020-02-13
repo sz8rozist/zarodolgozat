@@ -25,6 +25,7 @@ namespace byb
             panelEtkezesek.Visible = false;
             panelUjEtkezes.Visible = false;
 
+
         }
         private void Etrend_Load(object sender, EventArgs e)
         {
@@ -170,6 +171,7 @@ namespace byb
         private void buttonHozzaad_Click(object sender, EventArgs e)
         {
             panelUjEtel.Visible = true;
+            buttonUjMentes.Enabled = false;
         }
 
         private void buttonUjMentes_Click(object sender, EventArgs e)
@@ -288,6 +290,19 @@ namespace byb
 
         private void comboBoxEtelNev_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void textBoxMennyiseg_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxMennyiseg.Text != null)
+            {
+                buttonUjMentes.Enabled = true;
+            }
+            else
+            {
+                buttonUjMentes.Enabled = false;
+            }
             
         }
     }

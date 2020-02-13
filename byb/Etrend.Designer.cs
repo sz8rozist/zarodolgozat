@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
@@ -90,8 +90,8 @@
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewEtelek.TabIndex = 1;
             // 
@@ -194,6 +194,7 @@
             this.textBoxMennyiseg.Name = "textBoxMennyiseg";
             this.textBoxMennyiseg.Size = new System.Drawing.Size(100, 20);
             this.textBoxMennyiseg.TabIndex = 19;
+            this.textBoxMennyiseg.TextChanged += new System.EventHandler(this.textBoxMennyiseg_TextChanged);
             // 
             // textBoxZsir
             // 
@@ -439,10 +440,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.panelEtelek);
             this.Controls.Add(this.panelEtkezesek);
             this.Controls.Add(this.buttonEtkezesek);
             this.Controls.Add(this.buttonEtelek);
-            this.Controls.Add(this.panelEtelek);
             this.Name = "etrend";
             this.Size = new System.Drawing.Size(727, 579);
             this.Load += new System.EventHandler(this.Etrend_Load);
