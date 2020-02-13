@@ -40,8 +40,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.etrend1 = new byb.etrend();
-            this.home1 = new byb.Home();
+            this.etrend2 = new byb.etrend();
+            this.home2 = new byb.Home();
+            this.tkieg1 = new byb.tkieg();
             this.panelSlideMenu.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -185,29 +186,37 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.etrend1);
-            this.panel1.Controls.Add(this.home1);
+            this.panel1.Controls.Add(this.tkieg1);
+            this.panel1.Controls.Add(this.etrend2);
+            this.panel1.Controls.Add(this.home2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(213, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(727, 604);
             this.panel1.TabIndex = 2;
             // 
-            // etrend1
+            // etrend2
             // 
-            this.etrend1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.etrend1.Location = new System.Drawing.Point(0, 25);
-            this.etrend1.Name = "etrend1";
-            this.etrend1.Size = new System.Drawing.Size(727, 579);
-            this.etrend1.TabIndex = 1;
+            this.etrend2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.etrend2.Location = new System.Drawing.Point(0, 22);
+            this.etrend2.Name = "etrend2";
+            this.etrend2.Size = new System.Drawing.Size(727, 579);
+            this.etrend2.TabIndex = 1;
             // 
-            // home1
+            // home2
             // 
-            this.home1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.home1.Location = new System.Drawing.Point(0, 25);
-            this.home1.Name = "home1";
-            this.home1.Size = new System.Drawing.Size(727, 579);
-            this.home1.TabIndex = 0;
+            this.home2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.home2.Location = new System.Drawing.Point(0, 25);
+            this.home2.Name = "home2";
+            this.home2.Size = new System.Drawing.Size(727, 579);
+            this.home2.TabIndex = 0;
+            // 
+            // tkieg1
+            // 
+            this.tkieg1.Location = new System.Drawing.Point(0, 25);
+            this.tkieg1.Name = "tkieg1";
+            this.tkieg1.Size = new System.Drawing.Size(727, 579);
+            this.tkieg1.TabIndex = 2;
             // 
             // Buildyourbody
             // 
@@ -246,5 +255,8 @@
         private System.Windows.Forms.Label label1;
         private Home home1;
         private etrend etrend1;
+        private etrend etrend2;
+        private Home home2;
+        private tkieg tkieg1;
     }
 }

@@ -4,6 +4,7 @@ using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -55,6 +56,31 @@ namespace byb.Repository
             }
             return tkiegek;
 
+        }
+        public DataTable getTkiegekListabolDT()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("k_id", typeof(int));
+            dt.Columns.Add("knev", typeof(string));
+            dt.Columns.Add("tipus", typeof(string));
+            dt.Columns.Add("gyarto", typeof(string));
+            dt.Columns.Add("kiszereles", typeof(int));
+            dt.Columns.Add("ks_mertekegyseg", typeof(string));
+            foreach (Taplalekkiegeszito t in tkiegek)
+            {
+                dt.Rows.Add(t.Id, t.Nev, t.Tipus, t.Gyarto, t.Kiszereles, t.Kme);
+            }
+            return dt;
+        }
+        public List<String> getTipusok()
+        {
+            List<String> tipus = new List<string>();
+            foreach(Taplalekkiegeszito t in tkiegek)
+            {
+                if(!tipus.Contains(t.Tipus))
+                    tipus.Add(t.Tipus);
+            }
+            return tipus;
         }
     }
 }

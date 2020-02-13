@@ -22,7 +22,7 @@ namespace byb.Modell.Database
         /// <returns>Minden adat az kiegeszitok táblából</returns>
         public static string getAllTkiegRecord()
         {
-            return "SELECT * FROM kiegeszitok";
+            return "SELECT * FROM kiegeszitok_adatai";
         }
         /// <summary>
         /// felhasználók adatainak lekérdezése adatbázisból

@@ -24,7 +24,7 @@ namespace byb
         }
         public void formIndulaskor()
         {
-            home1.BringToFront();
+            home2.BringToFront();
             Slidepanel.Height = buttonKezdolap.Height;
             Slidepanel.Top = buttonKezdolap.Top;
         }
@@ -33,7 +33,7 @@ namespace byb
         {
             Slidepanel.Height = buttonKezdolap.Height;
             Slidepanel.Top = buttonKezdolap.Top;
-            home1.BringToFront();
+            home2.BringToFront();
         }
 
 
@@ -47,13 +47,14 @@ namespace byb
         {
             Slidepanel.Height = buttonEtrend.Height;
             Slidepanel.Top = buttonEtrend.Top;
-            etrend1.BringToFront();
+            etrend2.BringToFront();
         }
 
         private void buttonKieg_Click(object sender, EventArgs e)
         {
             Slidepanel.Height = buttonKieg.Height;
             Slidepanel.Top = buttonKieg.Top;
+            tkieg1.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
