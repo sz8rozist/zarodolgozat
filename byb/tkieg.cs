@@ -19,21 +19,17 @@ namespace byb
         {
             InitializeComponent();
         }
-        public void feltoltComboboxTipusokkal()
-        {
-            comboBoxTkiegFajtak.DataSource = repo.getTipusok();
-        }
         public void beallitKiegekDGV()
         {
-            kiegekDT.Columns[0].ColumnName = "ID";
+            kiegekDT.Columns[0].ColumnName = "K_ID";
             kiegekDT.Columns[1].ColumnName = "Név";
             kiegekDT.Columns[2].ColumnName = "Típus";
             kiegekDT.Columns[3].ColumnName = "Gyártó";
             kiegekDT.Columns[4].ColumnName = "Kiszerelés";
             kiegekDT.Columns[5].ColumnName = "Mértékegység";
+            //kiegekDT.Columns[6].ColumnName = "F_ID";
             dataGridViewKiegek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewKiegek.ReadOnly = true;
-            dataGridViewKiegek.Columns[0].Visible = false;
             dataGridViewKiegek.AllowUserToDeleteRows = false;
             dataGridViewKiegek.AllowUserToAddRows = false;
             dataGridViewKiegek.MultiSelect = false;
@@ -54,7 +50,7 @@ namespace byb
         }
         public void frissitDGVKiegek()
         {
-            kiegekDT = repo.getTkiegekListabolDT();
+            kiegekDT = repo.getKiegDT();
             dataGridViewKiegek.DataSource = null;
             dataGridViewKiegek.DataSource = kiegekDT;
         }
@@ -68,8 +64,7 @@ namespace byb
 
         private void tkieg_Load(object sender, EventArgs e)
         {
-            repo.setTkiegek(repo.getTaplalekkiegeszitokAdatbazisbol());
-            feltoltComboboxTipusokkal();
+            repo.setKiegek(repo.getKiegekAdatbazisbol());
         }
     }
 }

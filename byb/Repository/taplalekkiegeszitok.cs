@@ -1,5 +1,4 @@
-﻿using byb.Database;
-using byb.Modell;
+﻿using byb.Modell;
 using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
@@ -12,52 +11,55 @@ using System.Threading.Tasks;
 
 namespace byb.Repository
 {
-    partial class Repo
+    partial class Repo 
     {
-        //tkiegek lista
-        List<Taplalekkiegeszito> tkiegek;
-        //lista set - get metódusok
-       public List<Taplalekkiegeszito> getTkiegek()
+        List<Taplalekkiegeszito> kiegek;
+        public void setKiegek(List<Taplalekkiegeszito> kiegek)
         {
-            return tkiegek;
+            this.kiegek = kiegek;
         }
-        public void setTkiegek(List<Taplalekkiegeszito> tkiegek)
+        public List<Taplalekkiegeszito> getKiegek()
         {
-            this.tkiegek = tkiegek;
+            return kiegek;
         }
-        //Adatbázis rekordok hozzáadása listához
-        public List<Taplalekkiegeszito> getTaplalekkiegeszitokAdatbazisbol()
+        public List<Taplalekkiegeszito> getKiegekAdatbazisbol()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
             try
             {
                 con.Open();
-                string query = Sql.getAllTkiegRecord();
+                string query = Sql.getKiegAdatok();
                 MySqlCommand cmd = new MySqlCommand(query, con);
                 MySqlDataReader dr;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     int id = Convert.ToInt32(dr["k_id"]);
-                    string nev = dr["knev"].ToString();
+                    string knev = dr["knev"].ToString();
                     string tipus = dr["tipus"].ToString();
                     string gyarto = dr["gyarto"].ToString();
                     int kiszereles = Convert.ToInt32(dr["kiszereles"]);
-                    string kme = dr["ks_mertekegyseg"].ToString();
-                    Taplalekkiegeszito t = new Taplalekkiegeszito(id, nev, tipus, gyarto, kiszereles, kme);
-                    tkiegek.Add(t);
+                    string mertekegyseg = dr["ks_mertekegyseg"].ToString();
+                    int f_id = Convert.ToInt32(dr["f_id"]);
+                    Taplalekkiegeszito kieg = new Taplalekkiegeszito(id,knev,tipus,gyarto,kiszereles,mertekegyseg,f_id);
+                    kiegek.Add(kieg);
                 }
                 con.Close();
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 con.Close();
                 Debug.WriteLine(e.Message);
-                throw new RepositoryException("A kiegészítők adatainak kiolvasása sikertelen");
+                throw new RepositoryException("Az étkezések adatainak kiolvasása sikertelen");
             }
-            return tkiegek;
+            return kiegek;
 
         }
-        public DataTable getTkiegekListabolDT()
+        /// <summary>
+        /// Listából készít dataTable-t
+        /// </summary>
+        /// <returns>Data Table</returns>
+        public DataTable getKiegDT()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("k_id", typeof(int));
@@ -66,21 +68,11 @@ namespace byb.Repository
             dt.Columns.Add("gyarto", typeof(string));
             dt.Columns.Add("kiszereles", typeof(int));
             dt.Columns.Add("ks_mertekegyseg", typeof(string));
-            foreach (Taplalekkiegeszito t in tkiegek)
+            foreach (Taplalekkiegeszito t in kiegek)
             {
-                dt.Rows.Add(t.Id, t.Nev, t.Tipus, t.Gyarto, t.Kiszereles, t.Kme);
+                dt.Rows.Add(t.Kid,t.Knev,t.Tipus,t.Gyarto,t.Kiszereles,t.KsMertekE);
             }
             return dt;
-        }
-        public List<String> getTipusok()
-        {
-            List<String> tipus = new List<string>();
-            foreach(Taplalekkiegeszito t in tkiegek)
-            {
-                if(!tipus.Contains(t.Tipus))
-                    tipus.Add(t.Tipus);
-            }
-            return tipus;
         }
     }
 }

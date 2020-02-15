@@ -16,45 +16,48 @@ namespace byb
     {
         CreateDatabase cd = new CreateDatabase();
         Repo r = new Repo();
+        private int ImageNumber = 1;
         public Buildyourbody()
         {
             InitializeComponent();
             formIndulaskor();
             label2.Text = FormLogin.islogged;
         }
+        private void Slider()
+        {
+            if(ImageNumber == 5)
+            {
+                ImageNumber = 1;
+            }
+            pictureBox1.ImageLocation = string.Format(@"Images\{0}.jpg", ImageNumber);
+            ImageNumber++;
+        }
         public void formIndulaskor()
         {
-            home2.BringToFront();
-            Slidepanel.Height = buttonKezdolap.Height;
-            Slidepanel.Top = buttonKezdolap.Top;
+            etrend2.SendToBack();
+            tkieg1.SendToBack();
         }
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            Slidepanel.Height = buttonKezdolap.Height;
-            Slidepanel.Top = buttonKezdolap.Top;
-            home2.BringToFront();
+            etrend2.SendToBack();
+            tkieg1.SendToBack();
         }
 
 
         private void buttonEdzes_Click(object sender, EventArgs e)
         {
-            Slidepanel.Height = buttonEdzes.Height;
-            Slidepanel.Top = buttonEdzes.Top;
         }
 
         private void buttonEtrend_Click(object sender, EventArgs e)
         {
-            Slidepanel.Height = buttonEtrend.Height;
-            Slidepanel.Top = buttonEtrend.Top;
             etrend2.BringToFront();
         }
 
         private void buttonKieg_Click(object sender, EventArgs e)
         {
-            Slidepanel.Height = buttonKieg.Height;
-            Slidepanel.Top = buttonKieg.Top;
             tkieg1.BringToFront();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,5 +65,9 @@ namespace byb
             Application.Exit();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Slider();
+        }
     }
 }

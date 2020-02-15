@@ -23,7 +23,7 @@ namespace byb
             panelEtelek.Visible = false;
             panelUjEtel.Visible = false;
             panelEtkezesek.Visible = false;
-            panelUjEtkezes.Visible = false;
+            panelUjEtkezes.Visible = true;
 
 
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonEtelek = new System.Windows.Forms.Button();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
             this.buttonEtkezesek = new System.Windows.Forms.Button();
@@ -90,8 +90,8 @@
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.dataGridViewEtelek.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewEtelek.Size = new System.Drawing.Size(497, 296);
             this.dataGridViewEtelek.TabIndex = 1;
             // 
@@ -117,9 +117,9 @@
             this.panelEtelek.Controls.Add(this.panelUjEtel);
             this.panelEtelek.Controls.Add(this.buttonTorolEtel);
             this.panelEtelek.Controls.Add(this.dataGridViewEtelek);
-            this.panelEtelek.Location = new System.Drawing.Point(16, 52);
+            this.panelEtelek.Location = new System.Drawing.Point(231, 6);
             this.panelEtelek.Name = "panelEtelek";
-            this.panelEtelek.Size = new System.Drawing.Size(526, 509);
+            this.panelEtelek.Size = new System.Drawing.Size(526, 484);
             this.panelEtelek.TabIndex = 4;
             // 
             // buttonHozzaad
@@ -129,7 +129,7 @@
             this.buttonHozzaad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHozzaad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonHozzaad.ForeColor = System.Drawing.Color.White;
-            this.buttonHozzaad.Location = new System.Drawing.Point(93, 305);
+            this.buttonHozzaad.Location = new System.Drawing.Point(3, 352);
             this.buttonHozzaad.Name = "buttonHozzaad";
             this.buttonHozzaad.Size = new System.Drawing.Size(84, 32);
             this.buttonHozzaad.TabIndex = 8;
@@ -153,7 +153,7 @@
             this.panelUjEtel.Controls.Add(this.label4);
             this.panelUjEtel.Controls.Add(this.label3);
             this.panelUjEtel.Controls.Add(this.Étel);
-            this.panelUjEtel.Location = new System.Drawing.Point(183, 305);
+            this.panelUjEtel.Location = new System.Drawing.Point(93, 307);
             this.panelUjEtel.Name = "panelUjEtel";
             this.panelUjEtel.Size = new System.Drawing.Size(317, 169);
             this.panelUjEtel.TabIndex = 7;
@@ -315,9 +315,9 @@
             this.panelEtkezesek.Controls.Add(this.buttonUjEtkezes);
             this.panelEtkezesek.Controls.Add(this.buttonTorolEtkezes);
             this.panelEtkezesek.Controls.Add(this.dataGridViewEtkezesek);
-            this.panelEtkezesek.Location = new System.Drawing.Point(16, 52);
+            this.panelEtkezesek.Location = new System.Drawing.Point(196, 8);
             this.panelEtkezesek.Name = "panelEtkezesek";
-            this.panelEtkezesek.Size = new System.Drawing.Size(518, 506);
+            this.panelEtkezesek.Size = new System.Drawing.Size(520, 479);
             this.panelEtkezesek.TabIndex = 9;
             // 
             // panelUjEtkezes
@@ -328,7 +328,7 @@
             this.panelUjEtkezes.Controls.Add(this.label2);
             this.panelUjEtkezes.Controls.Add(this.label1);
             this.panelUjEtkezes.Controls.Add(this.comboBoxEtelNev);
-            this.panelUjEtkezes.Location = new System.Drawing.Point(12, 305);
+            this.panelUjEtkezes.Location = new System.Drawing.Point(103, 270);
             this.panelUjEtkezes.Name = "panelUjEtkezes";
             this.panelUjEtkezes.Size = new System.Drawing.Size(264, 157);
             this.panelUjEtkezes.TabIndex = 13;
@@ -411,7 +411,7 @@
             this.buttonUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUjEtkezes.ForeColor = System.Drawing.Color.White;
-            this.buttonUjEtkezes.Location = new System.Drawing.Point(116, 267);
+            this.buttonUjEtkezes.Location = new System.Drawing.Point(12, 310);
             this.buttonUjEtkezes.Name = "buttonUjEtkezes";
             this.buttonUjEtkezes.Size = new System.Drawing.Size(84, 32);
             this.buttonUjEtkezes.TabIndex = 11;
@@ -440,12 +440,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.panelEtelek);
             this.Controls.Add(this.panelEtkezesek);
+            this.Controls.Add(this.panelEtelek);
             this.Controls.Add(this.buttonEtkezesek);
             this.Controls.Add(this.buttonEtelek);
             this.Name = "etrend";
-            this.Size = new System.Drawing.Size(727, 579);
+            this.Size = new System.Drawing.Size(940, 495);
             this.Load += new System.EventHandler(this.Etrend_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).EndInit();
             this.panelEtelek.ResumeLayout(false);

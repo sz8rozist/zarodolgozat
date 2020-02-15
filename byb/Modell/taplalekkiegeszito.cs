@@ -8,43 +8,31 @@ namespace byb.Modell
 {
     class Taplalekkiegeszito
     {
-        /// <summary>
-        /// Táplálékkiegészítő adatai
-        /// </summary>
-        private int id;
-        private string nev;
+        private int kid;
+        private string knev;
         private string tipus;
         private string gyarto;
         private int kiszereles;
-        private string kme;
+        private string ksMertekE;
+        private int fid;
 
-        /// <summary>
-        /// Konstruktor
-        /// </summary>
-        /// <param name="id">tkieg azonosito</param>
-        /// <param name="nev">tkieg neve</param>
-        /// <param name="tipus">tkieg típusa</param>
-        /// <param name="gyarto">tkieg gyártója</param>
-        /// <param name="kiszereles">tkieg kiszerelése</param>
-        /// <param name="kme">kiszerelés mértékegysége</param>
-        public Taplalekkiegeszito(int id, string nev, string tipus, string gyarto, int kiszereles, string kme)
+        public Taplalekkiegeszito(int kid, string knev, string tipus, string gyarto, int kiszereles, string ksMertekE, int fid)
         {
-            this.id = id;
-            this.nev = nev;
+            this.kid = kid;
+            this.knev = knev;
             this.tipus = tipus;
             this.gyarto = gyarto;
             this.kiszereles = kiszereles;
-            this.kme = kme;
+            this.ksMertekE = ksMertekE;
+            this.fid = fid;
         }
-        /// <summary>
-        /// set - get metódusok
-        /// </summary>
-        public int Id { get => id; set => id = value; }
-        public string Nev { get => nev; set => nev = value; }
+
+        public int Kid { get => kid; set => kid = value; }
+        public string Knev { get => knev; set => knev = value; }
         public string Tipus { get => tipus; set => tipus = value; }
         public string Gyarto { get => gyarto; set => gyarto = value; }
         public int Kiszereles { get => kiszereles; set => kiszereles = value; }
-        public string Kme { get => kme; set => kme = value; }
-
+        public string KsMertekE { get => ksMertekE; set => ksMertekE = value; }
+        public int Fid { get => fid; set => fid = value; }
     }
 }

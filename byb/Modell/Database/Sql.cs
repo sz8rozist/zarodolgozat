@@ -16,13 +16,9 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM etelek";
         }
-        /// <summary>
-        /// táplálékkiegészítők adatainak lekérdezése adatbázisból
-        /// </summary>
-        /// <returns>Minden adat az kiegeszitok táblából</returns>
-        public static string getAllTkiegRecord()
+        public static string getKiegAdatok()
         {
-            return "SELECT * FROM kiegeszitok_adatai";
+            return "SELECT kiegeszitok_adatai.k_id, kiegeszitok_adatai.knev,kiegeszitok_adatai.tipus, kiegeszitok_adatai.gyarto, kiegeszitok_adatai.kiszereles, kiegeszitok_adatai.ks_mertekegyseg, kiegeszitok.f_id FROM kiegeszitok_adatai INNER JOIN kiegeszitok ON kiegeszitok_adatai.k_id = kiegeszitok.id WHERE kiegeszitok.f_id = " + FormLogin.loggedID;
         }
         /// <summary>
         /// felhasználók adatainak lekérdezése adatbázisból
