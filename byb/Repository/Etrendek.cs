@@ -2,16 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace byb.Repository
 {
-    class Etrendek
+    partial class Repo
     {
         private List<Etrend> etrendek;
-        public Etrendek(int azon,List<Etel> etelek, List<Etkezes> etkezesek)
+       /* public Etrendek(int azon,List<Etel> etelek, List<Etkezes> etkezesek)
         {
             etrendek = new List<Etrend>();
             List<Etkezes> etk = etkezesek.FindAll(x => x.Fid == azon);
@@ -33,10 +34,49 @@ namespace byb.Repository
                 }
                 
             }
-        }
-        public Etrendek()
+        }*/
+        public List<Etrend> getEtrendekListakbolUIDalapjan(int azon, List<Etel> etelek, List<Etkezes> etkezesek)
         {
+            List<Etkezes> etk = etkezesek.FindAll(x => x.Fid == azon);
+            foreach (Etkezes e in etk)
+            {
+                Etel etel = etelek.Find(x => x.Id == e.Etelid);
+                if (etel != null)
+                {
+                    Etrend etrend = new Etrend(
+                    azon,
+                    e.Idopont,
+                    etel.Nev,
+                    etel.Feherje,
+                    etel.Szenhidrat,
+                    etel.Zsir,
+                    etel.Mennyiseg
+                    );
+                    etrendek.Add(etrend);
+                }
 
+            }
+            return etrendek;
+        }
+        public void setEtrendek(List<Etrend> etrendek)
+        {
+            this.etrendek = etrendek;
+        }
+        public List<Etrend> getEtrendek()
+        {
+            return etrendek;
+        }
+        public void AddEtrendItemToList(Etrend ujetrend)
+        {
+            try
+            {
+                etrendek.Add(ujetrend);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
         }
         public DataTable getEtrendDT()
         {
@@ -54,9 +94,6 @@ namespace byb.Repository
             }
             return dt;
         }
-        public void AddEtrendItemToList(Etrend ujetrend)
-        {
-            etrendek.Add(ujetrend);
-        }
+
     }
 }

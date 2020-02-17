@@ -16,6 +16,7 @@ namespace byb
     public partial class etrend : UserControl
     {
         Repo repo = new Repo();
+        private DataTable etrendDT = new DataTable();
         public etrend()
         {
             InitializeComponent();
@@ -26,17 +27,13 @@ namespace byb
         {
             repo.setEtkezesek(repo.getEtkezesekAdatbazisbol());
             repo.setEtelek(repo.getEtelekAdatbazisbol());
+            repo.setEtrendek(repo.getEtrendekListakbolUIDalapjan(FormLogin.loggedID, repo.getEtelek(), repo.getEtkezesek()));
         }
         public void frissítDGVEtrendek()
         {
-            int azon = FormLogin.loggedID;
-            Etrendek etrendek = new Etrendek(
-                    azon,
-                    repo.getEtelek(),
-                    repo.getEtkezesek()
-                    );
+            etrendDT = repo.getEtrendDT();
             dataGridViewEtrend.DataSource = null;
-            dataGridViewEtrend.DataSource = etrendek.getEtrendDT();
+            dataGridViewEtrend.DataSource = etrendDT;
         }
         public void feltoltDGVEtrendek()
         {
@@ -93,6 +90,16 @@ namespace byb
                     repo.getEtelIDEtkezeshez(),
                     FormLogin.loggedID
                    );
+            Etrend ujetrend = new Etrend(
+                    FormLogin.loggedID,
+                    dateTimePickerIdopont.Text,
+                    textBoxEnev.Text,
+                    Convert.ToInt32(textBoxFeherje.Text),
+                    Convert.ToInt32(textBoxCh.Text),
+                    Convert.ToInt32(textBoxZs.Text),
+                    textBoxMennyiseg.Text
+                );
+            repo.AddEtrendItemToList(ujetrend);
             repo.AddEtkezesAdatbazishoz(ujetkezes);
             repo.AddEtkezesListahoz(ujetkezes);
             frissítDGVEtrendek();

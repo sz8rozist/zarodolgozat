@@ -16,22 +16,20 @@ namespace byb
     public partial class tkieg : UserControl
     {
         Repo repo = new Repo();
+        private DataTable tkiegDT = new DataTable();
         public tkieg()
         {
             InitializeComponent();
+            panel1.Visible = false;
         }
-        public void feltoltDGVKiegek()
+        public void frissítDGVTkiegekViewn()
         {
+            tkiegDT = repo.getTkgViewDT();
             dataGridViewKiegek.DataSource = null;
-
-            int azon = FormLogin.loggedID;
-
-            TaplalekkiegeszitokViews tkieg = new TaplalekkiegeszitokViews(
-                azon,
-                repo.getTkiegek(),
-                repo.getKiegek()
-                );
-            dataGridViewKiegek.DataSource = tkieg.getTkgViewDT();
+            dataGridViewKiegek.DataSource = tkiegDT;
+        }
+        public void beallitDGVKiegek()
+        {
             dataGridViewKiegek.Columns["knev"].HeaderText = "Név";
             dataGridViewKiegek.Columns["tipus"].HeaderText = "Típus";
             dataGridViewKiegek.Columns["gyarto"].HeaderText = "Gyártó";
@@ -58,41 +56,48 @@ namespace byb
 
         private void buttonKiegek_Click(object sender, EventArgs e)
         {
-            feltoltDGVKiegek();
+            frissítDGVTkiegekViewn();
+            beallitDGVKiegek();
         }
 
         private void tkieg_Load(object sender, EventArgs e)
         {
             repo.setKiegek(repo.getKiegekAdatbazisbol());
             repo.setTkiegek(repo.getHasznaltKiegeszitoAdatokAdatbazisbol());
+            repo.setTkiegView(repo.getTapkiegekListakbolUIDAlapjan(FormLogin.loggedID,repo.getTkiegek(),repo.getKiegek()));
         }
-        public void ujKiegeszito()
+        private void buttonUj_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
         {
             try
             {
-                        KiegAdat ujka = new KiegAdat(
-                            textBoxKnev.Text, 
-                            textBoxKTipus.Text, 
-                            textBoxKgyarto.Text);
-                        repo.AddUjKiegAdatDB(ujka);
-                        repo.addUjKiegAdatListahoz(ujka);
-
+                KiegAdat ujka = new KiegAdat(
+                           textBoxKnev.Text,
+                           textBoxKTipus.Text,
+                           textBoxKgyarto.Text);
+                repo.AddUjKiegAdatDB(ujka);
+                repo.addUjKiegAdatListahoz(ujka);
                 Kiegeszito ujkieg = new Kiegeszito(
-                            repo.getKiegIDKiegeszitoTablaba(),
-                            FormLogin.loggedID);
+                        repo.getKiegIDKiegeszitoTablaba(),
+                        FormLogin.loggedID);
                 repo.AddujKieg(ujkieg);
                 repo.addUjKiegeszitoListahoz(ujkieg);
+                TaplalekkiegeszitokView tkv = new TaplalekkiegeszitokView(
+                        textBoxKnev.Text,
+                        textBoxKTipus.Text,
+                        textBoxKgyarto.Text
+                    );
+                repo.addTkiegViewList(tkv);
+                frissítDGVTkiegekViewn();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                    Debug.Write(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
-        }
-
-        private void buttonUj_Click(object sender, EventArgs e)
-        {
-            ujKiegeszito();
-            feltoltDGVKiegek();
         }
     }
 }

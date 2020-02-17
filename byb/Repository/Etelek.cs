@@ -63,24 +63,6 @@ namespace byb.Repository
 
         }
         /// <summary>
-        /// Listából készít DataTablet a view-n való megjelenítéshez DGV-ben
-        /// </summary>
-        /// <returns>etelekDT - DataTable</returns>
-        public DataTable getListabolDataTable()
-        {
-            DataTable etelekDT = new DataTable();
-            etelekDT.Columns.Add("enev", typeof(string));
-            etelekDT.Columns.Add("feherje", typeof(int));
-            etelekDT.Columns.Add("szenhidrat", typeof(int));
-            etelekDT.Columns.Add("zsir", typeof(int));
-            etelekDT.Columns.Add("mennyiseg", typeof(string));
-            foreach(Etel e in etelek)
-            {
-                etelekDT.Rows.Add(e.Nev, e.Feherje, e.Szenhidrat, e.Zsir, e.Mennyiseg);
-            }
-            return etelekDT;
-        }
-        /// <summary>
         /// Új étel hozzáadása az adatbázishoz (insert into)
         /// </summary>
         /// <param name="ujetel">Az új étel</param>

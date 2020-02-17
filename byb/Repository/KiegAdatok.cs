@@ -52,25 +52,6 @@ namespace byb.Repository
             return kiegek;
 
         }
-        /// <summary>
-        /// Listából készít dataTable-t
-        /// </summary>
-        /// <returns>Data Table</returns>
-        public DataTable getKiegDT()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("k_id", typeof(int));
-            dt.Columns.Add("knev", typeof(string));
-            dt.Columns.Add("tipus", typeof(string));
-            dt.Columns.Add("gyarto", typeof(string));
-            dt.Columns.Add("kiszereles", typeof(int));
-            dt.Columns.Add("ks_mertekegyseg", typeof(string));
-            foreach (KiegAdat t in kiegek)
-            {
-                dt.Rows.Add(t.Kid,t.Knev,t.Tipus,t.Gyarto);
-            }
-            return dt;
-        }
         public void AddUjKiegAdatDB(KiegAdat ujkiegadat)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);

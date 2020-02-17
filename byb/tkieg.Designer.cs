@@ -33,8 +33,9 @@
             this.textBoxKnev = new System.Windows.Forms.TextBox();
             this.textBoxKgyarto = new System.Windows.Forms.TextBox();
             this.textBoxKTipus = new System.Windows.Forms.TextBox();
-            this.buttonUj = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonUj = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegek)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,20 +85,10 @@
             this.textBoxKTipus.Size = new System.Drawing.Size(100, 20);
             this.textBoxKTipus.TabIndex = 12;
             // 
-            // buttonUj
-            // 
-            this.buttonUj.Location = new System.Drawing.Point(47, 230);
-            this.buttonUj.Name = "buttonUj";
-            this.buttonUj.Size = new System.Drawing.Size(75, 23);
-            this.buttonUj.TabIndex = 13;
-            this.buttonUj.Text = "Mentés";
-            this.buttonUj.UseVisualStyleBackColor = true;
-            this.buttonUj.Click += new System.EventHandler(this.buttonUj_Click);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonSave);
             this.panel1.Controls.Add(this.textBoxKnev);
-            this.panel1.Controls.Add(this.buttonUj);
             this.panel1.Controls.Add(this.textBoxKTipus);
             this.panel1.Controls.Add(this.textBoxKgyarto);
             this.panel1.Location = new System.Drawing.Point(682, 65);
@@ -105,10 +96,41 @@
             this.panel1.Size = new System.Drawing.Size(208, 333);
             this.panel1.TabIndex = 14;
             // 
+            // buttonUj
+            // 
+            this.buttonUj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(49)))));
+            this.buttonUj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonUj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUj.ForeColor = System.Drawing.Color.White;
+            this.buttonUj.Location = new System.Drawing.Point(133, 18);
+            this.buttonUj.Name = "buttonUj";
+            this.buttonUj.Size = new System.Drawing.Size(91, 32);
+            this.buttonUj.TabIndex = 15;
+            this.buttonUj.Text = "Új";
+            this.buttonUj.UseVisualStyleBackColor = false;
+            this.buttonUj.Click += new System.EventHandler(this.buttonUj_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(49)))));
+            this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(14, 220);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(91, 32);
+            this.buttonSave.TabIndex = 16;
+            this.buttonSave.Text = "Mentés";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // tkieg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonUj);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewKiegek);
             this.Controls.Add(this.buttonKiegek);
@@ -129,7 +151,8 @@
         private System.Windows.Forms.TextBox textBoxKnev;
         private System.Windows.Forms.TextBox textBoxKgyarto;
         private System.Windows.Forms.TextBox textBoxKTipus;
-        private System.Windows.Forms.Button buttonUj;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonUj;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

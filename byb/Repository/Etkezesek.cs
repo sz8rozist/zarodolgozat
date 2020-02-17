@@ -59,23 +59,6 @@ namespace byb.Repository
             return etkezesek;
 
         }
-        /// <summary>
-        /// Listából készít dataTable-t
-        /// </summary>
-        /// <returns>Data Table</returns>
-        public DataTable getEtkezesDTListabol()
-        {
-            DataTable etkezesDT = new DataTable();
-            etkezesDT.Columns.Add("etkezesek_id", typeof(int));
-            etkezesDT.Columns.Add("idopont", typeof(string));
-            etkezesDT.Columns.Add("etel_id", typeof(int));
-            etkezesDT.Columns.Add("f_id", typeof(int));
-            foreach (Etkezes etkezes in etkezesek)
-            {
-                    etkezesDT.Rows.Add(etkezes.Etkezesid, etkezes.Idopont, etkezes.Etelid,etkezes.Fid);
-            }
-            return etkezesDT;
-        }
         //Id alapján töröl a listából
         public void torolEtkezesListabol(int etkezesID)
         {
@@ -138,17 +121,6 @@ namespace byb.Repository
                 Debug.WriteLine(ujetkezes + "étkezés hozzáadása nem sikerült.");
                 throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
             }
-        }
-        public int getKovetkezoEtkezesID()
-        {
-            if (etkezesek.Count == 0)
-                return 1;
-            else
-                return etkezesek.Max(x => x.Etkezesid) + 1;
-        }
-        public int getEtelID(string nev)
-        {
-            return etelek.Find(x => x.Nev == nev).Id;
         }
     }
 }
