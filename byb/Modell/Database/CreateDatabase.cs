@@ -8,13 +8,18 @@ using System.Threading.Tasks;
 
 namespace byb.Database
 {
+    /// <summary>
+    /// CreateDatabase osztály
+    /// </summary>
     class CreateDatabase
     {
-        
+        /// <summary>
+        /// Connection stringek, csak olvashatóak
+        /// </summary>
         private readonly string connectionString;
         private readonly string createString;
         /// <summary>
-        /// Kontruktor
+        /// Kontruktor-ban connection stringek példányosítása
         /// </summary>
         public CreateDatabase()
         {

@@ -16,10 +16,18 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM etelek";
         }
+        /// <summary>
+        /// Kiegészítők adatainak lekérdezése adatbázisból
+        /// </summary>
+        /// <returns>Minden adat a kiegeszitok_adatai táblából</returns>
         public static string getKiegAdatok()
         {
             return "SELECT * FROM kiegeszitok_adatai";
         }
+        /// <summary>
+        /// Kiegészítők kapcsoló tábla adatainak lekérdezése adatbázisból
+        /// </summary>
+        /// <returns>Minden adat a kiegeszitok táblából</returns>
         public static string getHasznaltKiegAdatok()
         {
             return "SELECT * FROM kiegeszitok";
@@ -32,6 +40,10 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM felhasznalok";
         }
+        /// <summary>
+        /// Étkezések kapcsoló tábla adatainak lekérdezése adatbázisból
+        /// </summary>
+        /// <returns>Minden adat az étkezések táblából</returns>
         public static string getEtkezesekAllRecord()
         {
             return "SELECT * FROM etkezesek";

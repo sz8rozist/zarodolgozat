@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace byb.Modell
 {
+    /// <summary>
+    /// Étrend osztály
+    /// </summary>
     class Etrend
     {
+        /// <summary>
+        /// Étrend adatai
+        /// </summary>
         private int fid;
         private string idopont;
         private string etelnev;
@@ -15,6 +21,16 @@ namespace byb.Modell
         private int szenhidrat;
         private int zsir;
         private string menny;
+        /// <summary>
+        /// Konstruktor az étrend adataival
+        /// </summary>
+        /// <param name="fid">Felhasználó azonosító</param>
+        /// <param name="idopont">Időpont</param>
+        /// <param name="etelnev">Ételnév</param>
+        /// <param name="feherje">Fehérje tartalom</param>
+        /// <param name="szenhidrat">Szénhidrát tartalom</param>
+        /// <param name="zsir">Zsír tartalom</param>
+        /// <param name="menny">Mennyiség</param>
         public Etrend(int fid,string idopont,string etelnev, int feherje, int szenhidrat, int zsir,string menny)
         {
             this.fid = fid;
@@ -25,6 +41,9 @@ namespace byb.Modell
             this.zsir = zsir;
             this.menny = menny;
         }
+        /// <summary>
+        /// Set - Get metódusok
+        /// </summary>
         public int Fid { get => fid; set => fid = value; }
         public string Idopont { get => idopont; set => idopont = value; }
         public string Etelnev { get => etelnev; set => etelnev = value; }

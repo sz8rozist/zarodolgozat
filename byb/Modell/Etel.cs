@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace byb.Modell
 {
+    /// <summary>
+    /// Étel osztály
+    /// </summary>
     class Etel
     {
         /// <summary>
@@ -18,7 +21,7 @@ namespace byb.Modell
         private int szenhidrat;
         private string mennyiseg;
         /// <summary>
-        /// Konstruktor
+        /// Konstruktor az étel adataival
         /// </summary>
         /// <param name="id">Étel azonosító</param>
         /// <param name="nev">Étel név</param>
@@ -36,6 +39,15 @@ namespace byb.Modell
             this.szenhidrat = szenhidrat;
             this.mennyiseg = mennyiseg;
         }
+        /// <summary>
+        /// Konstruktor új rekord hozzáadásához ID nélkül mivel az ID auto increment
+        /// </summary>
+        /// <param name="nev">Étel név</param>
+        /// <param name="kaloria">Mennyi kalória van benne</param>
+        /// <param name="feherje">Mennyi fehérjét tartalmaz</param>
+        /// <param name="zsir">Mennyi zsírt tartalmaz</param>
+        /// <param name="szenhidrat">Szénhidrát mennyiség</param>
+        /// <param name="mennyiseg">Fogyasztás grammra egy étkezéskor</param>
         public Etel( string nev, int feherje, int zsir, int szenhidrat, string mennyiseg)
         {
 

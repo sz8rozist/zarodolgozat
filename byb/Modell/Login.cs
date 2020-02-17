@@ -8,16 +8,26 @@ using System.Threading.Tasks;
 
 namespace byb.Modell
 {
+    /// <summary>
+    /// Bejelentkezés osztály
+    /// </summary>
     public class Login
     {
-        //Connection string az adatbázishoz való csatlakozáshoz
+        /// <summary>
+        /// Connection string az adatbázishoz való csatlakozáshoz
+        /// </summary>
         ConnectionString cs = new ConnectionString();
         private string connectionString;
-        //Bejelentkezés adatai username - password és egy id
+        /// <summary>
+        /// A bejelentkezés adatai plusz a felhasználó azonosítója(id) ami mentésre kerül a bejelentkezés során
+        /// </summary>
         private string username;
         private string password;
         private int id;
-        //get metódusok
+        /// <summary>
+        /// Get metódusok
+        /// </summary>
+        /// <returns></returns>
         public string getUsername()
         {
             return username;
@@ -30,7 +40,11 @@ namespace byb.Modell
         {
             return id;
         }
-        //konstruktor a view-n való bejelentkezéshez username és password paraméterekkel
+        /// <summary>
+        /// Paraméteres konstruktor a bejelentkezéshez
+        /// </summary>
+        /// <param name="username">Felhasználónév</param>
+        /// <param name="password">Jelszó</param>
         public Login(string username, string password)
         {
             this.username = username;

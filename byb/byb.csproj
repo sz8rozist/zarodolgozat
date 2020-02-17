@@ -145,7 +145,6 @@
     <None Include="bin\Debug\Images\2.jpg" />
     <None Include="bin\Debug\Images\3.jpg" />
     <None Include="bin\Debug\Images\4.jpg" />
-    <Content Include="Modell\Database\buildyourbody.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
