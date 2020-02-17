@@ -18,27 +18,45 @@ namespace byb.Repository
             foreach(Etkezes e in etk)
             {
                 Etel etel = etelek.Find(x => x.Id == e.Etelid);
-                Etrend etrend = new Etrend(
-                    e.Etkezesid,
+                if(etel != null)
+                {
+                    Etrend etrend = new Etrend(
                     azon,
                     e.Idopont,
-                    etel.Nev
+                    etel.Nev,
+                    etel.Feherje,
+                    etel.Szenhidrat,
+                    etel.Zsir,
+                    etel.Mennyiseg
                     );
-                etrendek.Add(etrend);
+                    etrendek.Add(etrend);
+                }
+                
             }
+        }
+        public Etrendek()
+        {
+
         }
         public DataTable getEtrendDT()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("etkezesek_id",typeof(int));
             dt.Columns.Add("idopont",typeof(string));
             dt.Columns.Add("enev",typeof(string));
+            dt.Columns.Add("feherje",typeof(int));
+            dt.Columns.Add("szenhidrat",typeof(int));
+            dt.Columns.Add("zsir",typeof(int));
+            dt.Columns.Add("mennyiseg",typeof(string));
 
             foreach(Etrend etrend in etrendek)
             {
-                dt.Rows.Add(etrend.Etkezesid,etrend.Idopont, etrend.Etelnev);
+                dt.Rows.Add(etrend.Idopont, etrend.Etelnev, etrend.Feherje,etrend.Szenhidrat,etrend.Zsir,etrend.Menny);
             }
             return dt;
+        }
+        public void AddEtrendItemToList(Etrend ujetrend)
+        {
+            etrendek.Add(ujetrend);
         }
     }
 }

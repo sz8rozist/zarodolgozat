@@ -23,6 +23,12 @@ namespace byb.Modell
             this.etelid = etelid;
             this.fid = fid;
         }
+        public Etkezes(string idopont, int etelid, int fid)
+        {
+            this.idopont = idopont;
+            this.etelid = etelid;
+            this.fid = fid;
+        }
         //set - get metódusok
         public int Etkezesid { get => etkezesid; set => etkezesid = value; }
         public string Idopont { get => idopont; set => idopont = value; }

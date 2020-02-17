@@ -13,7 +13,6 @@ namespace byb.Modell
         /// </summary>
         private int id;
         private string nev;
-        private int kaloria;
         private int feherje;
         private int zsir;
         private int szenhidrat;
@@ -28,11 +27,19 @@ namespace byb.Modell
         /// <param name="zsir">Mennyi zsírt tartalmaz</param>
         /// <param name="szenhidrat">Szénhidrát mennyiség</param>
         /// <param name="mennyiseg">Fogyasztás grammra egy étkezéskor</param>
-        public Etel(int id, string nev, int kaloria, int feherje, int zsir, int szenhidrat, string mennyiseg)
+        public Etel(int id, string nev, int feherje, int zsir, int szenhidrat, string mennyiseg)
         {
             this.id = id;
             this.nev = nev;
-            this.kaloria = kaloria;
+            this.feherje = feherje;
+            this.zsir = zsir;
+            this.szenhidrat = szenhidrat;
+            this.mennyiseg = mennyiseg;
+        }
+        public Etel( string nev, int feherje, int zsir, int szenhidrat, string mennyiseg)
+        {
+
+            this.nev = nev;
             this.feherje = feherje;
             this.zsir = zsir;
             this.szenhidrat = szenhidrat;
@@ -45,13 +52,9 @@ namespace byb.Modell
         public  string getInsertEtelek()
         {
             return "INSERT INTO `etelek" +
-                "`(`etel_id`, `enev`, `kaloria`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`)" +
+                "`(`enev`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`)" +
                 " VALUES ('" +
-                id +
-                "', '" +
                 Nev +
-                "', '" +
-                Kaloria +
                 "', '" +
                 Feherje +
                 "', '" +
@@ -67,7 +70,6 @@ namespace byb.Modell
         /// </summary>
         public int Id { get => id; set => id = value; }
         public string Nev { get => nev; set => nev = value; }
-        public int Kaloria { get => kaloria; set => kaloria = value; }
         public int Feherje { get => feherje; set => feherje = value; }
         public int Zsir { get => zsir; set => zsir = value; }
         public int Szenhidrat { get => szenhidrat; set => szenhidrat = value; }

@@ -8,26 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using byb.Repository;
+using byb.Modell;
+using System.Diagnostics;
 
 namespace byb
 {
     public partial class tkieg : UserControl
     {
         Repo repo = new Repo();
-        private DataTable kiegekDT = new DataTable();
         public tkieg()
         {
             InitializeComponent();
         }
-        public void beallitKiegekDGV()
+        public void feltoltDGVKiegek()
         {
-            kiegekDT.Columns[0].ColumnName = "K_ID";
-            kiegekDT.Columns[1].ColumnName = "Név";
-            kiegekDT.Columns[2].ColumnName = "Típus";
-            kiegekDT.Columns[3].ColumnName = "Gyártó";
-            kiegekDT.Columns[4].ColumnName = "Kiszerelés";
-            kiegekDT.Columns[5].ColumnName = "Mértékegység";
-            //kiegekDT.Columns[6].ColumnName = "F_ID";
+            dataGridViewKiegek.DataSource = null;
+
+            int azon = FormLogin.loggedID;
+
+            TaplalekkiegeszitokViews tkieg = new TaplalekkiegeszitokViews(
+                azon,
+                repo.getTkiegek(),
+                repo.getKiegek()
+                );
+            dataGridViewKiegek.DataSource = tkieg.getTkgViewDT();
+            dataGridViewKiegek.Columns["knev"].HeaderText = "Név";
+            dataGridViewKiegek.Columns["tipus"].HeaderText = "Típus";
+            dataGridViewKiegek.Columns["gyarto"].HeaderText = "Gyártó";
             dataGridViewKiegek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewKiegek.ReadOnly = true;
             dataGridViewKiegek.AllowUserToDeleteRows = false;
@@ -48,23 +55,44 @@ namespace byb
             dataGridViewKiegek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewKiegek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
-        public void frissitDGVKiegek()
-        {
-            kiegekDT = repo.getKiegDT();
-            dataGridViewKiegek.DataSource = null;
-            dataGridViewKiegek.DataSource = kiegekDT;
-        }
 
         private void buttonKiegek_Click(object sender, EventArgs e)
         {
-            frissitDGVKiegek();
-            beallitKiegekDGV();
-            
+            feltoltDGVKiegek();
         }
 
         private void tkieg_Load(object sender, EventArgs e)
         {
             repo.setKiegek(repo.getKiegekAdatbazisbol());
+            repo.setTkiegek(repo.getHasznaltKiegeszitoAdatokAdatbazisbol());
+        }
+        public void ujKiegeszito()
+        {
+            try
+            {
+                        KiegAdat ujka = new KiegAdat(
+                            textBoxKnev.Text, 
+                            textBoxKTipus.Text, 
+                            textBoxKgyarto.Text);
+                        repo.AddUjKiegAdatDB(ujka);
+                        repo.addUjKiegAdatListahoz(ujka);
+
+                Kiegeszito ujkieg = new Kiegeszito(
+                            repo.getKiegIDKiegeszitoTablaba(),
+                            FormLogin.loggedID);
+                repo.AddujKieg(ujkieg);
+                repo.addUjKiegeszitoListahoz(ujkieg);
+            }
+            catch (Exception ex)
+            {
+                    Debug.Write(ex.Message);
+            }
+        }
+
+        private void buttonUj_Click(object sender, EventArgs e)
+        {
+            ujKiegeszito();
+            feltoltDGVKiegek();
         }
     }
 }

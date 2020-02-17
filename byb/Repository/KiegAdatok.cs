@@ -13,16 +13,16 @@ namespace byb.Repository
 {
     partial class Repo 
     {
-        List<Taplalekkiegeszito> kiegek;
-        public void setKiegek(List<Taplalekkiegeszito> kiegek)
+        List<KiegAdat> kiegek;
+        public void setKiegek(List<KiegAdat> kiegek)
         {
             this.kiegek = kiegek;
         }
-        public List<Taplalekkiegeszito> getKiegek()
+        public List<KiegAdat> getKiegek()
         {
             return kiegek;
         }
-        public List<Taplalekkiegeszito> getKiegekAdatbazisbol()
+        public List<KiegAdat> getKiegekAdatbazisbol()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
             try
@@ -38,10 +38,7 @@ namespace byb.Repository
                     string knev = dr["knev"].ToString();
                     string tipus = dr["tipus"].ToString();
                     string gyarto = dr["gyarto"].ToString();
-                    int kiszereles = Convert.ToInt32(dr["kiszereles"]);
-                    string mertekegyseg = dr["ks_mertekegyseg"].ToString();
-                    int f_id = Convert.ToInt32(dr["f_id"]);
-                    Taplalekkiegeszito kieg = new Taplalekkiegeszito(id,knev,tipus,gyarto,kiszereles,mertekegyseg,f_id);
+                    KiegAdat kieg = new KiegAdat(id,knev,tipus,gyarto);
                     kiegek.Add(kieg);
                 }
                 con.Close();
@@ -68,11 +65,46 @@ namespace byb.Repository
             dt.Columns.Add("gyarto", typeof(string));
             dt.Columns.Add("kiszereles", typeof(int));
             dt.Columns.Add("ks_mertekegyseg", typeof(string));
-            foreach (Taplalekkiegeszito t in kiegek)
+            foreach (KiegAdat t in kiegek)
             {
-                dt.Rows.Add(t.Kid,t.Knev,t.Tipus,t.Gyarto,t.Kiszereles,t.KsMertekE);
+                dt.Rows.Add(t.Kid,t.Knev,t.Tipus,t.Gyarto);
             }
             return dt;
         }
+        public void AddUjKiegAdatDB(KiegAdat ujkiegadat)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = ujkiegadat.insertIntoKiegAdatok();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(ujkiegadat + "kiegeszito adat hozzáadása nem sikerült.");
+                throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
+            }
+        }
+        public void addUjKiegAdatListahoz(KiegAdat ujkiegadat)
+        {
+            try
+            {
+                kiegek.Add(ujkiegadat);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("A táplálékkiegeszítő adatainak hozzáadása nem sikerült.");
+            }
+        }
+        public int getKiegIDKiegeszitoTablaba()
+        {
+            return kiegek.Max(x => x.Kid) +1;
+        }
+    
     }
 }

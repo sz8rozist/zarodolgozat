@@ -16,15 +16,10 @@ namespace byb
     public partial class etrend : UserControl
     {
         Repo repo = new Repo();
-        private DataTable etelekDT = new DataTable();
         public etrend()
         {
             InitializeComponent();
-            panelEtelek.Visible = false;
-            panelUjEtel.Visible = false;
-            panelEtkezesek.Visible = false;
-            panelUjEtkezes.Visible = true;
-
+            panel1.Visible = false;
 
         }
         private void Etrend_Load(object sender, EventArgs e)
@@ -32,278 +27,75 @@ namespace byb
             repo.setEtkezesek(repo.getEtkezesekAdatbazisbol());
             repo.setEtelek(repo.getEtelekAdatbazisbol());
         }
-        public void feltoltComboboxEtelNevekkel()
+        public void frissítDGVEtrendek()
         {
-            comboBoxEtelNev.DataSource = repo.getEtelNevek();
-        }
-        public void frissitDGVEtelek()
-        {
-            etelekDT = repo.getListabolDataTable();
-            dataGridViewEtelek.DataSource = null;
-            dataGridViewEtelek.DataSource = etelekDT;
-        }
-       
-        public void beallitEtelekDGV()
-        {
-            etelekDT.Columns[0].ColumnName = "Név";
-            etelekDT.Columns[1].ColumnName = "Kalória";
-            etelekDT.Columns[2].ColumnName = "Fehérje";
-            etelekDT.Columns[3].ColumnName = "Szénhidrát";
-            etelekDT.Columns[4].ColumnName = "Zsír";
-            etelekDT.Columns[5].ColumnName = "Mennyiség";
-
-            dataGridViewEtelek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewEtelek.ReadOnly = true;
-            dataGridViewEtelek.AllowUserToDeleteRows = false;
-            dataGridViewEtelek.AllowUserToAddRows = false;
-            dataGridViewEtelek.MultiSelect = false;
-            dataGridViewEtelek.RowHeadersVisible = false;
-            dataGridViewEtelek.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridViewEtelek.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewEtelek.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewEtelek.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridViewEtelek.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewEtelek.DefaultCellStyle.Font = new Font("Century Gothic", 8);
-            dataGridViewEtelek.AllowUserToResizeRows = false;
-            dataGridViewEtelek.AllowUserToResizeColumns = false;
-            dataGridViewEtelek.EnableHeadersVisualStyles = false;
-            dataGridViewEtelek.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
-            dataGridViewEtelek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewEtelek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridViewEtelek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-        }
-        public void feltoltDGVEtkezesekEtrendekkel()
-        {
-            dataGridViewEtkezesek.DataSource = null;
-
             int azon = FormLogin.loggedID;
-
-            Etrendek etrend = new Etrendek(
-                azon,
-                repo.getEtelek(),
-                repo.getEtkezesek()
-                );
-            dataGridViewEtkezesek.DataSource = etrend.getEtrendDT();
-            dataGridViewEtkezesek.Columns["idopont"].HeaderText = "Időpont";
-            dataGridViewEtkezesek.Columns["etkezesek_id"].HeaderText = "Étkezés ID";
-            dataGridViewEtkezesek.Columns["enev"].HeaderText = "Étel";
-            dataGridViewEtkezesek.Columns[0].Visible = false;
-            dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewEtkezesek.ReadOnly = true;
-            dataGridViewEtkezesek.AllowUserToDeleteRows = false;
-            dataGridViewEtkezesek.AllowUserToAddRows = false;
-            dataGridViewEtkezesek.MultiSelect = false;
-            dataGridViewEtkezesek.RowHeadersVisible = false;
-            dataGridViewEtkezesek.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridViewEtkezesek.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewEtkezesek.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewEtkezesek.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridViewEtkezesek.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewEtkezesek.DefaultCellStyle.Font = new Font("Century Gothic", 8);
-            dataGridViewEtkezesek.AllowUserToResizeRows = false;
-            dataGridViewEtkezesek.AllowUserToResizeColumns = false;
-            dataGridViewEtkezesek.EnableHeadersVisualStyles = false;
-            dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
-            dataGridViewEtkezesek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridViewEtkezesek.Columns["idopont"].DefaultCellStyle.Format = "yyyy / MM / dd";
+            Etrendek etrendek = new Etrendek(
+                    azon,
+                    repo.getEtelek(),
+                    repo.getEtkezesek()
+                    );
+            dataGridViewEtrend.DataSource = null;
+            dataGridViewEtrend.DataSource = etrendek.getEtrendDT();
         }
-        private void buttonEtelek_Click(object sender, EventArgs e)
+        public void feltoltDGVEtrendek()
         {
-            panelEtelek.Visible = true;
-            panelEtkezesek.Visible = false;
-            //DGV adatainak frissítése
-            frissitDGVEtelek();
-            //DGV beállítása
-            beallitEtelekDGV();
+            dataGridViewEtrend.Columns["idopont"].HeaderText = "Időpont";
+            dataGridViewEtrend.Columns["enev"].HeaderText = "Név";
+            dataGridViewEtrend.Columns["feherje"].HeaderText = "Fehérj";
+            dataGridViewEtrend.Columns["szenhidrat"].HeaderText = "Szénhidrát";
+            dataGridViewEtrend.Columns["zsir"].HeaderText = "Zsír";
+            dataGridViewEtrend.Columns["mennyiseg"].HeaderText = "Mennyiség";
+            dataGridViewEtrend.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewEtrend.ReadOnly = true;
+            dataGridViewEtrend.AllowUserToDeleteRows = false;
+            dataGridViewEtrend.AllowUserToAddRows = false;
+            dataGridViewEtrend.MultiSelect = false;
+            dataGridViewEtrend.RowHeadersVisible = false;
+            dataGridViewEtrend.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridViewEtrend.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewEtrend.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridViewEtrend.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewEtrend.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewEtrend.DefaultCellStyle.Font = new Font("Century Gothic", 8);
+            dataGridViewEtrend.AllowUserToResizeRows = false;
+            dataGridViewEtrend.AllowUserToResizeColumns = false;
+            dataGridViewEtrend.EnableHeadersVisualStyles = false;
+            dataGridViewEtrend.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
+            dataGridViewEtrend.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewEtrend.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewEtrend.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
-
         private void buttonEtkezesek_Click(object sender, EventArgs e)
         {
-            panelEtelek.Visible = false;
-            panelEtkezesek.Visible = true;
-            feltoltComboboxEtelNevekkel();
-            feltoltDGVEtkezesekEtrendekkel();
-            
-
+            frissítDGVEtrendek();
+            feltoltDGVEtrendek();
         }
 
-        private void buttonTorolEtel_Click(object sender, EventArgs e)
+        private void buttonÚj_Click(object sender, EventArgs e)
         {
-            if ((dataGridViewEtelek.Rows == null) ||
-                (dataGridViewEtelek.Rows.Count == 0))
-                return;
-            if (MessageBox.Show(
-                "Valóban törölni akarja a sort?",
-                "Törlés",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                //1. törölni kell a listából
-                //DGV - be kijelölt sor első cellájának az értéke (név) ami alapján törlünk.
-                string nev = dataGridViewEtelek.SelectedRows[0].Cells[0].Value.ToString();
-
-                try
-                {
-                    repo.torolEtelListabol(nev);
-                }
-                catch (RepositoryException rex)
-                {
-                    Debug.WriteLine(rex.Message);
-                    Debug.WriteLine("Az étel törlése nem sikerült.");
-                }
-                //2. törölni kell az adatbázisból
-                try
-                {
-                    repo.torolEtelAdatbazisbol(nev);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-                //3. frissíteni kell a DataGridView-t  
-                frissitDGVEtelek();
-
-            }
+            panel1.Visible = true;
         }
-
-        private void buttonHozzaad_Click(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
-            panelUjEtel.Visible = true;
-            buttonUjMentes.Enabled = false;
-        }
-
-        private void buttonUjMentes_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Etel ujetel = new Etel(
-                    repo.getKovetkezoEtelID(),
-                    EtelNev.Text,
-                    Convert.ToInt32(textBoxKaloria.Text),
-                    Convert.ToInt32(textBoxFeherje.Text),
-                    Convert.ToInt32(textBoxSzenhidrat.Text),
-                    Convert.ToInt32(textBoxZsir.Text),
-                    textBoxMennyiseg.Text
-                    );
-                //hozzáadás listához
-                repo.AddEtelListahoz(ujetel);
-                //hozzáadás adatbázishoz
-                repo.AddEtelAdatbazishoz(ujetel);
-                //DGV frissítés
-                EtelNev.Text = string.Empty;
-                textBoxKaloria.Text = string.Empty;
-                textBoxFeherje.Text = string.Empty;
-                textBoxSzenhidrat.Text = string.Empty;
-                textBoxZsir.Text = string.Empty;
-                textBoxMennyiseg.Text = string.Empty;
-                frissitDGVEtelek();
+            Etel ujetel = new Etel(
+                textBoxEnev.Text,
+               Convert.ToInt32( textBoxFeherje.Text),
+                Convert.ToInt32(textBoxCh.Text),
+                Convert.ToInt32(textBoxZs.Text),
+                textBoxMennyiseg.Text
                 
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-                Debug.WriteLine("Új Étel hozzáadás sikertelen");
-            }
-        }
-        private void buttonMentesEtkezes_Click(object sender, EventArgs e)
-        {
-            int etelID = repo.getEtelID(comboBoxEtelNev.Text);
-            UjEtkezes(etelID);
-            feltoltDGVEtkezesekEtrendekkel();
-        }
-        private void buttonMegse_Click(object sender, EventArgs e)
-        {
-            panelUjEtel.Visible = false;
-        }
-
-        private void buttonTorolEtkezes_Click(object sender, EventArgs e)
-        {
-            if ((dataGridViewEtkezesek.Rows == null) ||
-                (dataGridViewEtkezesek.Rows.Count == 0))
-                return;
-            if (MessageBox.Show(
-                "Valóban törölni akarja a sort?",
-                "Törlés",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            {
-                //1. törölni kell a listából
-                //DGV - be kijelölt sor első cellájának az értéke (időpont) ami alapján törlünk.
-                int etkezesID = Convert.ToInt32(dataGridViewEtkezesek.SelectedRows[0].Cells[0].Value);
-
-                try
-                {
-                    repo.torolEtkezesListabol(etkezesID);
-                }
-                catch (RepositoryException rex)
-                {
-                    Debug.WriteLine(rex.Message);
-                    Debug.WriteLine("Az étel törlése nem sikerült.");
-                }
-                //2. törölni kell az adatbázisból
-                try
-                {
-                    repo.torolEtkezesAdatbazisbol(etkezesID);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-                //3. frissíteni kell a DataGridView-t  
-                feltoltDGVEtkezesekEtrendekkel();
-
-            }
-        }
-
-
-        public void UjEtkezes(int etelID)
-        {
-            try
-            {
-                Etkezes ujetkezes = new Etkezes(
-                    repo.getKovetkezoEtkezesID(),
-                    dateTimePicker1.Text,
-                    etelID,
+                );
+            repo.AddEtelAdatbazishoz(ujetel);
+            repo.AddEtelListahoz(ujetel);
+            Etkezes ujetkezes = new Etkezes(
+                    dateTimePickerIdopont.Text,
+                    repo.getEtelIDEtkezeshez(),
                     FormLogin.loggedID
-                    );
-                repo.AddEtkezesAdatbazishoz(ujetkezes);
-                repo.AddEtkezesListahoz(ujetkezes);
-            }
-            catch(Exception ex)
-            {
-                Debug.Write(ex.Message);
-            }
-        }
-        private void buttonUjEtkezes_Click(object sender, EventArgs e)
-        {
-            panelUjEtkezes.Visible = true;
-
-
-        }
-
-        private void buttonEtkezesMegse_Click(object sender, EventArgs e)
-        {
-            panelUjEtkezes.Visible = false;
-        }
-
-        private void comboBoxEtelNev_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBoxMennyiseg_TextChanged(object sender, EventArgs e)
-        {
-            if(textBoxMennyiseg.Text != null)
-            {
-                buttonUjMentes.Enabled = true;
-            }
-            else
-            {
-                buttonUjMentes.Enabled = false;
-            }
-            
+                   );
+            repo.AddEtkezesAdatbazishoz(ujetkezes);
+            repo.AddEtkezesListahoz(ujetkezes);
+            frissítDGVEtrendek();
         }
     }
 }

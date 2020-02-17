@@ -20,7 +20,10 @@ namespace byb.Repository
             users = new List<Felhasznalo>();
             etkezesek = new List<Etkezes>();
             etelek = new List<Etel>();
-            kiegek = new List<Taplalekkiegeszito>();
+            kiegek = new List<KiegAdat>();
+            tkiegek = new List<Kiegeszito>();
+
+
         }
     }
 }

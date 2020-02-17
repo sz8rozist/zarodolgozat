@@ -8,20 +8,29 @@ namespace byb.Modell
 {
     class Etrend
     {
-        private int etkezesid;
         private int fid;
         private string idopont;
         private string etelnev;
-        public Etrend(int etkezesid,int fid,string idopont,string etelnev)
+        private int feherje;
+        private int szenhidrat;
+        private int zsir;
+        private string menny;
+        public Etrend(int fid,string idopont,string etelnev, int feherje, int szenhidrat, int zsir,string menny)
         {
-            this.etkezesid = etkezesid;
             this.fid = fid;
             this.idopont = idopont;
             this.etelnev = etelnev;
+            this.feherje = feherje;
+            this.szenhidrat = szenhidrat;
+            this.zsir = zsir;
+            this.menny = menny;
         }
         public int Fid { get => fid; set => fid = value; }
         public string Idopont { get => idopont; set => idopont = value; }
         public string Etelnev { get => etelnev; set => etelnev = value; }
-        public int Etkezesid { get => etkezesid; set => etkezesid = value; }
+        public int Feherje { get => feherje; set => feherje = value; }
+        public int Szenhidrat { get => szenhidrat; set => szenhidrat = value; }
+        public int Zsir { get => zsir; set => zsir = value; }
+        public string Menny { get => menny; set => menny = value; }
     }
 }

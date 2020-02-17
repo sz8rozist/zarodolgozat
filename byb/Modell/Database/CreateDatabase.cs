@@ -214,30 +214,30 @@ namespace byb.Database
                 MySqlCommand cmdIzomcsoport = new MySqlCommand(izomcsoportTesztAdatok, con);
                 cmdIzomcsoport.ExecuteNonQuery();
 
-                string etelekTesztAdatok = "INSERT INTO `etelek` (`etel_id`, `enev`, `kaloria`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`) VALUES " +
-                    "(NULL, 'Csirkemell', '300', '24', '2', '2', '100gr')," +
-                    "(NULL, 'Rizs', '300', '1', '50', '22', '70gr')," +
-                    "(NULL, 'Pulykamell', '210', '24', '2', '23', '10gr')," +
-                    "(NULL, 'Tilápia', '230', '30', '2', '2', '87gr')," +
-                    "(NULL, 'Bélszín', '500', '35', '10', '6', '132gr')," +
-                    "(NULL, 'Iso Whey Zero', '0', '20', '0', '0', '34gr')," +
-                    "(NULL, 'Bulgur', '300', '24', '2', '2', '322gr')," +
-                    "(NULL, 'Paradicsom', '300', '24', '2', '2', '32gr')," +
-                    "(NULL, 'Édesburgonya', '300', '24', '2', '2', '60gr')," +
-                    "(NULL, 'Avokádó', '300', '24', '2', '2', '90gr');";
+                string etelekTesztAdatok = "INSERT INTO `etelek` (`etel_id`, `enev`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`) VALUES " +
+                    "(NULL, 'Csirkemell', '24', '2', '2', '100gr')," +
+                    "(NULL, 'Rizs', '1', '50', '22', '70gr')," +
+                    "(NULL, 'Pulykamell', '24', '2', '23', '10gr')," +
+                    "(NULL, 'Tilápia', '30', '2', '2', '87gr')," +
+                    "(NULL, 'Bélszín','35', '10', '6', '132gr')," +
+                    "(NULL, 'Iso Whey Zero', '20', '0', '0', '34gr')," +
+                    "(NULL, 'Bulgur', '24', '2', '2', '322gr')," +
+                    "(NULL, 'Paradicsom', '24', '2', '2', '32gr')," +
+                    "(NULL, 'Édesburgonya', '24', '2', '2', '60gr')," +
+                    "(NULL, 'Avokádó', '24', '2', '2', '90gr');";
                 MySqlCommand cmdEtel = new MySqlCommand(etelekTesztAdatok, con);
                 cmdEtel.ExecuteNonQuery();
 
-                string kiegadatok = "INSERT INTO `kiegeszitok_adatai` (`k_id`, `knev`, `tipus`, `gyarto`, `kiszereles`, `ks_mertekegyseg`) VALUES " +
-                    "(NULL, 'Iso Whey Zero', 'Fehérje', 'Biotech Usa', '2', 'kg')," +
-                    "(NULL, '100% Whey', 'Fehérje', 'Scitec Nutrition', '2', 'kg')," +
-                    "(NULL, 'Bcaa Flash Zero', 'Aminosav', 'Biotech Usa', '500', 'gr')," +
-                    "(NULL, 'True Whey', 'Fehérje', 'Gym Beam', '1', 'kg')," +
-                    "(NULL, 'Wianabol', 'Tesztoszteron Serkentő', 'Biotech Usa', '30', 'kapsz')," +
-                    "(NULL, 'Anabolic Whey', 'Fehérje', 'Scitec Nutrition', '4', 'kg')," +
-                    "(NULL, 'Mega Daily One', 'Multivitamin', 'Scitec Nutrition', '30', 'kapsz')," +
-                    "(NULL, 'Multipro', 'Multivitamin', 'Scitec Nutrition', '30', 'kisz')," +
-                    "(NULL, 'Beef Isolate', 'Fehérje', 'Biotech Usa', '2', 'kg');";
+                string kiegadatok = "INSERT INTO `kiegeszitok_adatai` (`k_id`, `knev`, `tipus`, `gyarto`) VALUES " +
+                    "(NULL, 'Iso Whey Zero', 'Fehérje', 'Biotech Usa')," +
+                    "(NULL, '100% Whey', 'Fehérje', 'Scitec Nutrition')," +
+                    "(NULL, 'Bcaa Flash Zero', 'Aminosav', 'Biotech Usa')," +
+                    "(NULL, 'True Whey', 'Fehérje', 'Gym Beam')," +
+                    "(NULL, 'Wianabol', 'Tesztoszteron Serkentő', 'Biotech Usa')," +
+                    "(NULL, 'Anabolic Whey', 'Fehérje', 'Scitec Nutrition')," +
+                    "(NULL, 'Mega Daily One', 'Multivitamin', 'Scitec Nutrition')," +
+                    "(NULL, 'Multipro', 'Multivitamin', 'Scitec Nutrition')," +
+                    "(NULL, 'Beef Isolate', 'Fehérje', 'Biotech Usa');";
                 MySqlCommand cmdkiegadatok = new MySqlCommand(kiegadatok, con);
                 cmdkiegadatok.ExecuteNonQuery();
                 con.Close();

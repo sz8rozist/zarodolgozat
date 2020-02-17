@@ -18,7 +18,11 @@ namespace byb.Modell.Database
         }
         public static string getKiegAdatok()
         {
-            return "SELECT kiegeszitok_adatai.k_id, kiegeszitok_adatai.knev,kiegeszitok_adatai.tipus, kiegeszitok_adatai.gyarto, kiegeszitok_adatai.kiszereles, kiegeszitok_adatai.ks_mertekegyseg, kiegeszitok.f_id FROM kiegeszitok_adatai INNER JOIN kiegeszitok ON kiegeszitok_adatai.k_id = kiegeszitok.id WHERE kiegeszitok.f_id = " + FormLogin.loggedID;
+            return "SELECT * FROM kiegeszitok_adatai";
+        }
+        public static string getHasznaltKiegAdatok()
+        {
+            return "SELECT * FROM kiegeszitok";
         }
         /// <summary>
         /// felhasználók adatainak lekérdezése adatbázisból
