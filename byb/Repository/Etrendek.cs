@@ -78,6 +78,14 @@ namespace byb.Repository
             }
             
         }
+        public void torolEtrendListabol(string enev)
+        {
+            Etrend et = etrendek.Find(x => x.Etelnev == enev);
+            if (et != null)
+                etrendek.Remove(et);
+            else
+                throw new RepositoryException("Sikertelen törlés az étrendek listából");
+        }
         public DataTable getEtrendDT()
         {
             DataTable dt = new DataTable();

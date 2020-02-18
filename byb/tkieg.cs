@@ -73,6 +73,7 @@ namespace byb
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            errorProviderKnev.Clear();
             try
             {
                 KiegAdat ujka = new KiegAdat(
@@ -93,11 +94,19 @@ namespace byb
                     );
                 repo.addTkiegViewList(tkv);
                 frissítDGVTkiegekViewn();
+                textBoxKnev.Text = string.Empty;
+                textBoxKTipus.Text = string.Empty;
+                textBoxKgyarto.Text = string.Empty;
             }
-            catch(Exception ex)
+            catch (ValidateKiegeszitoException vke)
             {
-                Debug.WriteLine(ex.Message);
+                errorProviderKnev.SetError(textBoxKnev, vke.Message);
             }
+            catch (Exception ex)
+            {
+                
+            }
+
         }
     }
 }

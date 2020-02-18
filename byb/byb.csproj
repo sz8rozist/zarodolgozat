@@ -84,6 +84,7 @@
     <Compile Include="Modell\Login.cs" />
     <Compile Include="Modell\KiegAdat.cs" />
     <Compile Include="Modell\TaplalekkiegeszitokView.cs" />
+    <Compile Include="Modell\ValidateKiegeszitoException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />

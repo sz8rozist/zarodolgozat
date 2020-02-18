@@ -41,6 +41,8 @@ namespace byb.Modell
         public KiegAdat(string knev, string tipus, string gyarto)
         {
             this.knev = knev;
+            if (!validateKiegeszitoName(knev))
+                throw new ValidateKiegeszitoException("A kiegeszítő neve nem megfelelő!");
             this.tipus = tipus;
             this.gyarto = gyarto;
         }
@@ -58,6 +60,19 @@ namespace byb.Modell
         public string insertIntoKiegAdatok()
         {
             return "INSERT INTO `kiegeszitok_adatai`(`knev`, `tipus`, `gyarto`) VALUES ('"+Knev+"','"+Tipus+"','"+Gyarto+"')";
+        }
+        public bool validateKiegeszitoName(string knev)
+        {
+            if (knev == string.Empty)
+                return false;
+            if (!char.IsUpper(knev.ElementAt(0)))
+                return false;
+            for (int i = 0; i < knev.Length; i++)
+            {
+                if (!char.IsLetter(knev.ElementAt(i)))
+                    return false;
+            }
+            return true;
         }
     }
 }
