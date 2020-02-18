@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.labelHibauzenet = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.username = new System.Windows.Forms.TextBox();
             this.pwd = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -53,54 +51,42 @@
             // labelHibauzenet
             // 
             this.labelHibauzenet.AutoSize = true;
-            this.labelHibauzenet.Location = new System.Drawing.Point(108, 283);
+            this.labelHibauzenet.Location = new System.Drawing.Point(117, 228);
             this.labelHibauzenet.Name = "labelHibauzenet";
             this.labelHibauzenet.Size = new System.Drawing.Size(0, 13);
             this.labelHibauzenet.TabIndex = 11;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Location = new System.Drawing.Point(70, 216);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 1);
-            this.panel2.TabIndex = 9;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Location = new System.Drawing.Point(70, 282);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 1);
-            this.panel1.TabIndex = 10;
-            // 
             // username
             // 
-            this.username.BackColor = System.Drawing.Color.Gainsboro;
+            this.username.BackColor = System.Drawing.Color.White;
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.username.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.username.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.username.Location = new System.Drawing.Point(111, 190);
+            this.username.Location = new System.Drawing.Point(116, 132);
+            this.username.Multiline = true;
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(207, 15);
+            this.username.Size = new System.Drawing.Size(207, 23);
             this.username.TabIndex = 7;
             // 
             // pwd
             // 
-            this.pwd.BackColor = System.Drawing.Color.Gainsboro;
+            this.pwd.BackColor = System.Drawing.SystemColors.Window;
             this.pwd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pwd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.pwd.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pwd.Location = new System.Drawing.Point(111, 256);
+            this.errorProviderLogin.SetIconAlignment(this.pwd, System.Windows.Forms.ErrorIconAlignment.BottomLeft);
+            this.pwd.Location = new System.Drawing.Point(116, 198);
+            this.pwd.Multiline = true;
             this.pwd.Name = "pwd";
-            this.pwd.Size = new System.Drawing.Size(207, 15);
+            this.pwd.Size = new System.Drawing.Size(207, 23);
             this.pwd.TabIndex = 8;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(70, 186);
+            this.pictureBox3.Location = new System.Drawing.Point(79, 131);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 24);
             this.pictureBox3.TabIndex = 5;
@@ -108,9 +94,10 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(70, 252);
+            this.pictureBox2.Location = new System.Drawing.Point(79, 197);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 24);
             this.pictureBox2.TabIndex = 6;
@@ -118,14 +105,14 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(141, 348);
+            this.button1.Location = new System.Drawing.Point(144, 275);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 36);
+            this.button1.Size = new System.Drawing.Size(132, 36);
             this.button1.TabIndex = 13;
             this.button1.Text = "Bejelentkezés";
             this.button1.UseVisualStyleBackColor = false;
@@ -134,19 +121,27 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.labelHibauzenet);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.pwd);
+            this.panel3.Controls.Add(this.username);
+            this.panel3.Location = new System.Drawing.Point(188, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(406, 110);
+            this.panel3.Size = new System.Drawing.Size(406, 389);
             this.panel3.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(93, 43);
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label1.Location = new System.Drawing.Point(93, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 39);
             this.label1.TabIndex = 0;
@@ -154,7 +149,8 @@
             // 
             // panel4
             // 
-            this.panel4.Location = new System.Drawing.Point(61, 406);
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Location = new System.Drawing.Point(70, 337);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(273, 10);
             this.panel4.TabIndex = 15;
@@ -162,7 +158,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Green;
-            this.panel5.Location = new System.Drawing.Point(61, 406);
+            this.panel5.Location = new System.Drawing.Point(70, 337);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(40, 10);
             this.panel5.TabIndex = 16;
@@ -182,18 +178,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(406, 461);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(773, 517);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelHibauzenet);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.username);
-            this.Controls.Add(this.pwd);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,15 +193,12 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label labelHibauzenet;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.TextBox pwd;
         private System.Windows.Forms.PictureBox pictureBox3;

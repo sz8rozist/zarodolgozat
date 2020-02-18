@@ -78,7 +78,7 @@ namespace byb
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
     }
 }
