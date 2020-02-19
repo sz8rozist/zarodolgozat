@@ -61,17 +61,18 @@ namespace byb.Database
                                             " `edzesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ," +
                                             "`idopont` datetime NOT NULL," +
                                             "`f_id` int(11) NOT NULL," +
-                                            "`izomcsoport_id` int(11) NOT NULL" +
+                                            "`edzesterv_id` int(11) NOT NULL" +
                                             ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cdmedzes = new MySqlCommand(edzesekQuery, con);
                 cdmedzes.ExecuteNonQuery();
 
 
-                string edzesterv = "CREATE TABLE IF NOT EXISTS `edzesterv` (" +
-                                         " `edzesterv_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
-                                          "`gyakorlatok_id` int(11) NOT NULL,"+
-                                          "`edzesek_id` int(11) NOT NULL"+
-                                        ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
+                string edzesterv = "CREATE TABLE IF NOT EXISTS `edzestervek` ( "+
+ " `edzesterv_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,"+
+ " `gyakorlat_id` int(11) NOT NULL,"+
+ " `sorozatszam` int(11) NOT NULL,"+
+ " `ismetlesszam` int(11) NOT NULL"+
+") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdterv = new MySqlCommand(edzesterv, con);
                 cmdterv.ExecuteNonQuery();
 
@@ -80,7 +81,6 @@ namespace byb.Database
                 string etelek = "CREATE TABLE IF NOT EXISTS `etelek` (" +
                                  " `etel_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                  " `enev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
-                                 " `kaloria` int(11) NOT NULL,"+
                                   "`feherje` int(11) NOT NULL,"+
                                  " `szenhidrat` int(11) NOT NULL,"+
                                  " `zsir` int(11) NOT NULL,"+
@@ -117,8 +117,7 @@ namespace byb.Database
                 string gyakorlatok = "CREATE TABLE IF NOT EXISTS `gyakorlatok` (" +
                                  " `gyakorlatok_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                  " `gynev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
-                                 " `sorozatszam` int(11) NOT NULL,"+
-                                 " `ismetlesszam` int(11) NOT NULL"+
+                                 " `izomcsoport_id` int(11) NOT NULL" +
                                 ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdgyakorlatok = new MySqlCommand(gyakorlatok, con);
                 cmdgyakorlatok.ExecuteNonQuery();
@@ -146,9 +145,7 @@ namespace byb.Database
                                           "`k_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                           "`knev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
                                           "`tipus` varchar(20) CHARACTER SET utf32 COLLATE utf32_hungarian_ci NOT NULL,"+
-                                          "`gyarto` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
-                                          "`kiszereles` int(11) NOT NULL,"+
-                                          "`ks_mertekegyseg` varchar(5) COLLATE utf8_hungarian_ci NOT NULL"+
+                                          "`gyarto` varchar(20) COLLATE utf8_hungarian_ci NOT NULL"+
                                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdkiegadatok = new MySqlCommand(kiegadatok, con);
                 cmdkiegadatok.ExecuteNonQuery();
@@ -156,14 +153,13 @@ namespace byb.Database
 
                 string fkeyEdzesek = "ALTER TABLE `edzesek`" +
   "ADD CONSTRAINT `edzesek_ibfk_1` FOREIGN KEY IF NOT EXISTS (`f_id`) REFERENCES `felhasznalok` (`f_id`)," +
-  "ADD CONSTRAINT `edzesek_ibfk_2` FOREIGN KEY IF NOT EXISTS (`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
+  "ADD CONSTRAINT `edzesek_ibfk_2` FOREIGN KEY IF NOT EXISTS (`edzesterv_id`) REFERENCES `edzestervek` (`edzesterv_id`); ";
                 MySqlCommand fkeyEdzesekcmd = new MySqlCommand(fkeyEdzesek, con);
                 fkeyEdzesekcmd.ExecuteNonQuery();
 
 
-                string fkeyEdzesterv = "ALTER TABLE `edzesterv`"+
-  "ADD CONSTRAINT `edzesterv_ibfk_1` FOREIGN KEY IF NOT EXISTS (`edzesek_id`) REFERENCES `edzesek` (`edzesek_id`),"+
-  "ADD CONSTRAINT `edzesterv_ibfk_2` FOREIGN KEY IF NOT EXISTS (`gyakorlatok_id`) REFERENCES `gyakorlatok` (`gyakorlatok_id`); ";
+                string fkeyEdzesterv = "ALTER TABLE `edzestervek`"+
+  "ADD CONSTRAINT `edzestervek_ibfk_1` FOREIGN KEY IF NOT EXISTS (`gyakorlat_id`) REFERENCES `gyakorlatok` (`gyakorlatok_id`);";
                 MySqlCommand fkeyEdzestervcmd = new MySqlCommand(fkeyEdzesterv, con);
                 fkeyEdzestervcmd.ExecuteNonQuery();
 
@@ -179,6 +175,11 @@ namespace byb.Database
   "ADD CONSTRAINT `kiegeszitok_ibfk_2` FOREIGN KEY IF NOT EXISTS (`k_id`) REFERENCES `kiegeszitok_adatai` (`k_id`); ";
                 MySqlCommand fkeyKiegcmd = new MySqlCommand(fkeyKieg, con);
                 fkeyKiegcmd.ExecuteNonQuery();
+
+                string fkeyGyak = "ALTER TABLE `gyakorlatok`"+
+  "ADD CONSTRAINT `gyakorlatok_ibfk_1` FOREIGN KEY(`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
+                MySqlCommand fkeyGyakcmd = new MySqlCommand(fkeyGyak, con);
+                fkeyGyakcmd.ExecuteNonQuery();
                 con.Close();
             }
             catch (CreateDatabaseException cde)
