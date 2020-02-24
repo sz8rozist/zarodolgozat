@@ -94,6 +94,7 @@ namespace byb
                     );
                 repo.addTkiegViewList(tkv);
                 frissítDGVTkiegekViewn();
+                beallitDGVKiegek();
                 textBoxKnev.Text = string.Empty;
                 textBoxKTipus.Text = string.Empty;
                 textBoxKgyarto.Text = string.Empty;

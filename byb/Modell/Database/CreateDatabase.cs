@@ -177,7 +177,7 @@ namespace byb.Database
                 fkeyKiegcmd.ExecuteNonQuery();
 
                 string fkeyGyak = "ALTER TABLE `gyakorlatok`"+
-  "ADD CONSTRAINT `gyakorlatok_ibfk_1` FOREIGN KEY(`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
+  "ADD CONSTRAINT `gyakorlatok_ibfk_1` FOREIGN KEY IF NOT EXISTS (`izomcsoport_id`) REFERENCES `izomcsoportok` (`izomcsoport_id`); ";
                 MySqlCommand fkeyGyakcmd = new MySqlCommand(fkeyGyak, con);
                 fkeyGyakcmd.ExecuteNonQuery();
                 con.Close();

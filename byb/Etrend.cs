@@ -92,6 +92,8 @@ namespace byb
                         repo.getEtelIDEtkezeshez(),
                         FormLogin.loggedID
                        );
+                repo.AddEtkezesAdatbazishoz(ujetkezes);
+                repo.AddEtkezesListahoz(ujetkezes);
                 Etrend ujetrend = new Etrend(
                         FormLogin.loggedID,
                         dateTimePickerIdopont.Text,
@@ -102,14 +104,15 @@ namespace byb
                         textBoxMennyiseg.Text
                     );
                 repo.AddEtrendItemToList(ujetrend);
-                repo.AddEtkezesAdatbazishoz(ujetkezes);
-                repo.AddEtkezesListahoz(ujetkezes);
-                frissítDGVEtrendek();
+
+                
                 textBoxCh.Text = string.Empty;
                 textBoxEnev.Text = string.Empty;
                 textBoxFeherje.Text = string.Empty;
                 textBoxZs.Text = string.Empty;
                 textBoxMennyiseg.Text = string.Empty;
+                frissítDGVEtrendek();
+                feltoltDGVEtrendek();
             }
             catch(Exception ex)
             {
