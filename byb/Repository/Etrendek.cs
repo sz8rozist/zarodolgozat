@@ -45,6 +45,8 @@ namespace byb.Repository
                 {
                     Etrend etrend = new Etrend(
                     azon,
+                    etel.Id,
+                    e.Etkezesid,
                     e.Idopont,
                     etel.Nev,
                     etel.Feherje,
@@ -78,17 +80,11 @@ namespace byb.Repository
             }
             
         }
-        public void torolEtrendListabol(string enev)
-        {
-            Etrend et = etrendek.Find(x => x.Etelnev == enev);
-            if (et != null)
-                etrendek.Remove(et);
-            else
-                throw new RepositoryException("Sikertelen törlés az étrendek listából");
-        }
         public DataTable getEtrendDT()
         {
             DataTable dt = new DataTable();
+            dt.Columns.Add("etkezesek_id", typeof(int));
+            dt.Columns.Add("etel_id", typeof(int));
             dt.Columns.Add("idopont",typeof(string));
             dt.Columns.Add("enev",typeof(string));
             dt.Columns.Add("feherje",typeof(int));
@@ -98,7 +94,7 @@ namespace byb.Repository
 
             foreach(Etrend etrend in etrendek)
             {
-                dt.Rows.Add(etrend.Idopont, etrend.Etelnev, etrend.Feherje,etrend.Szenhidrat,etrend.Zsir,etrend.Menny);
+                dt.Rows.Add(etrend.Etelid,etrend.Etkezesid,etrend.Idopont, etrend.Etelnev, etrend.Feherje,etrend.Szenhidrat,etrend.Zsir,etrend.Menny);
             }
             return dt;
         }

@@ -29,18 +29,18 @@ namespace byb
             {
                 ImageNumber = 1;
             }
-            pictureBox1.ImageLocation = string.Format(@"Images\{0}.jpg", ImageNumber);
+            pictureBox1.ImageLocation = string.Format(@"byb\Images\{0}.jpg", ImageNumber);
             ImageNumber++;
         }
         public void formIndulaskor()
         {
-            etrend2.SendToBack();
+            etrend1.SendToBack();
             tkieg1.SendToBack();
         }
 
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            etrend2.SendToBack();
+            etrend1.SendToBack();
             tkieg1.SendToBack();
         }
 
@@ -51,7 +51,7 @@ namespace byb
 
         private void buttonEtrend_Click(object sender, EventArgs e)
         {
-            etrend2.BringToFront();
+            etrend1.BringToFront();
         }
 
         private void buttonKieg_Click(object sender, EventArgs e)

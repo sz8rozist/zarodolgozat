@@ -28,8 +28,6 @@ namespace byb
             InitializeComponent();
             trd.Abort();
             pwd.PasswordChar = '*';
-            panel4.Visible = false;
-            panel5.Visible = false;
 
         }
 
@@ -37,48 +35,26 @@ namespace byb
         {
             Application.Run(new FormLoad());
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
             errorProviderLogin.Clear();
-            
+
             Login l = new Login(username.Text, pwd.Text);
-            if(l.loginCheck() == true)
+            if (l.loginCheck() == true)
             {
-                panel5.Visible = true;
                 timer1.Start();
                 islogged = l.getUsername();
                 loggedID = l.getLoginId();
-
-            }
-            else
-            {
-                errorProviderLogin.SetError(button1, "Sikertelen Belépés!");
-                //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                panel5.Visible = false;
-            }
-            
-            
-            
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            panel5.Width += 4;
-            if(panel5.Width >= 273)
-            {
-                timer1.Stop();
                 Buildyourbody b = new Buildyourbody();
                 b.Show();
                 this.Hide();
-
             }
-            
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-            panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
+            else
+            {
+                errorProviderLogin.SetError(buttonLogin, "Sikertelen Belépés!");
+                //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
         }
     }
 }

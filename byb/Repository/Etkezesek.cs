@@ -59,39 +59,6 @@ namespace byb.Repository
             return etkezesek;
 
         }
-        //Id alapján töröl a listából
-        public void torolEtkezesListabol(int etkezesID)
-        {
-            Etkezes etkezes = etkezesek.Find(x => x.Etkezesid == etkezesID);
-            if (etkezes != null)
-            {
-                etkezesek.Remove(etkezes);
-            }
-            else
-            {
-                throw new RepositoryException("Sikertelen etkezes törlés a listából!");
-            }
-        }
-        //id alapján töröl az adatbázisból
-        public void torolEtkezesAdatbazisbol(int etkezesekID)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                string query = "DELETE FROM etkezesek WHERE etkezesek_id =" + etkezesekID;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.Message);
-                Debug.WriteLine(etkezesekID + " étkezés idjű etkezes törlése nem sikerült.");
-                throw new RepositoryException("Sikertelen törlés az adatbázisból.");
-            }
-        }
         public void AddEtkezesListahoz(Etkezes ujetkezes)
         {
             try
@@ -121,6 +88,13 @@ namespace byb.Repository
                 Debug.WriteLine(ujetkezes + "étkezés hozzáadása nem sikerült.");
                 throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
             }
+        }
+        public int getEtkezesekKovetkezoID()
+        {
+            if (etkezesek.Count == 0)
+                return 1;
+            else
+                return etkezesek.Max(x => x.Etkezesid) + 1;
         }
     }
 }

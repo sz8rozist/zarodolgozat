@@ -37,6 +37,8 @@ namespace byb
         }
         public void feltoltDGVEtrendek()
         {
+            dataGridViewEtrend.Columns["etkezesek_id"].HeaderText = "ÉtkezésID";
+            dataGridViewEtrend.Columns["etel_id"].HeaderText = "ÉtelID";
             dataGridViewEtrend.Columns["idopont"].HeaderText = "Időpont";
             dataGridViewEtrend.Columns["enev"].HeaderText = "Név";
             dataGridViewEtrend.Columns["feherje"].HeaderText = "Fehérj";
@@ -44,6 +46,8 @@ namespace byb
             dataGridViewEtrend.Columns["zsir"].HeaderText = "Zsír";
             dataGridViewEtrend.Columns["mennyiseg"].HeaderText = "Mennyiség";
             dataGridViewEtrend.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewEtrend.Columns[0].Visible = false;
+            dataGridViewEtrend.Columns[1].Visible = false;
             dataGridViewEtrend.ReadOnly = true;
             dataGridViewEtrend.AllowUserToDeleteRows = false;
             dataGridViewEtrend.AllowUserToAddRows = false;
@@ -94,8 +98,10 @@ namespace byb
                        );
                 repo.AddEtkezesAdatbazishoz(ujetkezes);
                 repo.AddEtkezesListahoz(ujetkezes);
-                Etrend ujetrend = new Etrend(
+               Etrend ujetrend = new Etrend(
                         FormLogin.loggedID,
+                        repo.getEtelIDEtkezeshez(),
+                        repo.getEtkezesekKovetkezoID(),
                         dateTimePickerIdopont.Text,
                         textBoxEnev.Text,
                         Convert.ToInt32(textBoxFeherje.Text),
@@ -104,7 +110,7 @@ namespace byb
                         textBoxMennyiseg.Text
                     );
                 repo.AddEtrendItemToList(ujetrend);
-
+                
                 
                 textBoxCh.Text = string.Empty;
                 textBoxEnev.Text = string.Empty;
@@ -122,21 +128,7 @@ namespace byb
         }
         private void buttonTorles_Click(object sender, EventArgs e)
         {
-            if(dataGridViewEtrend.Rows == null || dataGridViewEtrend.Rows.Count == 0)
-            {
-                return;
-            }
-            else
-            {
-                if(MessageBox.Show("Valóban törölni kíván?","Törlés",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                {
-                    //listából való törlés
-                    repo.torolEtelListabol(dataGridViewEtrend.SelectedRows[0].Cells[1].Value.ToString());
-                    repo.torolEtrendListabol(dataGridViewEtrend.SelectedRows[0].Cells[1].Value.ToString());
-                    //adatbázisból való törlés
-                    repo.torolEtelAdatbazisbol(dataGridViewEtrend.SelectedRows[0].Cells[1].Value.ToString());
-                }
-            }
+
         }
     }
 }

@@ -109,5 +109,10 @@ namespace byb
             }
 
         }
+
+        private void buttonTorles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

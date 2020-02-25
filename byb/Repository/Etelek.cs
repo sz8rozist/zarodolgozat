@@ -112,44 +112,6 @@ namespace byb.Repository
                 throw new RepositoryException("Az étel hozzáadása nem sikerült.");
             }
         }
-        /// <summary>
-        /// Lista törlése kapott paraméter alapján
-        /// </summary>
-        /// <param name="nev">A kapott paraméter ami alapján törlünk</param>
-        public void torolEtelListabol(string nev)
-        {
-            Etel e = etelek.Find(x => x.Nev == nev);
-            if (e != null)
-            {
-                etelek.Remove(e);
-            }
-            else
-            {
-                throw new RepositoryException("Sikertelen etel törlés a listából!");
-            }
-        }
-        /// <summary>
-        /// Étel törlése adatbázisból kapott paraméter alapján
-        /// </summary>
-        /// <param name="nev">A paraméter ami alapján törlünk</param>
-        public void torolEtelAdatbazisbol(string nev)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                string query = "DELETE FROM etelek WHERE enev=" +nev;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.Message);
-                Debug.WriteLine(nev + " idéjű etel törlése nem sikerült.");
-                throw new RepositoryException("Sikertelen törlés az adatbázisból.");
-            }
-        }
+ 
     }
 }

@@ -15,6 +15,8 @@ namespace byb.Modell
         /// Étrend adatai
         /// </summary>
         private int fid;
+        private int etelid;
+        private int etkezesid;
         private string idopont;
         private string etelnev;
         private int feherje;
@@ -31,9 +33,11 @@ namespace byb.Modell
         /// <param name="szenhidrat">Szénhidrát tartalom</param>
         /// <param name="zsir">Zsír tartalom</param>
         /// <param name="menny">Mennyiség</param>
-        public Etrend(int fid,string idopont,string etelnev, int feherje, int szenhidrat, int zsir,string menny)
+        public Etrend(int fid,int etelid,int etkezesid,string idopont,string etelnev, int feherje, int szenhidrat, int zsir,string menny)
         {
             this.fid = fid;
+            this.etelid = etelid;
+            this.etkezesid = etkezesid;
             this.idopont = idopont;
             this.etelnev = etelnev;
             this.feherje = feherje;
@@ -51,5 +55,7 @@ namespace byb.Modell
         public int Szenhidrat { get => szenhidrat; set => szenhidrat = value; }
         public int Zsir { get => zsir; set => zsir = value; }
         public string Menny { get => menny; set => menny = value; }
+        public int Etelid { get => etelid; set => etelid = value; }
+        public int Etkezesid { get => etkezesid; set => etkezesid = value; }
     }
 }

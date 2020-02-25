@@ -35,13 +35,14 @@
             this.textBoxKgyarto = new System.Windows.Forms.TextBox();
             this.textBoxKTipus = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonUj = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.errorProviderKnev = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.buttonTorles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegek)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKnev)).BeginInit();
@@ -50,8 +51,11 @@
             // 
             // buttonKiegek
             // 
-            this.buttonKiegek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(49)))));
+            this.buttonKiegek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.buttonKiegek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonKiegek.FlatAppearance.BorderSize = 0;
+            this.buttonKiegek.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.buttonKiegek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonKiegek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKiegek.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKiegek.ForeColor = System.Drawing.Color.White;
@@ -74,23 +78,26 @@
             // 
             // textBoxKnev
             // 
-            this.textBoxKnev.Location = new System.Drawing.Point(105, 32);
+            this.textBoxKnev.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKnev.Location = new System.Drawing.Point(112, 34);
             this.textBoxKnev.Name = "textBoxKnev";
-            this.textBoxKnev.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKnev.Size = new System.Drawing.Size(100, 21);
             this.textBoxKnev.TabIndex = 7;
             // 
             // textBoxKgyarto
             // 
-            this.textBoxKgyarto.Location = new System.Drawing.Point(105, 121);
+            this.textBoxKgyarto.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKgyarto.Location = new System.Drawing.Point(112, 122);
             this.textBoxKgyarto.Name = "textBoxKgyarto";
-            this.textBoxKgyarto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKgyarto.Size = new System.Drawing.Size(100, 21);
             this.textBoxKgyarto.TabIndex = 11;
             // 
             // textBoxKTipus
             // 
-            this.textBoxKTipus.Location = new System.Drawing.Point(105, 79);
+            this.textBoxKTipus.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxKTipus.Location = new System.Drawing.Point(112, 81);
             this.textBoxKTipus.Name = "textBoxKTipus";
-            this.textBoxKTipus.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKTipus.Size = new System.Drawing.Size(100, 21);
             this.textBoxKTipus.TabIndex = 12;
             // 
             // panel1
@@ -107,10 +114,47 @@
             this.panel1.Size = new System.Drawing.Size(234, 333);
             this.panel1.TabIndex = 14;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(8, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Gyártó";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(8, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Típus";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(8, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 16);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Táplálékkiegeszítő";
+            // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(49)))));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
@@ -124,8 +168,11 @@
             // 
             // buttonUj
             // 
-            this.buttonUj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(32)))), ((int)(((byte)(49)))));
+            this.buttonUj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.buttonUj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonUj.FlatAppearance.BorderSize = 0;
+            this.buttonUj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.buttonUj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonUj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUj.ForeColor = System.Drawing.Color.White;
@@ -137,33 +184,6 @@
             this.buttonUj.UseVisualStyleBackColor = false;
             this.buttonUj.Click += new System.EventHandler(this.buttonUj_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Táplálékkiegeszítő";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Típus";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Gyártó";
-            // 
             // errorProviderKnev
             // 
             this.errorProviderKnev.ContainerControl = this;
@@ -172,10 +192,30 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // buttonTorles
+            // 
+            this.buttonTorles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonTorles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonTorles.FlatAppearance.BorderSize = 0;
+            this.buttonTorles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.buttonTorles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonTorles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTorles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTorles.ForeColor = System.Drawing.Color.White;
+            this.buttonTorles.Location = new System.Drawing.Point(250, 18);
+            this.buttonTorles.Name = "buttonTorles";
+            this.buttonTorles.Size = new System.Drawing.Size(91, 32);
+            this.buttonTorles.TabIndex = 16;
+            this.buttonTorles.Text = "Törlés";
+            this.buttonTorles.UseVisualStyleBackColor = false;
+            this.buttonTorles.Click += new System.EventHandler(this.buttonTorles_Click);
+            // 
             // tkieg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.buttonTorles);
             this.Controls.Add(this.buttonUj);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewKiegek);
@@ -207,5 +247,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProviderKnev;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.Button buttonTorles;
     }
 }
