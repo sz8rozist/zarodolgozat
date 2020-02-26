@@ -33,41 +33,34 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonKieg = new System.Windows.Forms.Button();
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.buttonEdzes = new System.Windows.Forms.Button();
-            this.buttonKezdolap = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.etrend1 = new byb.etrend();
+            this.buttonKieg = new System.Windows.Forms.Button();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSlideMenu
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panelSlideMenu.Controls.Add(this.pictureBox2);
+            this.panelSlideMenu.Controls.Add(this.label1);
             this.panelSlideMenu.Controls.Add(this.label2);
             this.panelSlideMenu.Controls.Add(this.button1);
-            this.panelSlideMenu.Controls.Add(this.buttonKieg);
-            this.panelSlideMenu.Controls.Add(this.buttonEtrend);
-            this.panelSlideMenu.Controls.Add(this.buttonEdzes);
-            this.panelSlideMenu.Controls.Add(this.buttonKezdolap);
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(1050, 115);
+            this.panelSlideMenu.Size = new System.Drawing.Size(671, 92);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(473, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(95, 97);
+            this.pictureBox2.Size = new System.Drawing.Size(78, 67);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -77,7 +70,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(26, 28);
+            this.label2.Location = new System.Drawing.Point(222, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 3;
@@ -89,7 +82,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(1017, 3);
+            this.button1.Location = new System.Drawing.Point(635, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 27);
             this.button1.TabIndex = 2;
@@ -97,119 +90,95 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonKieg
-            // 
-            this.buttonKieg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.buttonKieg.FlatAppearance.BorderSize = 0;
-            this.buttonKieg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKieg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonKieg.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonKieg.Image = ((System.Drawing.Image)(resources.GetObject("buttonKieg.Image")));
-            this.buttonKieg.Location = new System.Drawing.Point(151, 74);
-            this.buttonKieg.Name = "buttonKieg";
-            this.buttonKieg.Size = new System.Drawing.Size(143, 41);
-            this.buttonKieg.TabIndex = 4;
-            this.buttonKieg.Text = "  Kiegészítők";
-            this.buttonKieg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonKieg.UseVisualStyleBackColor = false;
-            this.buttonKieg.Click += new System.EventHandler(this.buttonKieg_Click);
-            // 
             // buttonEtrend
             // 
+            this.buttonEtrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonEtrend.FlatAppearance.BorderSize = 0;
             this.buttonEtrend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtrend.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEtrend.ForeColor = System.Drawing.Color.Transparent;
             this.buttonEtrend.Image = ((System.Drawing.Image)(resources.GetObject("buttonEtrend.Image")));
-            this.buttonEtrend.Location = new System.Drawing.Point(899, 74);
+            this.buttonEtrend.Location = new System.Drawing.Point(401, 158);
             this.buttonEtrend.Name = "buttonEtrend";
-            this.buttonEtrend.Size = new System.Drawing.Size(148, 41);
+            this.buttonEtrend.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.buttonEtrend.Size = new System.Drawing.Size(139, 123);
             this.buttonEtrend.TabIndex = 4;
-            this.buttonEtrend.Text = "      Étrend";
-            this.buttonEtrend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonEtrend.UseVisualStyleBackColor = true;
+            this.buttonEtrend.Text = " Étrend";
+            this.buttonEtrend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonEtrend.UseVisualStyleBackColor = false;
             this.buttonEtrend.Click += new System.EventHandler(this.buttonEtrend_Click);
             // 
             // buttonEdzes
             // 
+            this.buttonEdzes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonEdzes.FlatAppearance.BorderSize = 0;
             this.buttonEdzes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdzes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEdzes.ForeColor = System.Drawing.Color.Transparent;
             this.buttonEdzes.Image = ((System.Drawing.Image)(resources.GetObject("buttonEdzes.Image")));
-            this.buttonEdzes.Location = new System.Drawing.Point(748, 74);
+            this.buttonEdzes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonEdzes.Location = new System.Drawing.Point(256, 158);
             this.buttonEdzes.Name = "buttonEdzes";
-            this.buttonEdzes.Size = new System.Drawing.Size(145, 41);
+            this.buttonEdzes.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.buttonEdzes.Size = new System.Drawing.Size(139, 123);
             this.buttonEdzes.TabIndex = 4;
-            this.buttonEdzes.Text = "       Edzés";
-            this.buttonEdzes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonEdzes.UseVisualStyleBackColor = true;
+            this.buttonEdzes.Text = "Edzés";
+            this.buttonEdzes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonEdzes.UseVisualStyleBackColor = false;
             this.buttonEdzes.Click += new System.EventHandler(this.buttonEdzes_Click);
-            // 
-            // buttonKezdolap
-            // 
-            this.buttonKezdolap.FlatAppearance.BorderSize = 0;
-            this.buttonKezdolap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKezdolap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonKezdolap.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonKezdolap.Image = ((System.Drawing.Image)(resources.GetObject("buttonKezdolap.Image")));
-            this.buttonKezdolap.Location = new System.Drawing.Point(3, 74);
-            this.buttonKezdolap.Name = "buttonKezdolap";
-            this.buttonKezdolap.Size = new System.Drawing.Size(142, 41);
-            this.buttonKezdolap.TabIndex = 4;
-            this.buttonKezdolap.Text = "     Kezdőlap";
-            this.buttonKezdolap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonKezdolap.UseVisualStyleBackColor = true;
-            this.buttonKezdolap.Click += new System.EventHandler(this.buttonKezdolap_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1050, 635);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(156, 337);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(115, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(705, 39);
+            this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Üdvözöllek a Build Your Body alkalmazásban";
+            this.label1.Text = "Üdvözöllek: ";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 650);
+            this.panel1.Location = new System.Drawing.Point(0, 357);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1050, 100);
+            this.panel1.Size = new System.Drawing.Size(671, 42);
             this.panel1.TabIndex = 3;
             // 
-            // etrend1
+            // buttonKieg
             // 
-            this.etrend1.BackColor = System.Drawing.Color.White;
-            this.etrend1.Location = new System.Drawing.Point(0, 115);
-            this.etrend1.Name = "etrend1";
-            this.etrend1.Size = new System.Drawing.Size(1050, 538);
-            this.etrend1.TabIndex = 4;
+            this.buttonKieg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonKieg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonKieg.FlatAppearance.BorderSize = 0;
+            this.buttonKieg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.buttonKieg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.buttonKieg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKieg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonKieg.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonKieg.Image = ((System.Drawing.Image)(resources.GetObject("buttonKieg.Image")));
+            this.buttonKieg.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonKieg.Location = new System.Drawing.Point(111, 158);
+            this.buttonKieg.Name = "buttonKieg";
+            this.buttonKieg.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.buttonKieg.Size = new System.Drawing.Size(139, 123);
+            this.buttonKieg.TabIndex = 6;
+            this.buttonKieg.Text = "  Kiegészítők";
+            this.buttonKieg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonKieg.UseVisualStyleBackColor = false;
             // 
             // Buildyourbody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1050, 750);
-            this.Controls.Add(this.etrend1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(671, 399);
+            this.Controls.Add(this.buttonKieg);
             this.Controls.Add(this.panelSlideMenu);
+            this.Controls.Add(this.buttonEdzes);
+            this.Controls.Add(this.buttonEtrend);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Buildyourbody";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -217,25 +186,20 @@
             this.panelSlideMenu.ResumeLayout(false);
             this.panelSlideMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panelSlideMenu;
-        private System.Windows.Forms.Button buttonKezdolap;
-        private System.Windows.Forms.Button buttonKieg;
         private System.Windows.Forms.Button buttonEtrend;
         private System.Windows.Forms.Button buttonEdzes;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private etrend etrend1;
+        private System.Windows.Forms.Button buttonKieg;
     }
 }

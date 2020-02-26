@@ -61,5 +61,44 @@ namespace byb.Repository
             }
             return dt;
         }
+        public int getEtelNevhezID(string nev)
+        {
+            return etelek.Find(x => x.Enev == nev).Etelid;
+        }
+        public int getKovetkezoEtelID()
+        {
+            return etelek.Max(x => x.Etelid) + 1;
+        }
+        public void InsertEtelek(Etel ujEtel)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = ujEtel.InsertEtel();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(ujEtel + " étel beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+            }
+        }
+        public void AddEtelListahoz(Etel ujEtel)
+        {
+            try
+            {
+                etelek.Add(ujEtel);
+            }
+            catch (RepositoryException re)
+            {
+                throw new EtelekAddListahozException("Az étel hozzáadása listához nem járt sikerrel.");
+            }
+            
+        }
     }
 }

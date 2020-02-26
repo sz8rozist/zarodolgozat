@@ -16,7 +16,10 @@ namespace byb.Modell
             this.etelid = etelid;
             this.enev = enev;
         }
-
+        public string InsertEtel()
+        {
+            return "INSERT INTO `etelek` (`enev`) VALUES ('"+Enev+"');";
+        }
         public int Etelid { get => etelid; set => etelid = value; }
         public string Enev { get => enev; set => enev = value; }
     }

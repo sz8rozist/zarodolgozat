@@ -19,11 +19,12 @@ namespace byb
         {
             InitializeComponent();
             label2.Text = FormLogin.islogged;
-            etrend1.SendToBack();
+
         }
+        
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
-            etrend1.SendToBack();
+
         }
 
         private void buttonEdzes_Click(object sender, EventArgs e)
@@ -32,7 +33,9 @@ namespace byb
 
         private void buttonEtrend_Click(object sender, EventArgs e)
         {
-            etrend1.BringToFront();
+            Etrend d = new Etrend();
+            d.Show();
+            this.Hide();
         }
 
         private void buttonKieg_Click(object sender, EventArgs e)

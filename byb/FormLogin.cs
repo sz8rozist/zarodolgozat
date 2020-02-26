@@ -19,7 +19,6 @@ namespace byb
     {
         public static string islogged = "";
         public static int loggedID = 0;
-        Repo repo = new Repo();
         public FormLogin()
         {
             Thread trd = new Thread(new ThreadStart(formRun));
@@ -28,7 +27,7 @@ namespace byb
             InitializeComponent();
             trd.Abort();
             pwd.PasswordChar = '*';
-
+            timer1.Start();
         }
 
         private void formRun()
@@ -43,7 +42,6 @@ namespace byb
             Login l = new Login(username.Text, pwd.Text);
             if (l.loginCheck() == true)
             {
-                timer1.Start();
                 islogged = l.getUsername();
                 loggedID = l.getLoginId();
                 Buildyourbody b = new Buildyourbody();
@@ -55,6 +53,12 @@ namespace byb
                 errorProviderLogin.SetError(buttonLogin, "Sikertelen Belépés!");
                 //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

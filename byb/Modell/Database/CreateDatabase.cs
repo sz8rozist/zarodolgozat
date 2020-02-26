@@ -80,11 +80,7 @@ namespace byb.Database
 
                 string etelek = "CREATE TABLE IF NOT EXISTS `etelek` (" +
                                  " `etel_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
-                                 " `enev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
-                                  "`feherje` int(11) NOT NULL,"+
-                                 " `szenhidrat` int(11) NOT NULL,"+
-                                 " `zsir` int(11) NOT NULL,"+
-                                 " `mennyiseg` varchar(20) COLLATE utf8_hungarian_ci NOT NULL"+
+                                 " `enev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL"+
                                " ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdetelek = new MySqlCommand(etelek, con);
                 cmdetelek.ExecuteNonQuery();
@@ -94,7 +90,11 @@ namespace byb.Database
                                  " `etkezesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                  " `idopont` datetime NOT NULL,"+
                                  " `etel_id` int(11) NOT NULL,"+
-                                 " `f_id` int(11) NOT NULL"+
+                                 " `feherje` int(11) NOT NULL," +
+                                 " `szenhidrat` int(11) NOT NULL," +
+                                 " `zsir` int(11) NOT NULL," +
+                                 " `mennyiseg` varchar(20) COLLATE utf8_hungarian_ci NOT NULL," +
+                                 " `f_id` int(11) NOT NULL" +
                                " ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdetkezesek = new MySqlCommand(etkezesek, con);
                 cmdetkezesek.ExecuteNonQuery();
@@ -117,7 +117,8 @@ namespace byb.Database
                 string gyakorlatok = "CREATE TABLE IF NOT EXISTS `gyakorlatok` (" +
                                  " `gyakorlatok_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                  " `gynev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
-                                 " `izomcsoport_id` int(11) NOT NULL" +
+                                 " `izomcsoport_id` int(11) NOT NULL," +
+                                 " `leiras` varchar(20) COLLATE utf8_hungarian_ci NOT NULL" +
                                 ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdgyakorlatok = new MySqlCommand(gyakorlatok, con);
                 cmdgyakorlatok.ExecuteNonQuery();
@@ -220,17 +221,12 @@ namespace byb.Database
                 MySqlCommand cmdIzomcsoport = new MySqlCommand(izomcsoportTesztAdatok, con);
                 cmdIzomcsoport.ExecuteNonQuery();
 
-                string etelekTesztAdatok = "INSERT INTO `etelek` (`etel_id`, `enev`, `feherje`, `szenhidrat`, `zsir`, `mennyiseg`) VALUES " +
-                    "(NULL, 'Csirkemell', '24', '2', '2', '100gr')," +
-                    "(NULL, 'Rizs', '1', '50', '22', '70gr')," +
-                    "(NULL, 'Pulykamell', '24', '2', '23', '10gr')," +
-                    "(NULL, 'Tilápia', '30', '2', '2', '87gr')," +
-                    "(NULL, 'Bélszín','35', '10', '6', '132gr')," +
-                    "(NULL, 'Iso Whey Zero', '20', '0', '0', '34gr')," +
-                    "(NULL, 'Bulgur', '24', '2', '2', '322gr')," +
-                    "(NULL, 'Paradicsom', '24', '2', '2', '32gr')," +
-                    "(NULL, 'Édesburgonya', '24', '2', '2', '60gr')," +
-                    "(NULL, 'Avokádó', '24', '2', '2', '90gr');";
+                string etelekTesztAdatok = "INSERT INTO `etelek`(`etel_id`, `enev`) VALUES" +
+                    " (null, 'Csirkemell'),"+
+                    " (null, 'Sajt'),"+
+                    " (null, 'Brokkoli'),"+
+                    " (null, 'Avokádó'),"+
+                    " (null, 'Beef Steak');";
                 MySqlCommand cmdEtel = new MySqlCommand(etelekTesztAdatok, con);
                 cmdEtel.ExecuteNonQuery();
 

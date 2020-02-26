@@ -54,11 +54,17 @@
     <Compile Include="Buildyourbody.Designer.cs">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </Compile>
-    <Compile Include="etrend.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Etrend.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="etrend.Designer.cs">
-      <DependentUpon>etrend.cs</DependentUpon>
+    <Compile Include="Etrend.Designer.cs">
+      <DependentUpon>Etrend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Modell\Database\ConnectionString.cs" />
     <Compile Include="Modell\Database\CreateDatabase.cs" />
@@ -77,31 +83,37 @@
     </Compile>
     <Compile Include="Modell\Database\Sql.cs" />
     <Compile Include="Modell\Etel.cs" />
+    <Compile Include="Modell\Etkezes.cs" />
+    <Compile Include="Modell\EtkezesView.cs" />
     <Compile Include="Modell\Felhasznalo.cs" />
     <Compile Include="Modell\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />
+    <Compile Include="Repository\EtelekAddListahozException.cs" />
+    <Compile Include="Repository\Etkezesek.cs" />
+    <Compile Include="Repository\EtkezesekAddListahozException.cs" />
+    <Compile Include="Repository\EtkezesekViewn.cs" />
+    <Compile Include="Repository\EtkezesekViewnAddListahozException.cs" />
     <Compile Include="Repository\Felhasznalok.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Repository\RepositoryException.cs" />
-    <Compile Include="tkieg.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="tkieg.Designer.cs">
-      <DependentUpon>tkieg.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Repository\TorlesEtkezesekViewnException.cs" />
+    <Compile Include="Repository\TorlesEtkezesException.cs" />
     <EmbeddedResource Include="Buildyourbody.resx">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="etrend.resx">
-      <DependentUpon>etrend.cs</DependentUpon>
+    <EmbeddedResource Include="Etrend.resx">
+      <DependentUpon>Etrend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLoad.resx">
       <DependentUpon>FormLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,9 +125,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="tkieg.resx">
-      <DependentUpon>tkieg.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
