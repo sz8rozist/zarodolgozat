@@ -18,12 +18,7 @@ namespace byb.Repository
             connectionString = cs.getConnectionString();
             //Listák példányosítása a repoban
             users = new List<Felhasznalo>();
-            etkezesek = new List<Etkezes>();
             etelek = new List<Etel>();
-            kiegek = new List<KiegAdat>();
-            tkiegek = new List<Kiegeszito>();
-            etrendek = new List<Etrend>();
-            tkiegview = new List<TaplalekkiegeszitokView>();
 
         }
     }

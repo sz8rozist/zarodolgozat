@@ -1,5 +1,4 @@
-﻿using byb.Database;
-using byb.Modell;
+﻿using byb.Modell;
 using byb.Modell.Database;
 using MySql.Data.MySqlClient;
 using System;
@@ -14,104 +13,53 @@ namespace byb.Repository
 {
     partial class Repo
     {
-        //Ételek Lista
         List<Etel> etelek;
-        //Get metódus ami visszaadja a lista tartalmát
-        public List<Etel> getEtelek()
-        {
-            return etelek;
-        }
-        //Set metódus
         public void setEtelek(List<Etel> etelek)
         {
             this.etelek = etelek;
         }
-        /// <summary>
-        /// Az ételek listához hozzáadja a rekordokat az adatbázisból
-        /// </summary>
-        /// <returns>etelek lista</returns>
-        public List<Etel> getEtelekAdatbazisbol()
+        public List<Etel> getEtelek()
         {
-            MySqlConnection con = new MySqlConnection(connectionString);
-            try
-            {
-                con.Open();
-                string query = Sql.getAllEtelekRecord();
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                MySqlDataReader dr;
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    int id = Convert.ToInt32(dr["etel_id"]);
-                    string nev = dr["enev"].ToString();
-                    int fe = Convert.ToInt32(dr["feherje"]);
-                    int sz = Convert.ToInt32(dr["szenhidrat"]);
-                    int zs = Convert.ToInt32(dr["zsir"]);
-                    string menny = dr["mennyiseg"].ToString();
-                    Etel e = new Etel(id,nev,fe,sz,zs,menny);
-                    etelek.Add(e);
-                }
-                con.Close();
-            }
-            catch (Exception e)
-            {
-                con.Close();
-                Debug.WriteLine(e.Message);
-                throw new RepositoryException("Az ételek adatainak kiolvasása sikertelen");
-            }
             return etelek;
-
         }
-        /// <summary>
-        /// Új étel hozzáadása az adatbázishoz (insert into)
-        /// </summary>
-        /// <param name="ujetel">Az új étel</param>
-        public void AddEtelAdatbazishoz(Etel ujetel)
+        public List<Etel> getEtelekFromDB()
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                string query = ujetel.getInsertEtelek();
+                string query = Sql.getAllEtelekRecord();
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    int etelid = Convert.ToInt32(dr["etel_id"]);
+                    string enev = dr["enev"].ToString();
+                    Etel etel = new Etel(etelid, enev);
+                    etelek.Add(etel);
+                    
+                }
                 connection.Close();
             }
             catch (Exception e)
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujetel + "etel hozzáadása nem sikerült.");
-                throw new RepositoryException("Sikertelen hozzáadás az adatbázishoz.");
+                throw new RepositoryException("Ételek beolvasása az adatbázisból nem sikerült!");
             }
+            return etelek;
         }
-
-        /// <summary>
-        /// Metódus új étel adathoz, ha az ételek lista üres akkor 1 es id vel tér vissza ha nem akkor megkeressük a legnagyobb id-t és hozzáadunk egyet
-        /// </summary>
-        /// <returns>A max id- hez hozzáadott plusz 1</returns>
-        public int getEtelIDEtkezeshez()
+        public DataTable EtelDataTableEtelekListabol()
         {
-            if (etelek.Count == 0)
-                return 1;
-            else
-                return etelek.Max(x => x.Id) + 1;
-        }
-        /// <summary>
-        /// Új étel hozzáadása listához
-        /// </summary>
-        /// <param name="ujetel">Az új étel</param>
-        public void AddEtelListahoz(Etel ujetel)
-        {
-            try
+            DataTable dt = new DataTable();
+            dt.Columns.Add("etel_id", typeof(int));
+            dt.Columns.Add("enev", typeof(string));
+            foreach(Etel etel in etelek)
             {
-                etelek.Add(ujetel);
+                dt.Rows.Add(etel.Etelid, etel.Enev);
             }
-            catch (Exception e)
-            {
-                throw new RepositoryException("Az étel hozzáadása nem sikerült.");
-            }
+            return dt;
         }
- 
     }
 }

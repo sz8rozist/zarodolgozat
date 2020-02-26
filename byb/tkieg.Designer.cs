@@ -43,10 +43,12 @@
             this.errorProviderKnev = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.buttonTorles = new System.Windows.Forms.Button();
+            this.dataGridViewKiegeszitok = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegek)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKnev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegeszitok)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonKiegek
@@ -65,7 +67,6 @@
             this.buttonKiegek.TabIndex = 1;
             this.buttonKiegek.Text = "Kiegészítők";
             this.buttonKiegek.UseVisualStyleBackColor = false;
-            this.buttonKiegek.Click += new System.EventHandler(this.buttonKiegek_Click);
             // 
             // dataGridViewKiegek
             // 
@@ -73,7 +74,7 @@
             this.dataGridViewKiegek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKiegek.Location = new System.Drawing.Point(17, 65);
             this.dataGridViewKiegek.Name = "dataGridViewKiegek";
-            this.dataGridViewKiegek.Size = new System.Drawing.Size(646, 333);
+            this.dataGridViewKiegek.Size = new System.Drawing.Size(577, 295);
             this.dataGridViewKiegek.TabIndex = 5;
             // 
             // textBoxKnev
@@ -109,9 +110,9 @@
             this.panel1.Controls.Add(this.textBoxKnev);
             this.panel1.Controls.Add(this.textBoxKTipus);
             this.panel1.Controls.Add(this.textBoxKgyarto);
-            this.panel1.Location = new System.Drawing.Point(682, 65);
+            this.panel1.Location = new System.Drawing.Point(17, 366);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 333);
+            this.panel1.Size = new System.Drawing.Size(365, 166);
             this.panel1.TabIndex = 14;
             // 
             // label3
@@ -158,13 +159,12 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(80, 211);
+            this.buttonSave.Location = new System.Drawing.Point(246, 51);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(91, 32);
             this.buttonSave.TabIndex = 16;
             this.buttonSave.Text = "Mentés";
             this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonUj
             // 
@@ -208,26 +208,35 @@
             this.buttonTorles.TabIndex = 16;
             this.buttonTorles.Text = "Törlés";
             this.buttonTorles.UseVisualStyleBackColor = false;
-            this.buttonTorles.Click += new System.EventHandler(this.buttonTorles_Click);
+            // 
+            // dataGridViewKiegeszitok
+            // 
+            this.dataGridViewKiegeszitok.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewKiegeszitok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKiegeszitok.Location = new System.Drawing.Point(667, 65);
+            this.dataGridViewKiegeszitok.Name = "dataGridViewKiegeszitok";
+            this.dataGridViewKiegeszitok.Size = new System.Drawing.Size(240, 295);
+            this.dataGridViewKiegeszitok.TabIndex = 17;
             // 
             // tkieg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataGridViewKiegeszitok);
             this.Controls.Add(this.buttonTorles);
             this.Controls.Add(this.buttonUj);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewKiegek);
             this.Controls.Add(this.buttonKiegek);
             this.Name = "tkieg";
-            this.Size = new System.Drawing.Size(940, 495);
-            this.Load += new System.EventHandler(this.tkieg_Load);
+            this.Size = new System.Drawing.Size(1050, 538);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegek)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderKnev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKiegeszitok)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +257,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderKnev;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Button buttonTorles;
+        private System.Windows.Forms.DataGridView dataGridViewKiegeszitok;
     }
 }

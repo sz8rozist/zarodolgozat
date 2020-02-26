@@ -14,36 +14,17 @@ namespace byb
 {
     public partial class Buildyourbody : Form
     {
-        CreateDatabase cd = new CreateDatabase();
-        Repo r = new Repo();
-        private int ImageNumber = 1;
+       
         public Buildyourbody()
         {
             InitializeComponent();
-            formIndulaskor();
             label2.Text = FormLogin.islogged;
-        }
-        private void Slider()
-        {
-            if(ImageNumber == 5)
-            {
-                ImageNumber = 1;
-            }
-            pictureBox1.ImageLocation = string.Format(@"byb\Images\{0}.jpg", ImageNumber);
-            ImageNumber++;
-        }
-        public void formIndulaskor()
-        {
             etrend1.SendToBack();
-            tkieg1.SendToBack();
         }
-
         private void buttonKezdolap_Click(object sender, EventArgs e)
         {
             etrend1.SendToBack();
-            tkieg1.SendToBack();
         }
-
 
         private void buttonEdzes_Click(object sender, EventArgs e)
         {
@@ -56,8 +37,7 @@ namespace byb
 
         private void buttonKieg_Click(object sender, EventArgs e)
         {
-            tkieg1.BringToFront();
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,9 +45,5 @@ namespace byb
             Application.Exit();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Slider();
-        }
     }
 }

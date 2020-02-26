@@ -22,12 +22,7 @@ namespace byb
             InitializeComponent();
             panel1.Visible = false;
         }
-        public void frissítDGVTkiegekViewn()
-        {
-            tkiegDT = repo.getTkgViewDT();
-            dataGridViewKiegek.DataSource = null;
-            dataGridViewKiegek.DataSource = tkiegDT;
-        }
+       
         public void beallitDGVKiegek()
         {
             dataGridViewKiegek.Columns["knev"].HeaderText = "Név";
@@ -54,65 +49,12 @@ namespace byb
             dataGridViewKiegek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
-        private void buttonKiegek_Click(object sender, EventArgs e)
-        {
-            frissítDGVTkiegekViewn();
-            beallitDGVKiegek();
-        }
-
-        private void tkieg_Load(object sender, EventArgs e)
-        {
-            repo.setKiegek(repo.getKiegekAdatbazisbol());
-            repo.setTkiegek(repo.getHasznaltKiegeszitoAdatokAdatbazisbol());
-            repo.setTkiegView(repo.getTapkiegekListakbolUIDAlapjan(FormLogin.loggedID,repo.getTkiegek(),repo.getKiegek()));
-        }
+      
         private void buttonUj_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            errorProviderKnev.Clear();
-            try
-            {
-                KiegAdat ujka = new KiegAdat(
-                           textBoxKnev.Text,
-                           textBoxKTipus.Text,
-                           textBoxKgyarto.Text);
-                repo.AddUjKiegAdatDB(ujka);
-                repo.addUjKiegAdatListahoz(ujka);
-                Kiegeszito ujkieg = new Kiegeszito(
-                        repo.getKiegIDKiegeszitoTablaba(),
-                        FormLogin.loggedID);
-                repo.AddujKieg(ujkieg);
-                repo.addUjKiegeszitoListahoz(ujkieg);
-                TaplalekkiegeszitokView tkv = new TaplalekkiegeszitokView(
-                        textBoxKnev.Text,
-                        textBoxKTipus.Text,
-                        textBoxKgyarto.Text
-                    );
-                repo.addTkiegViewList(tkv);
-                frissítDGVTkiegekViewn();
-                beallitDGVKiegek();
-                textBoxKnev.Text = string.Empty;
-                textBoxKTipus.Text = string.Empty;
-                textBoxKgyarto.Text = string.Empty;
-            }
-            catch (ValidateKiegeszitoException vke)
-            {
-                errorProviderKnev.SetError(textBoxKnev, vke.Message);
-            }
-            catch (Exception ex)
-            {
-                
-            }
-
-        }
-
-        private void buttonTorles_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
