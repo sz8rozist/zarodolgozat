@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,11 +60,23 @@
     <Compile Include="Etrend.Designer.cs">
       <DependentUpon>Etrend.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormError.Designer.cs">
+      <DependentUpon>FormError.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMessage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMessage.Designer.cs">
       <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSucces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSucces.Designer.cs">
+      <DependentUpon>FormSucces.cs</DependentUpon>
     </Compile>
     <Compile Include="Modell\Database\ConnectionString.cs" />
     <Compile Include="Modell\Database\CreateDatabase.cs" />
@@ -106,6 +118,9 @@
     <EmbeddedResource Include="Etrend.resx">
       <DependentUpon>Etrend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormError.resx">
+      <DependentUpon>FormError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLoad.resx">
       <DependentUpon>FormLoad.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessage.resx">
       <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSucces.resx">
+      <DependentUpon>FormSucces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -95,12 +95,13 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Location = new System.Drawing.Point(635, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 27);
+            this.button1.Size = new System.Drawing.Size(36, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
@@ -158,8 +159,6 @@
             this.buttonKieg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonKieg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonKieg.FlatAppearance.BorderSize = 0;
-            this.buttonKieg.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.buttonKieg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.buttonKieg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonKieg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonKieg.ForeColor = System.Drawing.Color.Transparent;

@@ -44,13 +44,27 @@ namespace byb
             {
                 islogged = l.getUsername();
                 loggedID = l.getLoginId();
-                Buildyourbody b = new Buildyourbody();
-                b.Show();
-                this.Hide();
+                FormSucces fs = new FormSucces("Sikeres Bejelentkezés!");
+                DialogResult result = fs.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    Buildyourbody b = new Buildyourbody();
+                    b.Show();
+                    this.Hide();
+                    fs.Hide();
+                }
+
             }
             else
             {
-                errorProviderLogin.SetError(buttonLogin, "Sikertelen Belépés!");
+                FormError fe = new FormError("Sikertelen bejelentkezés!");
+                DialogResult result = fe.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    fe.Hide();
+                }
+                
+                //errorProviderLogin.SetError(buttonLogin, "Sikertelen Belépés!");
                 //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }

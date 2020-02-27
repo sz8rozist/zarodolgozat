@@ -55,25 +55,26 @@
             this.textBoxCh = new System.Windows.Forms.TextBox();
             this.dateTimePickerIdopont = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonEtkezesTorles
             // 
-            this.buttonEtkezesTorles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonEtkezesTorles.BackColor = System.Drawing.Color.Transparent;
             this.buttonEtkezesTorles.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEtkezesTorles.FlatAppearance.BorderSize = 0;
-            this.buttonEtkezesTorles.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonEtkezesTorles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonEtkezesTorles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonEtkezesTorles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtkezesTorles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEtkezesTorles.ForeColor = System.Drawing.Color.White;
-            this.buttonEtkezesTorles.Location = new System.Drawing.Point(286, 138);
+            this.buttonEtkezesTorles.Location = new System.Drawing.Point(608, 0);
             this.buttonEtkezesTorles.Name = "buttonEtkezesTorles";
-            this.buttonEtkezesTorles.Size = new System.Drawing.Size(106, 32);
+            this.buttonEtkezesTorles.Size = new System.Drawing.Size(106, 56);
             this.buttonEtkezesTorles.TabIndex = 25;
             this.buttonEtkezesTorles.Text = "Étkezés törlés";
             this.buttonEtkezesTorles.UseVisualStyleBackColor = false;
@@ -81,17 +82,16 @@
             // 
             // buttonUjEtel
             // 
-            this.buttonUjEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonUjEtel.BackColor = System.Drawing.Color.Transparent;
             this.buttonUjEtel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonUjEtel.FlatAppearance.BorderSize = 0;
-            this.buttonUjEtel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUjEtel.ForeColor = System.Drawing.Color.White;
-            this.buttonUjEtel.Location = new System.Drawing.Point(286, 100);
+            this.buttonUjEtel.Location = new System.Drawing.Point(488, 0);
             this.buttonUjEtel.Name = "buttonUjEtel";
-            this.buttonUjEtel.Size = new System.Drawing.Size(106, 32);
+            this.buttonUjEtel.Size = new System.Drawing.Size(106, 56);
             this.buttonUjEtel.TabIndex = 24;
             this.buttonUjEtel.Text = "Új étel";
             this.buttonUjEtel.UseVisualStyleBackColor = false;
@@ -103,18 +103,17 @@
             this.panel2.Controls.Add(this.buttonMentesUjEtel);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBoxEtelNev);
-            this.panel2.Location = new System.Drawing.Point(19, 301);
+            this.panel2.Location = new System.Drawing.Point(19, 385);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 136);
             this.panel2.TabIndex = 23;
             // 
             // buttonBezarUjEtel
             // 
-            this.buttonBezarUjEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonBezarUjEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonBezarUjEtel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonBezarUjEtel.FlatAppearance.BorderSize = 0;
-            this.buttonBezarUjEtel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonBezarUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonBezarUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.buttonBezarUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBezarUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBezarUjEtel.ForeColor = System.Drawing.Color.White;
@@ -128,11 +127,10 @@
             // 
             // buttonMentesUjEtel
             // 
-            this.buttonMentesUjEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonMentesUjEtel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonMentesUjEtel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonMentesUjEtel.FlatAppearance.BorderSize = 0;
-            this.buttonMentesUjEtel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonMentesUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonMentesUjEtel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.buttonMentesUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMentesUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMentesUjEtel.ForeColor = System.Drawing.Color.White;
@@ -167,7 +165,7 @@
             // 
             this.dataGridViewEtkezesek.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEtkezesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEtkezesek.Location = new System.Drawing.Point(410, 17);
+            this.dataGridViewEtkezesek.Location = new System.Drawing.Point(410, 77);
             this.dataGridViewEtkezesek.Name = "dataGridViewEtkezesek";
             this.dataGridViewEtkezesek.Size = new System.Drawing.Size(621, 325);
             this.dataGridViewEtkezesek.TabIndex = 22;
@@ -176,7 +174,7 @@
             // 
             this.dataGridViewEtelek.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEtelek.Location = new System.Drawing.Point(19, 17);
+            this.dataGridViewEtelek.Location = new System.Drawing.Point(19, 77);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
             this.dataGridViewEtelek.Size = new System.Drawing.Size(240, 235);
             this.dataGridViewEtelek.TabIndex = 21;
@@ -184,17 +182,16 @@
             // 
             // buttonÚj
             // 
-            this.buttonÚj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonÚj.BackColor = System.Drawing.Color.Transparent;
             this.buttonÚj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonÚj.FlatAppearance.BorderSize = 0;
-            this.buttonÚj.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonÚj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonÚj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.buttonÚj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonÚj.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonÚj.ForeColor = System.Drawing.Color.White;
-            this.buttonÚj.Location = new System.Drawing.Point(286, 62);
+            this.buttonÚj.Location = new System.Drawing.Point(371, 0);
             this.buttonÚj.Name = "buttonÚj";
-            this.buttonÚj.Size = new System.Drawing.Size(106, 32);
+            this.buttonÚj.Size = new System.Drawing.Size(106, 56);
             this.buttonÚj.TabIndex = 20;
             this.buttonÚj.Text = "Új etkezés";
             this.buttonÚj.UseVisualStyleBackColor = false;
@@ -216,22 +213,21 @@
             this.panel1.Controls.Add(this.textBoxFeherje);
             this.panel1.Controls.Add(this.textBoxCh);
             this.panel1.Controls.Add(this.dateTimePickerIdopont);
-            this.panel1.Location = new System.Drawing.Point(410, 365);
+            this.panel1.Location = new System.Drawing.Point(410, 408);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 156);
+            this.panel1.Size = new System.Drawing.Size(621, 113);
             this.panel1.TabIndex = 19;
             // 
             // buttonBezarUjEtkezes
             // 
-            this.buttonBezarUjEtkezes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonBezarUjEtkezes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonBezarUjEtkezes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonBezarUjEtkezes.FlatAppearance.BorderSize = 0;
-            this.buttonBezarUjEtkezes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonBezarUjEtkezes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonBezarUjEtkezes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.buttonBezarUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBezarUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonBezarUjEtkezes.ForeColor = System.Drawing.Color.White;
-            this.buttonBezarUjEtkezes.Location = new System.Drawing.Point(509, 100);
+            this.buttonBezarUjEtkezes.Location = new System.Drawing.Point(499, 69);
             this.buttonBezarUjEtkezes.Name = "buttonBezarUjEtkezes";
             this.buttonBezarUjEtkezes.Size = new System.Drawing.Size(84, 32);
             this.buttonBezarUjEtkezes.TabIndex = 18;
@@ -241,7 +237,7 @@
             // 
             // textBoxEtel
             // 
-            this.textBoxEtel.Location = new System.Drawing.Point(333, 24);
+            this.textBoxEtel.Location = new System.Drawing.Point(310, 18);
             this.textBoxEtel.Name = "textBoxEtel";
             this.textBoxEtel.Size = new System.Drawing.Size(153, 20);
             this.textBoxEtel.TabIndex = 15;
@@ -251,7 +247,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(3, 67);
+            this.label6.Location = new System.Drawing.Point(3, 54);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 14;
@@ -262,7 +258,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(299, 69);
+            this.label5.Location = new System.Drawing.Point(238, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(23, 16);
             this.label5.TabIndex = 13;
@@ -273,7 +269,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(2, 114);
+            this.label4.Location = new System.Drawing.Point(2, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 16);
             this.label4.TabIndex = 12;
@@ -284,7 +280,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(260, 116);
+            this.label3.Location = new System.Drawing.Point(238, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 16);
             this.label3.TabIndex = 11;
@@ -295,7 +291,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(299, 24);
+            this.label2.Location = new System.Drawing.Point(238, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 16);
             this.label2.TabIndex = 10;
@@ -314,22 +310,21 @@
             // 
             // textBoxMennyiseg
             // 
-            this.textBoxMennyiseg.Location = new System.Drawing.Point(332, 116);
+            this.textBoxMennyiseg.Location = new System.Drawing.Point(310, 79);
             this.textBoxMennyiseg.Name = "textBoxMennyiseg";
             this.textBoxMennyiseg.Size = new System.Drawing.Size(154, 20);
             this.textBoxMennyiseg.TabIndex = 8;
             // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.buttonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(509, 40);
+            this.buttonSave.Location = new System.Drawing.Point(499, 20);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(84, 32);
             this.buttonSave.TabIndex = 7;
@@ -339,21 +334,21 @@
             // 
             // textBoxZs
             // 
-            this.textBoxZs.Location = new System.Drawing.Point(332, 67);
+            this.textBoxZs.Location = new System.Drawing.Point(310, 47);
             this.textBoxZs.Name = "textBoxZs";
             this.textBoxZs.Size = new System.Drawing.Size(154, 20);
             this.textBoxZs.TabIndex = 4;
             // 
             // textBoxFeherje
             // 
-            this.textBoxFeherje.Location = new System.Drawing.Point(78, 65);
+            this.textBoxFeherje.Location = new System.Drawing.Point(78, 52);
             this.textBoxFeherje.Name = "textBoxFeherje";
             this.textBoxFeherje.Size = new System.Drawing.Size(154, 20);
             this.textBoxFeherje.TabIndex = 3;
             // 
             // textBoxCh
             // 
-            this.textBoxCh.Location = new System.Drawing.Point(78, 112);
+            this.textBoxCh.Location = new System.Drawing.Point(78, 78);
             this.textBoxCh.Name = "textBoxCh";
             this.textBoxCh.Size = new System.Drawing.Size(154, 20);
             this.textBoxCh.TabIndex = 2;
@@ -371,29 +366,43 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 465);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 61);
+            this.button1.Size = new System.Drawing.Size(65, 56);
             this.button1.TabIndex = 26;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.buttonEtkezesTorles);
+            this.panel3.Controls.Add(this.buttonÚj);
+            this.panel3.Controls.Add(this.buttonUjEtel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1050, 56);
+            this.panel3.TabIndex = 27;
             // 
             // Etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 538);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonEtkezesTorles);
-            this.Controls.Add(this.buttonUjEtel);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridViewEtkezesek);
             this.Controls.Add(this.dataGridViewEtelek);
-            this.Controls.Add(this.buttonÚj);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Etrend";
@@ -405,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -437,5 +447,6 @@
         private System.Windows.Forms.TextBox textBoxCh;
         private System.Windows.Forms.DateTimePicker dateTimePickerIdopont;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
     }
 }
