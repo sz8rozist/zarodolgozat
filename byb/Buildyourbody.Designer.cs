@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Buildyourbody));
             this.panelSlideMenu = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.buttonEdzes = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonKieg = new System.Windows.Forms.Button();
             this.panelSlideMenu.SuspendLayout();
@@ -44,7 +44,8 @@
             // 
             // panelSlideMenu
             // 
-            this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panelSlideMenu.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelSlideMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelSlideMenu.BackgroundImage")));
             this.panelSlideMenu.Controls.Add(this.pictureBox2);
             this.panelSlideMenu.Controls.Add(this.label1);
             this.panelSlideMenu.Controls.Add(this.label2);
@@ -57,6 +58,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
@@ -65,9 +67,22 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(115, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 21);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Üdvözöllek: ";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(222, 38);
@@ -78,6 +93,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -87,7 +103,7 @@
             this.button1.Size = new System.Drawing.Size(33, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonEtrend
@@ -127,20 +143,10 @@
             this.buttonEdzes.UseVisualStyleBackColor = false;
             this.buttonEdzes.Click += new System.EventHandler(this.buttonEdzes_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(115, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Üdvözöllek: ";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 357);
             this.panel1.Name = "panel1";
