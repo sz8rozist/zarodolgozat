@@ -40,6 +40,14 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM felhasznalok";
         }
+        public static string getGyakorlatokAllRecord()
+        {
+            return "SELECT * FROM gyakorlatok";
+        }
+        public static string getIzomcsoportokAllRecord()
+        {
+            return "SELECT * FROM izomcsoportok";
+        }
         /// <summary>
         /// Étkezések kapcsoló tábla adatainak lekérdezése adatbázisból
         /// </summary>

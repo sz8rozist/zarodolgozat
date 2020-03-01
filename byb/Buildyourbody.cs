@@ -48,5 +48,11 @@ namespace byb
             Application.Exit();
         }
 
+        private void buttonGyakorlatok_Click(object sender, EventArgs e)
+        {
+            Gyakorlatok gy = new Gyakorlatok();
+            gy.Show();
+            this.Hide();
+        }
     }
 }

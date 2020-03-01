@@ -242,6 +242,16 @@ namespace byb.Database
                     "(NULL, 'Beef Isolate', 'Fehérje', 'Biotech Usa');";
                 MySqlCommand cmdkiegadatok = new MySqlCommand(kiegadatok, con);
                 cmdkiegadatok.ExecuteNonQuery();
+
+                string gyakorlatok = "INSERT INTO `gyakorlatok` (`gyakorlatok_id`, `gynev`, `izomcsoport_id`, `leiras`) VALUES " +
+                    "(NULL, 'Fekvenyomás', '1', 'bbbb')" +
+                    "(NULL, 'Guggolás', '9', 'aaaa')" +
+                    "(NULL, 'Letolás Csigán', '5', 'aha')" +
+                    "(NULL, 'Szélesfogású Mellhezhúzás', '2', 'Ahadsa')" +
+                    "(NULL, 'Kalapács bicepsz', '4', 'Ahadsa')" +
+                "(NULL, 'Lórugás', '5', 'Ahadsa');";
+                MySqlCommand cmdgyakorlatok = new MySqlCommand(gyakorlatok, con);
+                cmdgyakorlatok.ExecuteNonQuery();
                 con.Close();
             }
             catch (Exception e)
