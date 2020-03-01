@@ -50,8 +50,8 @@ namespace byb
             dataGridViewEtelek.RowHeadersVisible = false;
             dataGridViewEtelek.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridViewEtelek.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewEtelek.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewEtelek.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewEtelek.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewEtelek.DefaultCellStyle.SelectionForeColor = Color.White;
             dataGridViewEtelek.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEtelek.DefaultCellStyle.Font = new Font("Century Gothic", 8);
             dataGridViewEtelek.AllowUserToResizeRows = false;
@@ -59,7 +59,7 @@ namespace byb
             dataGridViewEtelek.EnableHeadersVisualStyles = false;
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
             dataGridViewEtelek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewEtelek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewEtelek.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
             dataGridViewEtelek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
         private void frissitEtkezesekDGV()
@@ -85,8 +85,8 @@ namespace byb
             dataGridViewEtkezesek.RowHeadersVisible = false;
             dataGridViewEtkezesek.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridViewEtkezesek.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewEtkezesek.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewEtkezesek.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewEtkezesek.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewEtkezesek.DefaultCellStyle.SelectionForeColor = Color.White;
             dataGridViewEtkezesek.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEtkezesek.DefaultCellStyle.Font = new Font("Century Gothic", 8);
             dataGridViewEtkezesek.AllowUserToResizeRows = false;
@@ -94,7 +94,7 @@ namespace byb
             dataGridViewEtkezesek.EnableHeadersVisualStyles = false;
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
             dataGridViewEtkezesek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
             dataGridViewEtkezesek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 

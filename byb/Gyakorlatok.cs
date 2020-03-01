@@ -60,8 +60,8 @@ namespace byb
             dataGridViewGyakorlatok.RowHeadersVisible = false;
             dataGridViewGyakorlatok.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
             dataGridViewGyakorlatok.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewGyakorlatok.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewGyakorlatok.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewGyakorlatok.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewGyakorlatok.DefaultCellStyle.SelectionForeColor = Color.White;
             dataGridViewGyakorlatok.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewGyakorlatok.DefaultCellStyle.Font = new Font("Century Gothic", 8);
             dataGridViewGyakorlatok.AllowUserToResizeRows = false;
@@ -69,7 +69,7 @@ namespace byb
             dataGridViewGyakorlatok.EnableHeadersVisualStyles = false;
             dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
             dataGridViewGyakorlatok.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
             dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
