@@ -18,14 +18,9 @@ namespace byb
         public Gyakorlatok()
         {
             InitializeComponent();
-            try
-            {
-                repo.SetGyakorlatok(repo.getGyakorlatokFromDB());
-                repo.setIzomcsoportok(repo.getIzomcsoportokFromDB());
-            }catch(RepositoryException re)
-            {
-                Debug.WriteLine(re.Message);
-            }
+            repo.SetGyakorlatok(repo.getGyakorlatokFromDB());
+            repo.setIzomcsoportok(repo.getIzomcsoportokFromDB());
+            comboBox1.DataSource = repo.getIzomcsoportNevek();
             
         }
 

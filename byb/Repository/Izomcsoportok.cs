@@ -49,5 +49,14 @@ namespace byb.Repository
             }
             return izomcsoportok;
         }
+        public List<string> getIzomcsoportNevek()
+        {
+            List<string> inevek = new List<string>();
+            foreach (Izomcsoport izom in izomcsoportok)
+            {
+                inevek.Add(izom.IzomcsoportNev);
+            }
+            return inevek;
+        }
     }
 }

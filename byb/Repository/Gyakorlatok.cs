@@ -47,7 +47,7 @@ namespace byb.Repository
             {
                 connection.Close();
                 Debug.WriteLine(e.Message);
-                throw new RepositoryException("Gyakorlatok beolvasása az adatbázisból nem sikerült!");
+                 throw new RepositoryException("Gyakorlatok beolvasása az adatbázisból nem sikerült!");
             }
             return gyakorlatok;
         }
