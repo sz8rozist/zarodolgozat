@@ -24,6 +24,17 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM kiegeszitok_adatai";
         }
+
+        public static string getEdzesekAllRecord()
+        {
+            return "SELECT * FROM edzesek";
+        }
+
+        public static string getEdzestervekAllRecord()
+        {
+            return "SELECT * FROM edzestervek";
+        }
+
         /// <summary>
         /// Kiegészítők kapcsoló tábla adatainak lekérdezése adatbázisból
         /// </summary>

@@ -23,6 +23,8 @@ namespace byb.Repository
             etkezesekviewn = new List<EtkezesView>();
             gyakorlatok = new List<Gyakorlat>();
             izomcsoportok = new List<Izomcsoport>();
+            tervek = new List<Edzesterv>();
+            edzesek = new List<Edzes>();
         }
     }
 }

@@ -51,5 +51,10 @@ namespace byb.Repository
             }
             return gyakorlatok;
         }
+        public List<Gyakorlat> getGyakorlatIzomcsoportAlapjan(string izom)
+        {
+            int izomcsoport = izomcsoportok.Find(x => x.IzomcsoportNev == izom).Izomcsoportid;
+            return gyakorlatok.FindAll(x => x.Izomcsoportid == izomcsoport);
+        }
     }
 }
