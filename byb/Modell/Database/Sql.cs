@@ -29,7 +29,6 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM edzesek";
         }
-
         public static string getEdzestervekAllRecord()
         {
             return "SELECT * FROM edzestervek";

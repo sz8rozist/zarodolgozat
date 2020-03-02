@@ -252,6 +252,46 @@ namespace byb.Database
                 "(NULL, 'Lórugás', '5', 'Ahadsa');";
                 MySqlCommand cmdgyakorlatok = new MySqlCommand(gyakorlatok, con);
                 cmdgyakorlatok.ExecuteNonQuery();
+
+                string tervek = "INSERT INTO `edzestervek` (`edzesterv_id`, `gyakorlat_id`, `sorozatszam`, `ismetlesszam`) VALUES " +
+                    "(NULL, '3', '1', '2')," +
+                    "(NULL, '4', '1', '2')," +
+                    "(NULL, '5', '12', '2')," +
+                    "(NULL, '6', '13', '2')," +
+                    "(NULL, '6', '14', '2')," +
+                    "(NULL, '5', '145', '2')," +
+                    "(NULL, '5', '145', '2')," +
+                    "(NULL, '4', '134', '2')," +
+                    "(NULL, '2', '1', '2')," +
+                    "(NULL, '3', '133', '2')," +
+                    "(NULL, '1', '1', '2')," +
+                    "(NULL, '5', '1', '2')," +
+                    "(NULL, '4', '1', '2')," +
+                    "(NULL, '4', '1', '2')," +
+                    "(NULL, '6', '1', '2')," +
+                    "(NULL, '1', '1', '2')," +
+               "(NULL, '1', '1', '2');";
+                MySqlCommand cmdtervek = new MySqlCommand(tervek, con);
+                cmdtervek.ExecuteNonQuery();
+
+                string edzesek = "INSERT INTO `edzesek` (`edzesek_id`, `idopont`, `f_id`, `edzesterv_id`) VALUES " +
+                    "(NULL, '2020-03-12 00:00:00', '1', '1'),"+
+                    "(NULL, '2020-03-14 00:00:00', '1', '4'),"+
+                    "(NULL, '2020-03-15 00:00:00', '1', '3'),"+
+                    "(NULL, '2020-03-17 00:00:00', '1', '5'),"+
+                    "(NULL, '2020-03-17 00:00:00', '1', '10'),"+
+                    "(NULL, '2020-03-17 00:00:00', '1', '11'),"+
+                    "(NULL, '2020-03-17 00:00:00', '1', '14'),"+
+                    "(NULL, '2020-03-17 00:00:00', '1', '9'),"+
+                    "(NULL, '2020-03-19 00:00:00', '1', '10'),"+
+                    "(NULL, '2020-03-19 00:00:00', '1', '11'),"+
+                    "(NULL, '2020-03-19 00:00:00', '1', '8'),"+
+                    "(NULL, '2020-03-19 00:00:00', '1', '7'),"+
+                    "(NULL, '2020-03-19 00:00:00', '1', '6');";
+                MySqlCommand cmdedzesek = new MySqlCommand(edzesek, con);
+                cmdedzesek.ExecuteNonQuery();
+
+           
                 con.Close();
             }
             catch (Exception e)

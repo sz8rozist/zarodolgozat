@@ -16,6 +16,7 @@ namespace byb
     public partial class Gyakorlatok : Form
     {
         Repo repo = new Repo();
+        DataTable edzesDT = new DataTable();
         public Gyakorlatok()
         {
             InitializeComponent();
@@ -23,15 +24,16 @@ namespace byb
             repo.setIzomcsoportok(repo.getIzomcsoportokFromDB());
             repo.setTervek(repo.getedzestervekFromDB());
             repo.setEdzesek(repo.getEdzesekFromDB());
+            
             feltoltComboboxGyakorlatokkal();
             feltoltComboboxIdopontokkal();
             dataGridViewGyakorlatok.Visible = false;
             dataGridViewEdzesek.Visible = false;
-
+            
         }
         private void feltoltComboboxIdopontokkal()
         {
-            comboBoxIdopont.DataSource = repo.getIdopontok();
+            comboBoxIdopont.DataSource = repo.getIdopontok(FormLogin.loggedID);
         }
         private void feltoltComboboxGyakorlatokkal()
         {
@@ -72,6 +74,35 @@ namespace byb
             dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
             dataGridViewGyakorlatok.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+        private void beallitEdzesekDGV()
+        {
+            dataGridViewEdzesek.DataSource = null;
+            string idopont = comboBoxIdopont.Text;
+            dataGridViewEdzesek.DataSource = repo.getEdzesekViewraIdopontAlapjan(idopont);
+            dataGridViewEdzesek.Columns[0].HeaderText = "Gyakorlat";
+            dataGridViewEdzesek.Columns[1].HeaderText = "Sorozatszám";
+            dataGridViewEdzesek.Columns[2].HeaderText = "Ismétlésszám";
+            dataGridViewEdzesek.Columns[3].HeaderText = "Időpont";
+            dataGridViewEdzesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewEdzesek.ReadOnly = true;
+            dataGridViewEdzesek.AllowUserToDeleteRows = false;
+            dataGridViewEdzesek.AllowUserToAddRows = false;
+            dataGridViewEdzesek.MultiSelect = false;
+            dataGridViewEdzesek.RowHeadersVisible = false;
+            dataGridViewEdzesek.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridViewEdzesek.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewEdzesek.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue;
+            dataGridViewEdzesek.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridViewEdzesek.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewEdzesek.DefaultCellStyle.Font = new Font("Century Gothic", 8);
+            dataGridViewEdzesek.AllowUserToResizeRows = false;
+            dataGridViewEdzesek.AllowUserToResizeColumns = false;
+            dataGridViewEdzesek.EnableHeadersVisualStyles = false;
+            dataGridViewEdzesek.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10);
+            dataGridViewEdzesek.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewEdzesek.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
+            dataGridViewEdzesek.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex < 0)
@@ -85,6 +116,12 @@ namespace byb
             if (comboBoxIdopont.SelectedIndex < 0)
                 return;
             dataGridViewEdzesek.Visible = true;
+            beallitEdzesekDGV();
+        }
+
+        private void Gyakorlatok_Load(object sender, EventArgs e)
+        {
+            repo.setListEdzesViewn(repo.getEdzesekViewra(FormLogin.loggedID, repo.getGyakorlatok(), repo.getTervek(), repo.getEdzesek()));
         }
     }
 }

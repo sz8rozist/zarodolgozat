@@ -25,6 +25,7 @@ namespace byb.Repository
             izomcsoportok = new List<Izomcsoport>();
             tervek = new List<Edzesterv>();
             edzesek = new List<Edzes>();
+            edzesviewn = new List<EdzesViewn>();
         }
     }
 }

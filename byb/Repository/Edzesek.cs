@@ -51,12 +51,14 @@ namespace byb.Repository
             }
             return edzesek;
         }
-        public List<string> getIdopontok()
+        public List<string> getIdopontok(int userid)
         {
             List<string> idopont = new List<string>();
-            foreach(Edzes e in edzesek)
+            List<Edzes> edzes = edzesek.FindAll(x => x.Fid == userid);
+            foreach(Edzes e in edzes)
             {
-                idopont.Add(e.Idopont);
+                if(!idopont.Contains(e.Idopont))
+                    idopont.Add(e.Idopont);
             }
             return idopont;
         }

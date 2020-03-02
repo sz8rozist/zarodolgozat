@@ -141,6 +141,7 @@
             this.Name = "Gyakorlatok";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gyakorlatok";
+            this.Load += new System.EventHandler(this.Gyakorlatok_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGyakorlatok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEdzesek)).EndInit();
