@@ -14,21 +14,12 @@ namespace byb
 {
     public partial class Buildyourbody : Form
     {
-       
+        CreateDatabase db = new CreateDatabase();
         public Buildyourbody()
         {
             InitializeComponent();
             label2.Text = FormLogin.islogged;
 
-        }
-        
-        private void buttonKezdolap_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonEdzes_Click(object sender, EventArgs e)
-        {
         }
 
         private void buttonEtrend_Click(object sender, EventArgs e)
@@ -38,14 +29,10 @@ namespace byb
             this.Hide();
         }
 
-        private void buttonKieg_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            db.torolTesztadatok();
         }
 
         private void buttonGyakorlatok_Click(object sender, EventArgs e)
@@ -53,6 +40,11 @@ namespace byb
             Gyakorlatok gy = new Gyakorlatok();
             gy.Show();
             this.Hide();
+        }
+
+        private void buttonTesztadatok_Click(object sender, EventArgs e)
+        {
+            db.tesztadatokFeltoltese();
         }
     }
 }

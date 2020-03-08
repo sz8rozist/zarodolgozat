@@ -37,6 +37,7 @@
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonGyakorlatok = new System.Windows.Forms.Button();
+            this.buttonTesztadatok = new System.Windows.Forms.Button();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -149,10 +150,27 @@
             this.buttonGyakorlatok.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
             this.buttonGyakorlatok.Size = new System.Drawing.Size(169, 153);
             this.buttonGyakorlatok.TabIndex = 7;
-            this.buttonGyakorlatok.Text = "Gyakorlatok";
+            this.buttonGyakorlatok.Text = "Edzés";
             this.buttonGyakorlatok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonGyakorlatok.UseVisualStyleBackColor = false;
             this.buttonGyakorlatok.Click += new System.EventHandler(this.buttonGyakorlatok_Click);
+            // 
+            // buttonTesztadatok
+            // 
+            this.buttonTesztadatok.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.buttonTesztadatok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonTesztadatok.FlatAppearance.BorderSize = 0;
+            this.buttonTesztadatok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTesztadatok.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTesztadatok.ForeColor = System.Drawing.Color.Transparent;
+            this.buttonTesztadatok.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonTesztadatok.Location = new System.Drawing.Point(12, 98);
+            this.buttonTesztadatok.Name = "buttonTesztadatok";
+            this.buttonTesztadatok.Size = new System.Drawing.Size(111, 36);
+            this.buttonTesztadatok.TabIndex = 29;
+            this.buttonTesztadatok.Text = "Tesztadatok";
+            this.buttonTesztadatok.UseVisualStyleBackColor = false;
+            this.buttonTesztadatok.Click += new System.EventHandler(this.buttonTesztadatok_Click);
             // 
             // Buildyourbody
             // 
@@ -160,6 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(671, 399);
+            this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonGyakorlatok);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.buttonEtrend);
@@ -185,5 +204,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonGyakorlatok;
+        private System.Windows.Forms.Button buttonTesztadatok;
     }
 }

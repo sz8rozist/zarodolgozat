@@ -54,25 +54,5 @@ namespace byb.Repository
             }
             return dt;
         }
-        public void addEtkezesekViewListahoz(EtkezesView ujEv)
-        {
-            try
-            {
-                etkezesekviewn.Add(ujEv);
-            }
-            catch (Exception)
-            {
-                throw new EtkezesekViewnAddListahozException("Az étkezésviewn listához adása nem járt sikerrel");
-            }
-            
-        }
-        public void TorolEtkezesekViewListabol(int etkid)
-        {
-            EtkezesView e = etkezesekviewn.Find(x => x.Etkezesekid == etkid);
-            if (e != null)
-                etkezesekviewn.Remove(e);
-            else
-                throw new TorlesEtkezesekViewnException("Az étkezésview listába "+etkid+" ídjű étkezés nem létezik, sikertelen törlés a listából!");
-        }
     }
 }

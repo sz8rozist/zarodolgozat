@@ -190,10 +190,7 @@ namespace byb.Database
                 throw new CreateDatabaseException("Hiba történt a táblák létrehozásakor.");
             }
         }
-        /// <summary>
-        /// Tesztadatok feltöltése az adatbázisba
-        /// </summary>
-        public void tesztadatokFeltoltese()
+        public void felhasznaloTesztAdatok()
         {
             MySqlConnection con = new MySqlConnection(connectionString);
             try
@@ -207,6 +204,25 @@ namespace byb.Database
                     "(NULL, 'g8szatam', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '196');";
                 MySqlCommand cmdTesztAdatokFelhasznalok = new MySqlCommand(TesztAdatokFelhasznalok, con);
                 cmdTesztAdatokFelhasznalok.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+                Debug.WriteLine(ex.Message);
+                throw new CreateDatabaseException("Felhasználók tesztadatainak feltöltése sikertelen!");
+            }
+        }
+        /// <summary>
+        /// Tesztadatok feltöltése az adatbázisba
+        /// </summary>
+        public void tesztadatokFeltoltese()
+        {
+            MySqlConnection con = new MySqlConnection(connectionString);
+            try
+            {
+                con.Open();
+                
 
                 string izomcsoportTesztAdatok = "INSERT INTO `izomcsoportok` (`izomcsoport_id`, `izomcsoport`) VALUES " +
                     "(NULL, 'Mell'),"+
@@ -299,6 +315,22 @@ namespace byb.Database
                 con.Close();   
                 Debug.WriteLine(e.Message);
                 throw new CreateDatabaseException("Tesztadatok feltöltése sikertelen!");
+            }
+        }
+        public void torolTesztadatok()
+        {
+            MySqlConnection con = new MySqlConnection(connectionString);
+            try
+            {
+                con.Open();
+                string query = "DELETE FROM edzesek;DELETE FROM edzestervek; DELETE FROM gyakorlatok; DELETE FROM izomcsoportok; DELETE FROM etelek; DELETE FROM etkezesek";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw new CreateDatabaseException("Tesztadatok törlése sikertelen!");
             }
         }
         

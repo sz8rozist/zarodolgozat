@@ -56,67 +56,6 @@ namespace byb.Repository
             }
             return etkezesek;
         }
-        public void InsertEtkezes(Etkezes ujEtkezes)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                string query = ujEtkezes.InsertIntoEtkezesek();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.Message);
-                Debug.WriteLine(ujEtkezes + " étkezés beszúrása adatbázisba nem sikerült.");
-            }
-        }
-        public void AddEtkezesListahoz(Etkezes ujEtkezes)
-        {
-            try
-            {
-                etkezesek.Add(ujEtkezes);
-            }catch(RepositoryException re)
-            {
-                throw new EtkezesekAddListahozException("Az étkezés listához adása nem járt sikerrel");
-            }
-            
-        }
-        public int KovetkezoEtkezesID()
-        {
-            if (etkezesek.Count == 0)
-                return 1;
-            else
-                return etkezesek.Max(x => x.Etkezesekid) + 1;
-        }
-        public void TorolEtkezesListabol(int etkid)
-        {
-            Etkezes e = etkezesek.Find(x => x.Etkezesekid == etkid);
-            if (e != null)
-                etkezesek.Remove(e);
-            else
-                throw new TorlesEtkezesException("Az étkezés nem létezik, sikertelen törlés a listából!");
-        }
-        public void DeletEtkezes(int etkid)
-        {
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                string query = "DELETE FROM etkezesek WHERE etkezesek_id= "+etkid;
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                connection.Close();
-            }
-            catch (Exception e)
-            {
-                connection.Close();
-                Debug.WriteLine(e.Message);
-                Debug.WriteLine(etkid + " idjű étkezés törlése az adatbázisból nem sikerült.");
-            }
-        }
+  
     }
 }

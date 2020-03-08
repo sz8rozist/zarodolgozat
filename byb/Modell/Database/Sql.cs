@@ -16,15 +16,6 @@ namespace byb.Modell.Database
         {
             return "SELECT etel_id, enev FROM etelek";
         }
-        /// <summary>
-        /// Kiegészítők adatainak lekérdezése adatbázisból
-        /// </summary>
-        /// <returns>Minden adat a kiegeszitok_adatai táblából</returns>
-        public static string getKiegAdatok()
-        {
-            return "SELECT * FROM kiegeszitok_adatai";
-        }
-
         public static string getEdzesekAllRecord()
         {
             return "SELECT * FROM edzesek";
@@ -32,15 +23,6 @@ namespace byb.Modell.Database
         public static string getEdzestervekAllRecord()
         {
             return "SELECT * FROM edzestervek";
-        }
-
-        /// <summary>
-        /// Kiegészítők kapcsoló tábla adatainak lekérdezése adatbázisból
-        /// </summary>
-        /// <returns>Minden adat a kiegeszitok táblából</returns>
-        public static string getHasznaltKiegAdatok()
-        {
-            return "SELECT * FROM kiegeszitok";
         }
         /// <summary>
         /// felhasználók adatainak lekérdezése adatbázisból
