@@ -157,7 +157,7 @@
             // 
             // buttonTesztadatok
             // 
-            this.buttonTesztadatok.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.buttonTesztadatok.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonTesztadatok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonTesztadatok.FlatAppearance.BorderSize = 0;
             this.buttonTesztadatok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

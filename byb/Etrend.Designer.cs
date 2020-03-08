@@ -76,7 +76,7 @@
             // 
             // buttonEtkezesek
             // 
-            this.buttonEtkezesek.BackColor = System.Drawing.Color.DimGray;
+            this.buttonEtkezesek.BackColor = System.Drawing.Color.DarkSlateGray;
             this.buttonEtkezesek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonEtkezesek.FlatAppearance.BorderSize = 0;
             this.buttonEtkezesek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
