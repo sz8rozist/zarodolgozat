@@ -26,11 +26,6 @@ namespace byb
             label1.Visible = false;
             feltöltComboboxIdopontokkal();
             repo.setEtkezesekViewn(repo.getEtkezesekViewraFelhasznaloAlapjan(FormLogin.loggedID, repo.getEtelek(), repo.getEtkezesek()));
-            panel1.Visible = false;
-        }
-        private void feltöltComboboxEtelekkel()
-        {
-            comboBoxEtelNevek.DataSource = repo.getEtelNevek();
         }
         private void feltöltComboboxIdopontokkal()
         {
@@ -92,24 +87,7 @@ namespace byb
             label1.Visible = true;
             frissitEtkezesekDGV();
             beallitEtkezesekDGV();
-            textBox1.Text = repo.összeadKaloria().ToString();
-        }
-
-        private void buttonUjEtkezes_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = true;
-            feltöltComboboxEtelekkel();
-        }
-
-        private void buttonSaveUjEtkezes_Click(object sender, EventArgs e)
-        {
-           
-            //Beszúrás listába
-           
-            //DataGridView Frissítés
-            frissitEtkezesekDGV();
-            beallitEtkezesekDGV();
-
+            //textBox1.Text = repo.összeadKaloria().ToString();
         }
     }
 }

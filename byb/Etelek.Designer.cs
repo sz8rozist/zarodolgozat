@@ -50,6 +50,7 @@
             this.textBoxKaloria = new System.Windows.Forms.TextBox();
             this.textBoxMennyiseg = new System.Windows.Forms.TextBox();
             this.buttonSaveUjEtel = new System.Windows.Forms.Button();
+            this.buttonUjEtkezes = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,7 +64,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(715, 56);
+            this.panel3.Size = new System.Drawing.Size(895, 56);
             this.panel3.TabIndex = 28;
             // 
             // button1
@@ -270,11 +271,26 @@
             this.buttonSaveUjEtel.UseVisualStyleBackColor = false;
             this.buttonSaveUjEtel.Click += new System.EventHandler(this.buttonSaveUjEtel_Click);
             // 
+            // buttonUjEtkezes
+            // 
+            this.buttonUjEtkezes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonUjEtkezes.FlatAppearance.BorderSize = 0;
+            this.buttonUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUjEtkezes.ForeColor = System.Drawing.Color.White;
+            this.buttonUjEtkezes.Location = new System.Drawing.Point(333, 78);
+            this.buttonUjEtkezes.Name = "buttonUjEtkezes";
+            this.buttonUjEtkezes.Size = new System.Drawing.Size(86, 27);
+            this.buttonUjEtkezes.TabIndex = 42;
+            this.buttonUjEtkezes.Text = "Új étkezés";
+            this.buttonUjEtkezes.UseVisualStyleBackColor = false;
+            // 
             // Etelek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 418);
+            this.ClientSize = new System.Drawing.Size(895, 485);
+            this.Controls.Add(this.buttonUjEtkezes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonUjEtel);
             this.Controls.Add(this.button2);
@@ -318,5 +334,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSaveUjEtel;
+        private System.Windows.Forms.Button buttonUjEtkezes;
     }
 }
