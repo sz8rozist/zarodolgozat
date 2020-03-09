@@ -24,25 +24,35 @@ namespace byb
             repo.setEtkezesek(repo.getEtkezesekFromDB());
             dataGridViewEtkezesek.Visible = false;
             label1.Visible = false;
+            feltöltComboboxIdopontokkal();
             repo.setEtkezesekViewn(repo.getEtkezesekViewraFelhasznaloAlapjan(FormLogin.loggedID, repo.getEtelek(), repo.getEtkezesek()));
-          
+            panel1.Visible = false;
         }
-
+        private void feltöltComboboxEtelekkel()
+        {
+            comboBoxEtelNevek.DataSource = repo.getEtelNevek();
+        }
+        private void feltöltComboboxIdopontokkal()
+        {
+            comboBoxIdopontok.DataSource = repo.getIdopontok();
+        }
         private void frissitEtkezesekDGV()
         {
+            string idopont = comboBoxIdopontok.Text;
             dataGridViewEtkezesek.DataSource = null;
-            dataGridViewEtkezesek.DataSource = repo.getEtkezesekViewFelhasznaloAlapjanDT();
+            dataGridViewEtkezesek.DataSource = repo.getEtkezesIdopontAlapjan(idopont);
         }
         private void beallitEtkezesekDGV()
         {
-            dataGridViewEtkezesek.Columns["etkezesek_id"].HeaderText = "ÉtkezésID";
-            dataGridViewEtkezesek.Columns["enev"].HeaderText = "Étel";
-            dataGridViewEtkezesek.Columns["idopont"].HeaderText = "Időpont";
-            dataGridViewEtkezesek.Columns["feherje"].HeaderText = "Fehérje";
-            dataGridViewEtkezesek.Columns["szenhidrat"].HeaderText = "Szénhidrát";
-            dataGridViewEtkezesek.Columns["zsir"].HeaderText = "Zsír";
-            dataGridViewEtkezesek.Columns["mennyiseg"].HeaderText = "Mennyiség";
-            dataGridViewEtkezesek.Columns[0].Visible = false;
+            
+
+            dataGridViewEtkezesek.Columns[0].HeaderText = "Étel";
+            dataGridViewEtkezesek.Columns[1].HeaderText = "Időpont";
+            dataGridViewEtkezesek.Columns[2].HeaderText = "Fehérje";
+            dataGridViewEtkezesek.Columns[3].HeaderText = "Szénhidrát";
+            dataGridViewEtkezesek.Columns[4].HeaderText = "Zsír";
+            dataGridViewEtkezesek.Columns[5].HeaderText = "Mennyiség";
+    
             dataGridViewEtkezesek.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewEtkezesek.ReadOnly = true;
             dataGridViewEtkezesek.AllowUserToDeleteRows = false;
@@ -73,10 +83,33 @@ namespace byb
 
         private void buttonEtkezesek_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void comboBoxIdopontok_SelectedIndexChanged(object sender, EventArgs e)
+        {
             dataGridViewEtkezesek.Visible = true;
             label1.Visible = true;
             frissitEtkezesekDGV();
             beallitEtkezesekDGV();
+            textBox1.Text = repo.összeadKaloria().ToString();
+        }
+
+        private void buttonUjEtkezes_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            feltöltComboboxEtelekkel();
+        }
+
+        private void buttonSaveUjEtkezes_Click(object sender, EventArgs e)
+        {
+           
+            //Beszúrás listába
+           
+            //DataGridView Frissítés
+            frissitEtkezesekDGV();
+            beallitEtkezesekDGV();
+
         }
     }
 }

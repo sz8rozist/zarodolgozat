@@ -26,33 +26,52 @@ namespace byb.Repository
             {
                 Etel etel = etelek.Find(x => x.Etelid == e.Etelid);
                 EtkezesView ev = new EtkezesView(
-                        e.Etkezesekid,
                         etel.Enev,
                         e.Idopont,
-                        e.Feherje,
-                        e.Szenhidrat,
-                        e.Zsir,
-                        e.Mennyiseg
+                        etel.Feherje,
+                        etel.Szenhidrat,
+                        etel.Zsir,
+                        etel.Kaloria,
+                        etel.Mennyiseg
                     );
                 etkezesekviewn.Add(ev);
             }
             return etkezesekviewn;
         }
+        public List<EtkezesView> getEtkezesIdopontAlapjan(string idopont)
+        {
+            return etkezesekviewn.FindAll(x => x.Idopont == idopont);
+        }
         public DataTable getEtkezesekViewFelhasznaloAlapjanDT()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("etkezesek_id", typeof(int));
             dt.Columns.Add("enev", typeof(string));
             dt.Columns.Add("idopont", typeof(string));
             dt.Columns.Add("feherje", typeof(int));
             dt.Columns.Add("szenhidrat", typeof(int));
             dt.Columns.Add("zsir", typeof(int));
+            dt.Columns.Add("kaloria", typeof(int));
             dt.Columns.Add("mennyiseg", typeof(string));
             foreach(EtkezesView ev in etkezesekviewn)
             {
-                dt.Rows.Add(ev.Etkezesekid, ev.Enev,ev.Idopont, ev.Feherje, ev.Szenhidrat, ev.Zsir, ev.Mennyiseg);
+                dt.Rows.Add(ev.Enev,ev.Idopont, ev.Feherje, ev.Szenhidrat, ev.Zsir,ev.Kaloria, ev.Mennyiseg);
             }
             return dt;
+        }
+        public int összeadKaloria()
+        {
+            return etkezesekviewn.Sum(x => x.Kaloria);
+        }
+        public void addEtkezesViewnToLIst(EtkezesView ujEtkezesView)
+        {
+            try
+            {
+                etkezesekviewn.Add(ujEtkezesView);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Az étkezésviewn hozzáadása nem sikerült");
+            }
         }
     }
 }

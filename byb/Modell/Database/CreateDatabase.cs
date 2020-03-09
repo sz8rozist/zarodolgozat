@@ -242,7 +242,26 @@ namespace byb.Database
                     " (null, 'Csirkemell','12','12','15','100','500gr'),"+
                     " (null, 'Sajt','12','12','15','100','500gr')," +
                     " (null, 'Brokkoli','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','200','500gr')," +
                     " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','200','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','100','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','300','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','150','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','0','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','0','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','0','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','500','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','300','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','200','500gr')," +
                     " (null, 'Beef Steak','12','12','15','100','500gr');";
                 MySqlCommand cmdEtel = new MySqlCommand(etelekTesztAdatok, con);
                 cmdEtel.ExecuteNonQuery();

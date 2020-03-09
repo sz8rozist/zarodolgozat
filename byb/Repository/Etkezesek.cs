@@ -22,6 +22,19 @@ namespace byb.Repository
         {
             return etkezesek;
         }
+        public List<string> getIdopontok()
+        {
+            List<string> pontok = new List<string>();
+            foreach(Etkezes e in etkezesek)
+            {
+                if (!pontok.Contains(e.Idopont))
+                {
+                    pontok.Add(e.Idopont);
+                }
+                
+            }
+            return pontok;
+        }
         public List<Etkezes> getEtkezesekFromDB()
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
@@ -37,12 +50,8 @@ namespace byb.Repository
                     int etkezesekid = Convert.ToInt32(dr["etkezesek_id"]);
                     string idopont = dr["idopont"].ToString();
                     int etelid = Convert.ToInt32(dr["etel_id"]);
-                    int feherje = Convert.ToInt32(dr["feherje"]);
-                    int szenhidrat = Convert.ToInt32(dr["szenhidrat"]);
-                    int zsir = Convert.ToInt32(dr["zsir"]);
-                    string mennyiseg = dr["mennyiseg"].ToString();
                     int fid = Convert.ToInt32(dr["f_id"]);
-                    Etkezes etkezes = new Etkezes(etkezesekid,idopont,etelid,feherje,szenhidrat,zsir,mennyiseg,fid);
+                    Etkezes etkezes = new Etkezes(etkezesekid,idopont,etelid,fid);
                     etkezesek.Add(etkezes);
 
                 }

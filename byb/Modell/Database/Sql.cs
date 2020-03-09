@@ -14,7 +14,7 @@ namespace byb.Modell.Database
         /// <returns>Minden adat az etelek táblából</returns>
         public static string getAllEtelekRecord()
         {
-            return "SELECT etel_id, enev FROM etelek";
+            return "SELECT * FROM etelek";
         }
         public static string getEdzesekAllRecord()
         {

@@ -24,6 +24,12 @@ namespace byb.Modell
         private string username;
         private string password;
         private int id;
+        private int tsuly;
+        private int tmagassag;
+
+        public int Tsuly { get => tsuly; set => tsuly = value; }
+        public int Tmagassag { get => tmagassag; set => tmagassag = value; }
+
         /// <summary>
         /// Get metódusok
         /// </summary>
@@ -67,6 +73,8 @@ namespace byb.Modell
             if (dr.Read())
             {
                 id = Convert.ToInt32(dr["f_id"]);
+                tsuly = Convert.ToInt32(dr["tsuly"]);
+                tmagassag = Convert.ToInt32(dr["tmagassag"]);
                  return true;
             }
             else

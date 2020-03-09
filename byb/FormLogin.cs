@@ -19,6 +19,8 @@ namespace byb
     {
         public static string islogged = "";
         public static int loggedID = 0;
+        public static int loggedTsuly = 0;
+        public static int loggedTmagassag = 0;
         public FormLogin()
         {
             Thread trd = new Thread(new ThreadStart(formRun));
@@ -44,6 +46,8 @@ namespace byb
             {
                 islogged = l.getUsername();
                 loggedID = l.getLoginId();
+                loggedTsuly = l.Tsuly;
+                loggedTmagassag = l.Tmagassag;
                 FormSucces fs = new FormSucces("Sikeres Bejelentkezés!");
                 DialogResult result = fs.ShowDialog();
                 if(result == DialogResult.OK)
