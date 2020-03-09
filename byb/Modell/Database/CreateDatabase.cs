@@ -80,7 +80,12 @@ namespace byb.Database
 
                 string etelek = "CREATE TABLE IF NOT EXISTS `etelek` (" +
                                  " `etel_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
-                                 " `enev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL"+
+                                 " `enev` varchar(20) COLLATE utf8_hungarian_ci NOT NULL,"+
+                                 " `feherje` int(11) NOT NULL," +
+                                 " `szenhidrat` int(11) NOT NULL," +
+                                 " `zsir` int(11) NOT NULL," +
+                                 " `kaloria` int(11) NOT NULL," +
+                                 " `mennyiseg` varchar(20) COLLATE utf8_hungarian_ci NOT NULL" +
                                " ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdetelek = new MySqlCommand(etelek, con);
                 cmdetelek.ExecuteNonQuery();
@@ -90,10 +95,6 @@ namespace byb.Database
                                  " `etkezesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
                                  " `idopont` datetime NOT NULL,"+
                                  " `etel_id` int(11) NOT NULL,"+
-                                 " `feherje` int(11) NOT NULL," +
-                                 " `szenhidrat` int(11) NOT NULL," +
-                                 " `zsir` int(11) NOT NULL," +
-                                 " `mennyiseg` varchar(20) COLLATE utf8_hungarian_ci NOT NULL," +
                                  " `f_id` int(11) NOT NULL" +
                                " ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
                 MySqlCommand cmdetkezesek = new MySqlCommand(etkezesek, con);
@@ -237,12 +238,12 @@ namespace byb.Database
                 MySqlCommand cmdIzomcsoport = new MySqlCommand(izomcsoportTesztAdatok, con);
                 cmdIzomcsoport.ExecuteNonQuery();
 
-                string etelekTesztAdatok = "INSERT INTO `etelek`(`etel_id`, `enev`) VALUES" +
-                    " (null, 'Csirkemell'),"+
-                    " (null, 'Sajt'),"+
-                    " (null, 'Brokkoli'),"+
-                    " (null, 'Avokádó'),"+
-                    " (null, 'Beef Steak');";
+                string etelekTesztAdatok = "INSERT INTO `etelek`(`etel_id`, `enev`, `feherje`, `szenhidrat`, `zsir`, `kaloria`, `mennyiseg`) VALUES" +
+                    " (null, 'Csirkemell','12','12','15','100','500gr'),"+
+                    " (null, 'Sajt','12','12','15','100','500gr')," +
+                    " (null, 'Brokkoli','12','12','15','100','500gr')," +
+                    " (null, 'Avokádó','12','12','15','100','500gr')," +
+                    " (null, 'Beef Steak','12','12','15','100','500gr');";
                 MySqlCommand cmdEtel = new MySqlCommand(etelekTesztAdatok, con);
                 cmdEtel.ExecuteNonQuery();
 
