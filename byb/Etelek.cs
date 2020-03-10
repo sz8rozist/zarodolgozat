@@ -20,7 +20,9 @@ namespace byb
             InitializeComponent();
             r.setEtelek(r.getEtelekFromDB());
             dataGridViewEtelek.Visible = false;
-            panel1.Visible = false;
+            panelEtel.Visible = false;
+            buttonSaveUjEtel.Visible = false;
+            panelEtkezes.Visible = false;
         }
         public void beallitDataGridView()
         {
@@ -29,7 +31,7 @@ namespace byb
             dataGridViewEtelek.Columns["feherje"].HeaderText = "Fehérje";
             dataGridViewEtelek.Columns["szenhidrat"].HeaderText = "Szénhidrát";
             dataGridViewEtelek.Columns["zsir"].HeaderText = "Zsír";
-            dataGridViewEtelek.Columns["kaloria"].HeaderText = "Zsír";
+            dataGridViewEtelek.Columns["kaloria"].HeaderText = "Kalória";
             dataGridViewEtelek.Columns["mennyiseg"].HeaderText = "Mennyiség";
             dataGridViewEtelek.Columns[0].Visible = false;
             dataGridViewEtelek.Columns[1].Visible = false;
@@ -69,18 +71,40 @@ namespace byb
         {
             beallitDataGridView();
             dataGridViewEtelek.Visible = true;
-            
-            
         }
 
         private void dataGridViewEtelek_SelectionChanged(object sender, EventArgs e)
         {
+           
+            if (dataGridViewEtelek.SelectedRows.Count == 1)
+            {
+                panelEtel.Visible = true;
+                textBoxEtelNev.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[1].Value.ToString();
+                Feherje.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[4].Value.ToString();
+                textBoxCh.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[3].Value.ToString();
+                textBoxZsir.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[5].Value.ToString();
+                textBoxKaloria.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxMennyiseg.Text =
+                    dataGridViewEtelek.SelectedRows[0].Cells[6].Value.ToString();
+            }
             
         }
 
         private void buttonUjEtel_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
+            textBoxCh.Text = string.Empty;
+            textBoxEtelNev.Text = string.Empty;
+            Feherje.Text = string.Empty;
+            textBoxKaloria.Text = string.Empty;
+            textBoxMennyiseg.Text = string.Empty;
+            textBoxZsir.Text = string.Empty;
+            buttonSaveUjEtel.Visible = true;
+            
         }
 
         private void buttonSaveUjEtel_Click(object sender, EventArgs e)
@@ -103,8 +127,24 @@ namespace byb
             DialogResult result = fs.ShowDialog();
             if (result == DialogResult.OK)
             {
-                panel1.Visible = false;
+                panelEtel.Visible = false;
                 fs.Hide();
+            }
+        }
+
+        private void buttonUjEtkezes_Click(object sender, EventArgs e)
+        {
+            panelEtkezes.Visible = true;
+        }
+
+        private void buttonSaveUjEtkezes_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEtelek.SelectedRows.Count != 1)
+            {
+                FormError fe = new FormError("Nincs kiválasztva étel!");
+                DialogResult result = fe.ShowDialog();
+                if (result == DialogResult.OK)
+                    fe.Hide();
             }
         }
     }

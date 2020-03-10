@@ -42,16 +42,16 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonSzamolBMI = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonMutatBMIPanel = new System.Windows.Forms.Button();
-            this.buttonSzamolBMI = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -204,7 +204,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 494);
+            this.panel1.Location = new System.Drawing.Point(0, 427);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(848, 42);
             this.panel1.TabIndex = 3;
@@ -246,6 +246,61 @@
             this.panel2.Size = new System.Drawing.Size(348, 198);
             this.panel2.TabIndex = 6;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(162, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(139, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Normális testsúly 18,5 - 24,9";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(162, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Túlsúlyos                25 - 29,9";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(162, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Elhízott                  30 - 34,9";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(162, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(138, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Erősen elhízott             > 35";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(162, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Sovány                      < 18,5";
+            // 
+            // buttonSzamolBMI
+            // 
+            this.buttonSzamolBMI.Location = new System.Drawing.Point(31, 57);
+            this.buttonSzamolBMI.Name = "buttonSzamolBMI";
+            this.buttonSzamolBMI.Size = new System.Drawing.Size(285, 23);
+            this.buttonSzamolBMI.TabIndex = 3;
+            this.buttonSzamolBMI.Text = "Számol";
+            this.buttonSzamolBMI.UseVisualStyleBackColor = true;
+            this.buttonSzamolBMI.Click += new System.EventHandler(this.buttonSzamolBMI_Click);
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(216, 31);
@@ -280,67 +335,12 @@
             this.buttonMutatBMIPanel.UseVisualStyleBackColor = true;
             this.buttonMutatBMIPanel.Click += new System.EventHandler(this.buttonMutatBMIPanel_Click);
             // 
-            // buttonSzamolBMI
-            // 
-            this.buttonSzamolBMI.Location = new System.Drawing.Point(31, 57);
-            this.buttonSzamolBMI.Name = "buttonSzamolBMI";
-            this.buttonSzamolBMI.Size = new System.Drawing.Size(285, 23);
-            this.buttonSzamolBMI.TabIndex = 3;
-            this.buttonSzamolBMI.Text = "Számol";
-            this.buttonSzamolBMI.UseVisualStyleBackColor = true;
-            this.buttonSzamolBMI.Click += new System.EventHandler(this.buttonSzamolBMI_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(162, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Sovány                      < 18,5";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(162, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Erősen elhízott             > 35";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(162, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Elhízott                  30 - 34,9";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(162, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(141, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Túlsúlyos                25 - 29,9";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(162, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Normális testsúly 18,5 - 24,9";
-            // 
             // Buildyourbody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(848, 536);
+            this.ClientSize = new System.Drawing.Size(848, 469);
             this.Controls.Add(this.buttonMutatBMIPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);

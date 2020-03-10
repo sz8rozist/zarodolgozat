@@ -36,24 +36,29 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonUjEtel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Feherje = new System.Windows.Forms.TextBox();
-            this.textBoxEtelNev = new System.Windows.Forms.TextBox();
-            this.textBoxZsir = new System.Windows.Forms.TextBox();
-            this.textBoxCh = new System.Windows.Forms.TextBox();
-            this.textBoxKaloria = new System.Windows.Forms.TextBox();
-            this.textBoxMennyiseg = new System.Windows.Forms.TextBox();
+            this.panelEtel = new System.Windows.Forms.Panel();
             this.buttonSaveUjEtel = new System.Windows.Forms.Button();
+            this.textBoxMennyiseg = new System.Windows.Forms.TextBox();
+            this.textBoxKaloria = new System.Windows.Forms.TextBox();
+            this.textBoxCh = new System.Windows.Forms.TextBox();
+            this.textBoxZsir = new System.Windows.Forms.TextBox();
+            this.textBoxEtelNev = new System.Windows.Forms.TextBox();
+            this.Feherje = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonUjEtkezes = new System.Windows.Forms.Button();
+            this.panelEtkezes = new System.Windows.Forms.Panel();
+            this.dateTimePickerIdopont = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonSaveUjEtkezes = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelEtel.SuspendLayout();
+            this.panelEtkezes.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -140,121 +145,25 @@
             this.buttonUjEtel.UseVisualStyleBackColor = false;
             this.buttonUjEtel.Click += new System.EventHandler(this.buttonUjEtel_Click);
             // 
-            // panel1
+            // panelEtel
             // 
-            this.panel1.Controls.Add(this.buttonSaveUjEtel);
-            this.panel1.Controls.Add(this.textBoxMennyiseg);
-            this.panel1.Controls.Add(this.textBoxKaloria);
-            this.panel1.Controls.Add(this.textBoxCh);
-            this.panel1.Controls.Add(this.textBoxZsir);
-            this.panel1.Controls.Add(this.textBoxEtelNev);
-            this.panel1.Controls.Add(this.Feherje);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(461, 84);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 210);
-            this.panel1.TabIndex = 37;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Étel";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 39);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fehérje";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Szénhidrát";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 147);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Mennyiség";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Kalória";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Zsír";
-            // 
-            // Feherje
-            // 
-            this.Feherje.Location = new System.Drawing.Point(66, 36);
-            this.Feherje.Name = "Feherje";
-            this.Feherje.Size = new System.Drawing.Size(100, 20);
-            this.Feherje.TabIndex = 7;
-            // 
-            // textBoxEtelNev
-            // 
-            this.textBoxEtelNev.Location = new System.Drawing.Point(66, 10);
-            this.textBoxEtelNev.Name = "textBoxEtelNev";
-            this.textBoxEtelNev.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEtelNev.TabIndex = 8;
-            // 
-            // textBoxZsir
-            // 
-            this.textBoxZsir.Location = new System.Drawing.Point(66, 93);
-            this.textBoxZsir.Name = "textBoxZsir";
-            this.textBoxZsir.Size = new System.Drawing.Size(100, 20);
-            this.textBoxZsir.TabIndex = 9;
-            // 
-            // textBoxCh
-            // 
-            this.textBoxCh.Location = new System.Drawing.Point(66, 66);
-            this.textBoxCh.Name = "textBoxCh";
-            this.textBoxCh.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCh.TabIndex = 10;
-            // 
-            // textBoxKaloria
-            // 
-            this.textBoxKaloria.Location = new System.Drawing.Point(66, 120);
-            this.textBoxKaloria.Name = "textBoxKaloria";
-            this.textBoxKaloria.Size = new System.Drawing.Size(100, 20);
-            this.textBoxKaloria.TabIndex = 11;
-            // 
-            // textBoxMennyiseg
-            // 
-            this.textBoxMennyiseg.Location = new System.Drawing.Point(66, 144);
-            this.textBoxMennyiseg.Name = "textBoxMennyiseg";
-            this.textBoxMennyiseg.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMennyiseg.TabIndex = 12;
+            this.panelEtel.Controls.Add(this.buttonSaveUjEtel);
+            this.panelEtel.Controls.Add(this.textBoxMennyiseg);
+            this.panelEtel.Controls.Add(this.textBoxKaloria);
+            this.panelEtel.Controls.Add(this.textBoxCh);
+            this.panelEtel.Controls.Add(this.textBoxZsir);
+            this.panelEtel.Controls.Add(this.textBoxEtelNev);
+            this.panelEtel.Controls.Add(this.Feherje);
+            this.panelEtel.Controls.Add(this.label7);
+            this.panelEtel.Controls.Add(this.label6);
+            this.panelEtel.Controls.Add(this.label5);
+            this.panelEtel.Controls.Add(this.label4);
+            this.panelEtel.Controls.Add(this.label3);
+            this.panelEtel.Controls.Add(this.label2);
+            this.panelEtel.Location = new System.Drawing.Point(461, 84);
+            this.panelEtel.Name = "panelEtel";
+            this.panelEtel.Size = new System.Drawing.Size(214, 201);
+            this.panelEtel.TabIndex = 37;
             // 
             // buttonSaveUjEtel
             // 
@@ -263,13 +172,115 @@
             this.buttonSaveUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSaveUjEtel.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveUjEtel.Location = new System.Drawing.Point(66, 170);
+            this.buttonSaveUjEtel.Location = new System.Drawing.Point(7, 170);
             this.buttonSaveUjEtel.Name = "buttonSaveUjEtel";
             this.buttonSaveUjEtel.Size = new System.Drawing.Size(75, 27);
             this.buttonSaveUjEtel.TabIndex = 38;
             this.buttonSaveUjEtel.Text = "Mentés";
             this.buttonSaveUjEtel.UseVisualStyleBackColor = false;
             this.buttonSaveUjEtel.Click += new System.EventHandler(this.buttonSaveUjEtel_Click);
+            // 
+            // textBoxMennyiseg
+            // 
+            this.textBoxMennyiseg.Location = new System.Drawing.Point(66, 144);
+            this.textBoxMennyiseg.Name = "textBoxMennyiseg";
+            this.textBoxMennyiseg.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMennyiseg.TabIndex = 12;
+            // 
+            // textBoxKaloria
+            // 
+            this.textBoxKaloria.Location = new System.Drawing.Point(66, 120);
+            this.textBoxKaloria.Name = "textBoxKaloria";
+            this.textBoxKaloria.Size = new System.Drawing.Size(100, 20);
+            this.textBoxKaloria.TabIndex = 11;
+            // 
+            // textBoxCh
+            // 
+            this.textBoxCh.Location = new System.Drawing.Point(66, 66);
+            this.textBoxCh.Name = "textBoxCh";
+            this.textBoxCh.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCh.TabIndex = 10;
+            // 
+            // textBoxZsir
+            // 
+            this.textBoxZsir.Location = new System.Drawing.Point(66, 93);
+            this.textBoxZsir.Name = "textBoxZsir";
+            this.textBoxZsir.Size = new System.Drawing.Size(100, 20);
+            this.textBoxZsir.TabIndex = 9;
+            // 
+            // textBoxEtelNev
+            // 
+            this.textBoxEtelNev.Location = new System.Drawing.Point(66, 10);
+            this.textBoxEtelNev.Name = "textBoxEtelNev";
+            this.textBoxEtelNev.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEtelNev.TabIndex = 8;
+            // 
+            // Feherje
+            // 
+            this.Feherje.Location = new System.Drawing.Point(66, 36);
+            this.Feherje.Name = "Feherje";
+            this.Feherje.Size = new System.Drawing.Size(100, 20);
+            this.Feherje.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label7.Location = new System.Drawing.Point(3, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 16);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Zsír";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label6.Location = new System.Drawing.Point(2, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 16);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Kalória";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label5.Location = new System.Drawing.Point(2, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 16);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Mennyiség";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.Location = new System.Drawing.Point(3, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Szénhidrát";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label3.Location = new System.Drawing.Point(3, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fehérje";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label2.Location = new System.Drawing.Point(4, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Étel";
             // 
             // buttonUjEtkezes
             // 
@@ -284,14 +295,58 @@
             this.buttonUjEtkezes.TabIndex = 42;
             this.buttonUjEtkezes.Text = "Új étkezés";
             this.buttonUjEtkezes.UseVisualStyleBackColor = false;
+            this.buttonUjEtkezes.Click += new System.EventHandler(this.buttonUjEtkezes_Click);
+            // 
+            // panelEtkezes
+            // 
+            this.panelEtkezes.Controls.Add(this.buttonSaveUjEtkezes);
+            this.panelEtkezes.Controls.Add(this.label8);
+            this.panelEtkezes.Controls.Add(this.dateTimePickerIdopont);
+            this.panelEtkezes.Location = new System.Drawing.Point(32, 254);
+            this.panelEtkezes.Name = "panelEtkezes";
+            this.panelEtkezes.Size = new System.Drawing.Size(403, 71);
+            this.panelEtkezes.TabIndex = 43;
+            // 
+            // dateTimePickerIdopont
+            // 
+            this.dateTimePickerIdopont.Location = new System.Drawing.Point(66, 19);
+            this.dateTimePickerIdopont.Name = "dateTimePickerIdopont";
+            this.dateTimePickerIdopont.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerIdopont.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label8.Location = new System.Drawing.Point(8, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Időpont";
+            // 
+            // buttonSaveUjEtkezes
+            // 
+            this.buttonSaveUjEtkezes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSaveUjEtkezes.FlatAppearance.BorderSize = 0;
+            this.buttonSaveUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSaveUjEtkezes.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveUjEtkezes.Location = new System.Drawing.Point(292, 18);
+            this.buttonSaveUjEtkezes.Name = "buttonSaveUjEtkezes";
+            this.buttonSaveUjEtkezes.Size = new System.Drawing.Size(75, 27);
+            this.buttonSaveUjEtkezes.TabIndex = 39;
+            this.buttonSaveUjEtkezes.Text = "Mentés";
+            this.buttonSaveUjEtkezes.UseVisualStyleBackColor = false;
+            this.buttonSaveUjEtkezes.Click += new System.EventHandler(this.buttonSaveUjEtkezes_Click);
             // 
             // Etelek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 485);
+            this.Controls.Add(this.panelEtkezes);
             this.Controls.Add(this.buttonUjEtkezes);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelEtel);
             this.Controls.Add(this.buttonUjEtel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
@@ -304,8 +359,10 @@
             this.Text = "Etelek";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelEtel.ResumeLayout(false);
+            this.panelEtel.PerformLayout();
+            this.panelEtkezes.ResumeLayout(false);
+            this.panelEtkezes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,7 +377,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonUjEtel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelEtel;
         private System.Windows.Forms.TextBox textBoxMennyiseg;
         private System.Windows.Forms.TextBox textBoxKaloria;
         private System.Windows.Forms.TextBox textBoxCh;
@@ -335,5 +392,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSaveUjEtel;
         private System.Windows.Forms.Button buttonUjEtkezes;
+        private System.Windows.Forms.Panel panelEtkezes;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dateTimePickerIdopont;
+        private System.Windows.Forms.Button buttonSaveUjEtkezes;
     }
 }
