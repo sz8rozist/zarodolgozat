@@ -32,7 +32,6 @@
             this.panelSlideMenu = new System.Windows.Forms.Panel();
             this.buttonTesztadatok = new System.Windows.Forms.Button();
             this.buttonEtelek = new System.Windows.Forms.Button();
-            this.buttonGyakorlatok = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonEtrend = new System.Windows.Forms.Button();
@@ -61,9 +60,7 @@
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.DarkOrange;
             this.panelSlideMenu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelSlideMenu.BackgroundImage")));
-            this.panelSlideMenu.Controls.Add(this.buttonTesztadatok);
             this.panelSlideMenu.Controls.Add(this.buttonEtelek);
-            this.panelSlideMenu.Controls.Add(this.buttonGyakorlatok);
             this.panelSlideMenu.Controls.Add(this.pictureBox2);
             this.panelSlideMenu.Controls.Add(this.label1);
             this.panelSlideMenu.Controls.Add(this.buttonEtrend);
@@ -72,7 +69,7 @@
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(848, 92);
+            this.panelSlideMenu.Size = new System.Drawing.Size(714, 92);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // buttonTesztadatok
@@ -81,12 +78,12 @@
             this.buttonTesztadatok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonTesztadatok.FlatAppearance.BorderSize = 0;
             this.buttonTesztadatok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTesztadatok.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTesztadatok.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTesztadatok.ForeColor = System.Drawing.Color.Transparent;
             this.buttonTesztadatok.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonTesztadatok.Location = new System.Drawing.Point(105, 3);
+            this.buttonTesztadatok.Location = new System.Drawing.Point(12, 98);
             this.buttonTesztadatok.Name = "buttonTesztadatok";
-            this.buttonTesztadatok.Size = new System.Drawing.Size(111, 36);
+            this.buttonTesztadatok.Size = new System.Drawing.Size(86, 32);
             this.buttonTesztadatok.TabIndex = 29;
             this.buttonTesztadatok.Text = "Tesztadatok";
             this.buttonTesztadatok.UseVisualStyleBackColor = false;
@@ -94,41 +91,22 @@
             // 
             // buttonEtelek
             // 
-            this.buttonEtelek.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonEtelek.BackColor = System.Drawing.Color.Transparent;
             this.buttonEtelek.FlatAppearance.BorderSize = 0;
+            this.buttonEtelek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonEtelek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtelek.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEtelek.ForeColor = System.Drawing.Color.Transparent;
             this.buttonEtelek.Image = ((System.Drawing.Image)(resources.GetObject("buttonEtelek.Image")));
-            this.buttonEtelek.Location = new System.Drawing.Point(314, 3);
+            this.buttonEtelek.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEtelek.Location = new System.Drawing.Point(339, 19);
             this.buttonEtelek.Name = "buttonEtelek";
-            this.buttonEtelek.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.buttonEtelek.Size = new System.Drawing.Size(169, 86);
+            this.buttonEtelek.Size = new System.Drawing.Size(144, 56);
             this.buttonEtelek.TabIndex = 30;
             this.buttonEtelek.Text = "Ételek";
-            this.buttonEtelek.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonEtelek.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonEtelek.UseVisualStyleBackColor = false;
             this.buttonEtelek.Click += new System.EventHandler(this.buttonEtelek_Click);
-            // 
-            // buttonGyakorlatok
-            // 
-            this.buttonGyakorlatok.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonGyakorlatok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonGyakorlatok.FlatAppearance.BorderSize = 0;
-            this.buttonGyakorlatok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGyakorlatok.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonGyakorlatok.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonGyakorlatok.Image = ((System.Drawing.Image)(resources.GetObject("buttonGyakorlatok.Image")));
-            this.buttonGyakorlatok.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGyakorlatok.Location = new System.Drawing.Point(664, 6);
-            this.buttonGyakorlatok.Name = "buttonGyakorlatok";
-            this.buttonGyakorlatok.Padding = new System.Windows.Forms.Padding(0, 35, 0, 0);
-            this.buttonGyakorlatok.Size = new System.Drawing.Size(157, 83);
-            this.buttonGyakorlatok.TabIndex = 7;
-            this.buttonGyakorlatok.Text = "Edzés";
-            this.buttonGyakorlatok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonGyakorlatok.UseVisualStyleBackColor = false;
-            this.buttonGyakorlatok.Click += new System.EventHandler(this.buttonGyakorlatok_Click);
             // 
             // pictureBox2
             // 
@@ -155,19 +133,19 @@
             // 
             // buttonEtrend
             // 
-            this.buttonEtrend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonEtrend.BackColor = System.Drawing.Color.Transparent;
             this.buttonEtrend.FlatAppearance.BorderSize = 0;
+            this.buttonEtrend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
             this.buttonEtrend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtrend.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonEtrend.ForeColor = System.Drawing.Color.Transparent;
             this.buttonEtrend.Image = ((System.Drawing.Image)(resources.GetObject("buttonEtrend.Image")));
-            this.buttonEtrend.Location = new System.Drawing.Point(489, 4);
+            this.buttonEtrend.Location = new System.Drawing.Point(489, 19);
             this.buttonEtrend.Name = "buttonEtrend";
-            this.buttonEtrend.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.buttonEtrend.Size = new System.Drawing.Size(169, 86);
+            this.buttonEtrend.Size = new System.Drawing.Size(144, 56);
             this.buttonEtrend.TabIndex = 4;
             this.buttonEtrend.Text = " Étrend";
-            this.buttonEtrend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonEtrend.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonEtrend.UseVisualStyleBackColor = false;
             this.buttonEtrend.Click += new System.EventHandler(this.buttonEtrend_Click);
             // 
@@ -191,7 +169,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(812, 0);
+            this.button1.Location = new System.Drawing.Point(606, 52);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 27);
             this.button1.TabIndex = 2;
@@ -206,7 +184,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 427);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(848, 42);
+            this.panel1.Size = new System.Drawing.Size(714, 42);
             this.panel1.TabIndex = 3;
             // 
             // comboBox1
@@ -215,7 +193,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Tömegnövelés",
             "Szálkásítás"});
-            this.comboBox1.Location = new System.Drawing.Point(104, 127);
+            this.comboBox1.Location = new System.Drawing.Point(105, 161);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
@@ -224,7 +202,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 130);
+            this.label3.Location = new System.Drawing.Point(12, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 5;
@@ -241,7 +219,7 @@
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(458, 178);
+            this.panel2.Location = new System.Drawing.Point(304, 176);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 198);
             this.panel2.TabIndex = 6;
@@ -327,7 +305,7 @@
             // 
             // buttonMutatBMIPanel
             // 
-            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(458, 119);
+            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(304, 107);
             this.buttonMutatBMIPanel.Name = "buttonMutatBMIPanel";
             this.buttonMutatBMIPanel.Size = new System.Drawing.Size(75, 23);
             this.buttonMutatBMIPanel.TabIndex = 7;
@@ -340,7 +318,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(848, 469);
+            this.ClientSize = new System.Drawing.Size(714, 469);
+            this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonMutatBMIPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
@@ -370,7 +349,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonGyakorlatok;
         private System.Windows.Forms.Button buttonTesztadatok;
         private System.Windows.Forms.Button buttonEtelek;
         private System.Windows.Forms.ComboBox comboBox1;

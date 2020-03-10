@@ -23,6 +23,8 @@ namespace byb
             panelEtel.Visible = false;
             buttonSaveUjEtel.Visible = false;
             panelEtkezes.Visible = false;
+            buttonUjEtel.Visible = false;
+            buttonUjEtkezes.Visible = false;
         }
         public void beallitDataGridView()
         {
@@ -71,6 +73,8 @@ namespace byb
         {
             beallitDataGridView();
             dataGridViewEtelek.Visible = true;
+            buttonUjEtel.Visible = true;
+            buttonUjEtkezes.Visible = true;
         }
 
         private void dataGridViewEtelek_SelectionChanged(object sender, EventArgs e)
