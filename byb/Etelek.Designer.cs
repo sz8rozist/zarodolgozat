@@ -160,7 +160,7 @@
             this.panelEtel.Controls.Add(this.label4);
             this.panelEtel.Controls.Add(this.label3);
             this.panelEtel.Controls.Add(this.label2);
-            this.panelEtel.Location = new System.Drawing.Point(461, 84);
+            this.panelEtel.Location = new System.Drawing.Point(460, 121);
             this.panelEtel.Name = "panelEtel";
             this.panelEtel.Size = new System.Drawing.Size(214, 201);
             this.panelEtel.TabIndex = 37;
@@ -304,7 +304,7 @@
             this.panelEtkezes.Controls.Add(this.dateTimePickerIdopont);
             this.panelEtkezes.Location = new System.Drawing.Point(32, 254);
             this.panelEtkezes.Name = "panelEtkezes";
-            this.panelEtkezes.Size = new System.Drawing.Size(403, 71);
+            this.panelEtkezes.Size = new System.Drawing.Size(403, 68);
             this.panelEtkezes.TabIndex = 43;
             // 
             // buttonSaveUjEtkezes
@@ -314,7 +314,7 @@
             this.buttonSaveUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSaveUjEtkezes.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveUjEtkezes.Location = new System.Drawing.Point(292, 18);
+            this.buttonSaveUjEtkezes.Location = new System.Drawing.Point(195, 18);
             this.buttonSaveUjEtkezes.Name = "buttonSaveUjEtkezes";
             this.buttonSaveUjEtkezes.Size = new System.Drawing.Size(75, 27);
             this.buttonSaveUjEtkezes.TabIndex = 39;

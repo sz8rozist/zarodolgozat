@@ -51,6 +51,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonMutatBMIPanel = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelSlideMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,7 +72,7 @@
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(714, 92);
+            this.panelSlideMenu.Size = new System.Drawing.Size(726, 92);
             this.panelSlideMenu.TabIndex = 0;
             // 
             // buttonEtelek
@@ -169,7 +172,7 @@
             this.buttonTesztadatok.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonTesztadatok.ForeColor = System.Drawing.Color.Transparent;
             this.buttonTesztadatok.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonTesztadatok.Location = new System.Drawing.Point(12, 98);
+            this.buttonTesztadatok.Location = new System.Drawing.Point(15, 98);
             this.buttonTesztadatok.Name = "buttonTesztadatok";
             this.buttonTesztadatok.Size = new System.Drawing.Size(86, 32);
             this.buttonTesztadatok.TabIndex = 29;
@@ -182,9 +185,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 427);
+            this.panel1.Location = new System.Drawing.Point(0, 447);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(714, 42);
+            this.panel1.Size = new System.Drawing.Size(726, 42);
             this.panel1.TabIndex = 3;
             // 
             // comboBox1
@@ -210,6 +213,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -219,9 +225,9 @@
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(304, 176);
+            this.panel2.Location = new System.Drawing.Point(354, 137);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 198);
+            this.panel2.Size = new System.Drawing.Size(348, 199);
             this.panel2.TabIndex = 6;
             // 
             // label8
@@ -271,12 +277,16 @@
             // 
             // buttonSzamolBMI
             // 
+            this.buttonSzamolBMI.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonSzamolBMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSzamolBMI.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSzamolBMI.ForeColor = System.Drawing.Color.White;
             this.buttonSzamolBMI.Location = new System.Drawing.Point(31, 57);
             this.buttonSzamolBMI.Name = "buttonSzamolBMI";
             this.buttonSzamolBMI.Size = new System.Drawing.Size(285, 23);
             this.buttonSzamolBMI.TabIndex = 3;
             this.buttonSzamolBMI.Text = "Számol";
-            this.buttonSzamolBMI.UseVisualStyleBackColor = true;
+            this.buttonSzamolBMI.UseVisualStyleBackColor = false;
             this.buttonSzamolBMI.Click += new System.EventHandler(this.buttonSzamolBMI_Click);
             // 
             // textBox3
@@ -289,7 +299,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 86);
+            this.textBox2.Location = new System.Drawing.Point(31, 106);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -305,20 +315,54 @@
             // 
             // buttonMutatBMIPanel
             // 
-            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(304, 107);
+            this.buttonMutatBMIPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonMutatBMIPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMutatBMIPanel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonMutatBMIPanel.ForeColor = System.Drawing.Color.White;
+            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(559, 99);
             this.buttonMutatBMIPanel.Name = "buttonMutatBMIPanel";
-            this.buttonMutatBMIPanel.Size = new System.Drawing.Size(75, 23);
+            this.buttonMutatBMIPanel.Size = new System.Drawing.Size(143, 32);
             this.buttonMutatBMIPanel.TabIndex = 7;
-            this.buttonMutatBMIPanel.Text = "BMI";
-            this.buttonMutatBMIPanel.UseVisualStyleBackColor = true;
+            this.buttonMutatBMIPanel.Text = "BMI - Testtömegindex ";
+            this.buttonMutatBMIPanel.UseVisualStyleBackColor = false;
             this.buttonMutatBMIPanel.Click += new System.EventHandler(this.buttonMutatBMIPanel_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(28, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 16);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Testsúly";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(232, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 16);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Testmagasság";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(28, 87);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 16);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Eredmény";
             // 
             // Buildyourbody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(714, 469);
+            this.ClientSize = new System.Drawing.Size(726, 489);
             this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonMutatBMIPanel);
             this.Controls.Add(this.panel2);
@@ -364,5 +408,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

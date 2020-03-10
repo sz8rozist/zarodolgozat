@@ -42,22 +42,6 @@ namespace byb.Repository
         {
             return etkezesekviewn.FindAll(x => x.Idopont == idopont);
         }
-        public DataTable getEtkezesekViewFelhasznaloAlapjanDT()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("enev", typeof(string));
-            dt.Columns.Add("idopont", typeof(string));
-            dt.Columns.Add("feherje", typeof(int));
-            dt.Columns.Add("szenhidrat", typeof(int));
-            dt.Columns.Add("zsir", typeof(int));
-            dt.Columns.Add("kaloria", typeof(int));
-            dt.Columns.Add("mennyiseg", typeof(string));
-            foreach(EtkezesView ev in etkezesekviewn)
-            {
-                dt.Rows.Add(ev.Enev,ev.Idopont, ev.Feherje, ev.Szenhidrat, ev.Zsir,ev.Kaloria, ev.Mennyiseg);
-            }
-            return dt;
-        }
         public int getOsszFeherje(string idopont)
         {
             List<EtkezesView> etkezesview = etkezesekviewn.FindAll(x => x.Idopont == idopont);
@@ -67,6 +51,36 @@ namespace byb.Repository
                 totalfeherje = totalfeherje + evv.Feherje;
             }
             return totalfeherje;
+        }
+        public int getOsszSzenhidrat(string idopont)
+        {
+            List<EtkezesView> etkezesview = etkezesekviewn.FindAll(x => x.Idopont == idopont);
+            int totalszenhidrat = 0;
+            foreach (EtkezesView evv in etkezesview)
+            {
+                totalszenhidrat = totalszenhidrat + evv.Szenhidrat;
+            }
+            return totalszenhidrat;
+        }
+        public int getOsszZsir(string idopont)
+        {
+            List<EtkezesView> etkezesview = etkezesekviewn.FindAll(x => x.Idopont == idopont);
+            int totalzsir = 0;
+            foreach (EtkezesView evv in etkezesview)
+            {
+                totalzsir = totalzsir + evv.Zsir;
+            }
+            return totalzsir;
+        }
+        public int getOsszKaloria(string idopont)
+        {
+            List<EtkezesView> etkezesview = etkezesekviewn.FindAll(x => x.Idopont == idopont);
+            int totalkaloria = 0;
+            foreach (EtkezesView evv in etkezesview)
+            {
+                totalkaloria = totalkaloria + evv.Kaloria;
+            }
+            return totalkaloria;
         }
         public void addEtkezesViewnToLIst(EtkezesView ujEtkezesView)
         {

@@ -88,6 +88,9 @@ namespace byb
             frissitEtkezesekDGV();
             beallitEtkezesekDGV();
             labelFeherje.Text = repo.getOsszFeherje(comboBoxIdopontok.Text).ToString();
+            labelSzenhidrat.Text = repo.getOsszSzenhidrat(comboBoxIdopontok.Text).ToString();
+            labelZsír.Text = repo.getOsszZsir(comboBoxIdopontok.Text).ToString();
+            labelKaloraBevitel.Text = repo.getOsszKaloria(comboBoxIdopontok.Text).ToString();
         }
     }
 }

@@ -37,6 +37,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelFeherje = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelSzenhidrat = new System.Windows.Forms.Label();
+            this.labelZsír = new System.Windows.Forms.Label();
+            this.labelKaloraBevitel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +53,7 @@
             this.dataGridViewEtkezesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtkezesek.Location = new System.Drawing.Point(32, 104);
             this.dataGridViewEtkezesek.Name = "dataGridViewEtkezesek";
-            this.dataGridViewEtkezesek.Size = new System.Drawing.Size(621, 325);
+            this.dataGridViewEtkezesek.Size = new System.Drawing.Size(621, 268);
             this.dataGridViewEtkezesek.TabIndex = 22;
             // 
             // button1
@@ -109,26 +115,90 @@
             // labelFeherje
             // 
             this.labelFeherje.AutoSize = true;
-            this.labelFeherje.Location = new System.Drawing.Point(125, 456);
+            this.labelFeherje.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFeherje.Location = new System.Drawing.Point(143, 392);
             this.labelFeherje.Name = "labelFeherje";
-            this.labelFeherje.Size = new System.Drawing.Size(0, 13);
+            this.labelFeherje.Size = new System.Drawing.Size(0, 16);
             this.labelFeherje.TabIndex = 38;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(29, 453);
+            this.label4.Location = new System.Drawing.Point(29, 389);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 16);
+            this.label4.Size = new System.Drawing.Size(108, 16);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Fehérje bevitel:";
+            this.label4.Text = "Fehérje bevitel(gr):";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(29, 437);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 16);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Kalória bevitel(Kcal):";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(30, 421);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 16);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Zsír bevitel(gr):";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(30, 405);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 16);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Szénhidrát bevitel(gr):";
+            // 
+            // labelSzenhidrat
+            // 
+            this.labelSzenhidrat.AutoSize = true;
+            this.labelSzenhidrat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSzenhidrat.Location = new System.Drawing.Point(163, 408);
+            this.labelSzenhidrat.Name = "labelSzenhidrat";
+            this.labelSzenhidrat.Size = new System.Drawing.Size(0, 16);
+            this.labelSzenhidrat.TabIndex = 43;
+            // 
+            // labelZsír
+            // 
+            this.labelZsír.AutoSize = true;
+            this.labelZsír.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelZsír.Location = new System.Drawing.Point(122, 421);
+            this.labelZsír.Name = "labelZsír";
+            this.labelZsír.Size = new System.Drawing.Size(0, 16);
+            this.labelZsír.TabIndex = 44;
+            // 
+            // labelKaloraBevitel
+            // 
+            this.labelKaloraBevitel.AutoSize = true;
+            this.labelKaloraBevitel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKaloraBevitel.Location = new System.Drawing.Point(157, 439);
+            this.labelKaloraBevitel.Name = "labelKaloraBevitel";
+            this.labelKaloraBevitel.Size = new System.Drawing.Size(0, 16);
+            this.labelKaloraBevitel.TabIndex = 45;
             // 
             // Etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 509);
+            this.ClientSize = new System.Drawing.Size(686, 475);
+            this.Controls.Add(this.labelKaloraBevitel);
+            this.Controls.Add(this.labelZsír);
+            this.Controls.Add(this.labelSzenhidrat);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelFeherje);
             this.Controls.Add(this.label2);
@@ -156,5 +226,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelFeherje;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelSzenhidrat;
+        private System.Windows.Forms.Label labelZsír;
+        private System.Windows.Forms.Label labelKaloraBevitel;
     }
 }
