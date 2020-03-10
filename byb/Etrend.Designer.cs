@@ -43,7 +43,7 @@
             // 
             this.dataGridViewEtkezesek.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEtkezesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEtkezesek.Location = new System.Drawing.Point(12, 104);
+            this.dataGridViewEtkezesek.Location = new System.Drawing.Point(32, 104);
             this.dataGridViewEtkezesek.Name = "dataGridViewEtkezesek";
             this.dataGridViewEtkezesek.Size = new System.Drawing.Size(621, 325);
             this.dataGridViewEtkezesek.TabIndex = 22;
@@ -72,14 +72,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(918, 56);
+            this.panel3.Size = new System.Drawing.Size(686, 56);
             this.panel3.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(564, 84);
+            this.label1.Location = new System.Drawing.Point(584, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 34;
@@ -88,7 +88,7 @@
             // comboBoxIdopontok
             // 
             this.comboBoxIdopontok.FormattingEnabled = true;
-            this.comboBoxIdopontok.Location = new System.Drawing.Point(124, 72);
+            this.comboBoxIdopontok.Location = new System.Drawing.Point(136, 72);
             this.comboBoxIdopontok.Name = "comboBoxIdopontok";
             this.comboBoxIdopontok.Size = new System.Drawing.Size(121, 21);
             this.comboBoxIdopontok.TabIndex = 36;
@@ -98,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Location = new System.Drawing.Point(29, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 16);
             this.label2.TabIndex = 37;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 484);
+            this.ClientSize = new System.Drawing.Size(686, 509);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxIdopontok);
             this.Controls.Add(this.label1);

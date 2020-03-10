@@ -69,7 +69,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(895, 56);
+            this.panel3.Size = new System.Drawing.Size(713, 56);
             this.panel3.TabIndex = 28;
             // 
             // button1
@@ -343,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 485);
+            this.ClientSize = new System.Drawing.Size(713, 438);
             this.Controls.Add(this.panelEtkezes);
             this.Controls.Add(this.buttonUjEtkezes);
             this.Controls.Add(this.panelEtel);
