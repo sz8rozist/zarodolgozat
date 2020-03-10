@@ -93,7 +93,7 @@ namespace byb.Database
 
                 string etkezesek = "CREATE TABLE IF NOT EXISTS `etkezesek` (" +
                                  " `etkezesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT," +
-                                 " `idopont` datetime NOT NULL,"+
+                                 " `idopont` date NOT NULL,"+
                                  " `etel_id` int(11) NOT NULL,"+
                                  " `f_id` int(11) NOT NULL" +
                                " ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";

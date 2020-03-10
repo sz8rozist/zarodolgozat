@@ -58,9 +58,15 @@ namespace byb.Repository
             }
             return dt;
         }
-        public int összeadKaloria()
+        public int getOsszFeherje(string idopont)
         {
-            return etkezesekviewn.Sum(x => x.Kaloria);
+            List<EtkezesView> etkezesview = etkezesekviewn.FindAll(x => x.Idopont == idopont);
+            int totalfeherje = 0;
+            foreach(EtkezesView evv in etkezesview)
+            {
+                totalfeherje = totalfeherje + evv.Feherje;
+            }
+            return totalfeherje;
         }
         public void addEtkezesViewnToLIst(EtkezesView ujEtkezesView)
         {

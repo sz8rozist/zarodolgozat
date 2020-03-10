@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxIdopontok = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelFeherje = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -104,11 +106,31 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "Válassz időpontot!";
             // 
+            // labelFeherje
+            // 
+            this.labelFeherje.AutoSize = true;
+            this.labelFeherje.Location = new System.Drawing.Point(125, 456);
+            this.labelFeherje.Name = "labelFeherje";
+            this.labelFeherje.Size = new System.Drawing.Size(0, 13);
+            this.labelFeherje.TabIndex = 38;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(29, 453);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 16);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Fehérje bevitel:";
+            // 
             // Etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 509);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelFeherje);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxIdopontok);
             this.Controls.Add(this.label1);
@@ -132,5 +154,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxIdopontok;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelFeherje;
+        private System.Windows.Forms.Label label4;
     }
 }

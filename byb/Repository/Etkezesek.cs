@@ -65,6 +65,36 @@ namespace byb.Repository
             }
             return etkezesek;
         }
-  
+        public void addEtkezesToList(Etkezes ujEtkezes)
+        {
+            try
+            {
+                etkezesek.Add(ujEtkezes);
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Az étkezés hozzáadása nem sikerült");
+            }
+        }
+        public void insertEtkezesToDatabase(Etkezes ujEtkezes)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = ujEtkezes.getInsert();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(ujEtkezes + " étkezés beszúrása adatbázisba nem sikerült.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+            }
+        }
+
     }
 }

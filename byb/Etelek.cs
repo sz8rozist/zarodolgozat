@@ -150,6 +150,38 @@ namespace byb
                 if (result == DialogResult.OK)
                     fe.Hide();
             }
+            int etelid = Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[0].Value);
+            Etkezes ujEtkezes = new Etkezes(
+                    dateTimePickerIdopont.Text,
+                    etelid,
+                    FormLogin.loggedID
+                );
+            string etelnev = dataGridViewEtelek.SelectedRows[0].Cells[1].Value.ToString();
+            int feherje = Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[4].Value);
+            int szenhidrat = Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[3].Value);
+            int zsir = Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[5].Value);
+            int kaloria = Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[2].Value);
+            string mennyiseg = dataGridViewEtelek.SelectedRows[0].Cells[6].Value.ToString();
+            EtkezesView ev = new EtkezesView(
+                    etelnev,
+                    dateTimePickerIdopont.Text,
+                    feherje,
+                    szenhidrat,
+                    zsir,
+                    kaloria,
+                    mennyiseg
+                );
+            //Beszúrás az adatbázisba
+            r.insertEtkezesToDatabase(ujEtkezes);
+            r.addEtkezesViewnToLIst(ev);
+            //Beszúrás a listába
+            r.addEtkezesToList(ujEtkezes);
+            FormSucces fs = new FormSucces("Sikeres Mentés!");
+            DialogResult resultt = fs.ShowDialog();
+            if (resultt == DialogResult.OK)
+            {
+                fs.Hide();
+            }
         }
     }
 }

@@ -52,9 +52,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonUjEtkezes = new System.Windows.Forms.Button();
             this.panelEtkezes = new System.Windows.Forms.Panel();
-            this.dateTimePickerIdopont = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.buttonSaveUjEtkezes = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerIdopont = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panelEtel.SuspendLayout();
@@ -307,23 +307,6 @@
             this.panelEtkezes.Size = new System.Drawing.Size(403, 71);
             this.panelEtkezes.TabIndex = 43;
             // 
-            // dateTimePickerIdopont
-            // 
-            this.dateTimePickerIdopont.Location = new System.Drawing.Point(66, 19);
-            this.dateTimePickerIdopont.Name = "dateTimePickerIdopont";
-            this.dateTimePickerIdopont.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerIdopont.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label8.Location = new System.Drawing.Point(8, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 16);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Időpont";
-            // 
             // buttonSaveUjEtkezes
             // 
             this.buttonSaveUjEtkezes.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -338,6 +321,25 @@
             this.buttonSaveUjEtkezes.Text = "Mentés";
             this.buttonSaveUjEtkezes.UseVisualStyleBackColor = false;
             this.buttonSaveUjEtkezes.Click += new System.EventHandler(this.buttonSaveUjEtkezes_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label8.Location = new System.Drawing.Point(8, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Időpont";
+            // 
+            // dateTimePickerIdopont
+            // 
+            this.dateTimePickerIdopont.CustomFormat = "yyyy-MM-dd hh:mm";
+            this.dateTimePickerIdopont.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerIdopont.Location = new System.Drawing.Point(66, 19);
+            this.dateTimePickerIdopont.Name = "dateTimePickerIdopont";
+            this.dateTimePickerIdopont.Size = new System.Drawing.Size(123, 20);
+            this.dateTimePickerIdopont.TabIndex = 0;
             // 
             // Etelek
             // 

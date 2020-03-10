@@ -87,7 +87,7 @@ namespace byb
             label1.Visible = true;
             frissitEtkezesekDGV();
             beallitEtkezesekDGV();
-            //textBox1.Text = repo.összeadKaloria().ToString();
+            labelFeherje.Text = repo.getOsszFeherje(comboBoxIdopontok.Text).ToString();
         }
     }
 }
