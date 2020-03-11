@@ -95,6 +95,33 @@ namespace byb.Repository
                 throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
             }
         }
+        public void deleteEtkezesFromDataBase(int id)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = "DELETE FROM etkezesek WHERE etkezesek_id=" + id;
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                connection.Close();
+                Debug.WriteLine(e.Message);
+                Debug.WriteLine(id + " idéjű etkezés törlése nem sikerült.");
+                throw new RepositoryException("Sikertelen törlés az adatbázisból.");
+            }
+        }
+        public void deleteEtkezesFromList(int id)
+        {
+            Etkezes p = etkezesek.Find(x => x.Etkezesekid == id);
+            if (p != null)
+                etkezesek.Remove(p);
+            else
+                throw new RepositoryException("Az étkezést nem lehetett törölni.");
+        }
 
     }
 }

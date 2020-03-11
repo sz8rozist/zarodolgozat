@@ -16,14 +16,7 @@ namespace byb.Modell.Database
         {
             return "SELECT * FROM etelek";
         }
-        public static string getEdzesekAllRecord()
-        {
-            return "SELECT * FROM edzesek";
-        }
-        public static string getEdzestervekAllRecord()
-        {
-            return "SELECT * FROM edzestervek";
-        }
+        
         /// <summary>
         /// felhasználók adatainak lekérdezése adatbázisból
         /// </summary>
@@ -31,14 +24,6 @@ namespace byb.Modell.Database
         public static string getUsersAllRecord()
         {
             return "SELECT * FROM felhasznalok";
-        }
-        public static string getGyakorlatokAllRecord()
-        {
-            return "SELECT * FROM gyakorlatok";
-        }
-        public static string getIzomcsoportokAllRecord()
-        {
-            return "SELECT * FROM izomcsoportok";
         }
         /// <summary>
         /// Étkezések kapcsoló tábla adatainak lekérdezése adatbázisból

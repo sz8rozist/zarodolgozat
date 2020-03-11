@@ -102,12 +102,13 @@ namespace byb.Repository
         public void deleteEtelFromList(int id)
         {
             Etel p = etelek.Find(x => x.Etelid == id);
-            if (p != null)
+            Etkezes e = etkezesek.Find(x => x.Etelid == id);
+            if (p != null && !etkezesek.Contains(e))
                 etelek.Remove(p);
             else
                 throw new RepositoryException("Az ételt nem lehetett törölni.");
         }
-        public void deteEtelFromDataBase(int id)
+        public void deleteEtelFromDataBase(int id)
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
             try

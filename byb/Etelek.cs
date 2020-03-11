@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,15 +22,19 @@ namespace byb
             r.setEtelek(r.getEtelekFromDB());
             dataGridViewEtelek.Visible = false;
             panelEtel.Visible = false;
-            buttonSaveUjEtel.Visible = false;
             panelEtkezes.Visible = false;
             buttonUjEtel.Visible = false;
             buttonUjEtkezes.Visible = false;
+            feltoltComboboxEtelek();
+        }
+        public void feltoltComboboxEtelek()
+        {
+            comboBoxEtel.DataSource = r.getEtelNevek();
         }
         public void beallitDataGridView()
         {
             dataGridViewEtelek.DataSource = null;
-            dataGridViewEtelek.DataSource = r.getEtelEtelNevAlapjan(textBox1.Text);
+            dataGridViewEtelek.DataSource = r.getEtelEtelNevAlapjan(comboBoxEtel.Text);
             dataGridViewEtelek.Columns["feherje"].HeaderText = "Fehérje";
             dataGridViewEtelek.Columns["szenhidrat"].HeaderText = "Szénhidrát";
             dataGridViewEtelek.Columns["zsir"].HeaderText = "Zsír";
@@ -64,50 +69,10 @@ namespace byb
             b.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            beallitDataGridView();
-            dataGridViewEtelek.Visible = true;
-            buttonUjEtel.Visible = true;
-            buttonUjEtkezes.Visible = true;
-        }
-
-        private void dataGridViewEtelek_SelectionChanged(object sender, EventArgs e)
-        {
-           
-            if (dataGridViewEtelek.SelectedRows.Count == 1)
-            {
-                panelEtel.Visible = true;
-                textBoxEtelNev.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[1].Value.ToString();
-                Feherje.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[4].Value.ToString();
-                textBoxCh.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[3].Value.ToString();
-                textBoxZsir.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[5].Value.ToString();
-                textBoxKaloria.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[2].Value.ToString();
-                textBoxMennyiseg.Text =
-                    dataGridViewEtelek.SelectedRows[0].Cells[6].Value.ToString();
-            }
-            
-        }
-
         private void buttonUjEtel_Click(object sender, EventArgs e)
         {
-            textBoxCh.Text = string.Empty;
-            textBoxEtelNev.Text = string.Empty;
-            Feherje.Text = string.Empty;
-            textBoxKaloria.Text = string.Empty;
-            textBoxMennyiseg.Text = string.Empty;
-            textBoxZsir.Text = string.Empty;
-            buttonSaveUjEtel.Visible = true;
+
+            panelEtel.Visible = true;
             
         }
 
@@ -127,7 +92,7 @@ namespace byb
             r.insertEtelToDatabase(ujEtel);
             //Frissít DataGridView
             beallitDataGridView();
-            FormSucces fs = new FormSucces("Sikeres Mentés!");
+            FormSucces fs = new FormSucces("Étel mentése sikeres!");
             DialogResult result = fs.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -176,11 +141,64 @@ namespace byb
             r.addEtkezesViewnToLIst(ev);
             //Beszúrás a listába
             r.addEtkezesToList(ujEtkezes);
-            FormSucces fs = new FormSucces("Sikeres Mentés!");
+            FormSucces fs = new FormSucces("Sikeres étkezés hozzáadás");
             DialogResult resultt = fs.ShowDialog();
             if (resultt == DialogResult.OK)
             {
                 fs.Hide();
+            }
+        }
+
+        private void comboBoxEtel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            beallitDataGridView();
+            dataGridViewEtelek.Visible = true;
+            buttonUjEtel.Visible = true;
+            buttonUjEtkezes.Visible = true;
+        }
+        private void buttonDeleteEtel_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            if (dataGridViewEtelek.Rows == null || dataGridViewEtelek.Rows.Count == 0)
+            {
+                FormError fe = new FormError("Ooops...hiba történt!");
+                DialogResult dr = fe.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    fe.Hide();
+                }
+            }
+            else
+            {
+                FormMessage fm = new FormMessage("Biztos törölni szeretnél?");
+                DialogResult result = fm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    fm.Hide();
+                    try
+                    {
+                        //Törlés adatbázisból
+                        r.deleteEtelFromDataBase(Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[0].Value));
+                        //Törlés listából
+                        r.deleteEtelFromList(Convert.ToInt32(dataGridViewEtelek.SelectedRows[0].Cells[0].Value));
+                    }
+                    catch(RepositoryException ex)
+                    {
+                        Debug.WriteLine(ex.Message);
+                        FormError fe = new FormError("Sikertelen törlés, az étel tagja egy étkezésnek!");
+                        DialogResult dr = fe.ShowDialog();
+                        if (dr == DialogResult.OK)
+                            fe.Hide();
+                    }
+                    
+                    //DataGridView frissítés
+                    feltoltComboboxEtelek();
+                    beallitDataGridView();
+                }
+                else
+                {
+                    fm.Hide();
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ namespace byb.Modell
 {
     class EtkezesView
     {
+        private int etkezesid;
         private string enev;
         private string idopont;
         private int feherje;
@@ -16,7 +17,18 @@ namespace byb.Modell
         private int kaloria;
         private string mennyiseg;
 
-        public EtkezesView( string enev, string idopont, int feherje, int szenhidrat, int zsir, int kaloria, string mennyiseg)
+        public EtkezesView(int etkezesid, string enev, string idopont, int feherje, int szenhidrat, int zsir, int kaloria, string mennyiseg)
+        {
+            this.etkezesid = etkezesid;
+            this.enev = enev;
+            this.idopont = idopont;
+            this.feherje = feherje;
+            this.szenhidrat = szenhidrat;
+            this.zsir = zsir;
+            this.mennyiseg = mennyiseg;
+            this.kaloria = kaloria;
+        }
+        public EtkezesView(string enev, string idopont, int feherje, int szenhidrat, int zsir, int kaloria, string mennyiseg)
         {
             this.enev = enev;
             this.idopont = idopont;
@@ -34,5 +46,6 @@ namespace byb.Modell
         public int Zsir { get => zsir; set => zsir = value; }
         public string Mennyiseg { get => mennyiseg; set => mennyiseg = value; }
         public int Kaloria { get => kaloria; set => kaloria = value; }
+        public int Etkezesid { get => etkezesid; set => etkezesid = value; }
     }
 }

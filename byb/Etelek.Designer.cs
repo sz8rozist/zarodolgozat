@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Etelek));
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewEtelek = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonUjEtel = new System.Windows.Forms.Button();
             this.panelEtel = new System.Windows.Forms.Panel();
             this.buttonSaveUjEtel = new System.Windows.Forms.Button();
@@ -52,13 +51,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonUjEtkezes = new System.Windows.Forms.Button();
             this.panelEtkezes = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.buttonSaveUjEtkezes = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePickerIdopont = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxEtel = new System.Windows.Forms.ComboBox();
+            this.buttonDeleteEtel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panelEtel.SuspendLayout();
             this.panelEtkezes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -94,41 +99,18 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(29, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 16);
+            this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 30;
-            this.label1.Text = "Étel:";
+            this.label1.Text = "Válassz egy ételt:";
             // 
             // dataGridViewEtelek
             // 
             this.dataGridViewEtelek.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEtelek.Location = new System.Drawing.Point(32, 121);
+            this.dataGridViewEtelek.Location = new System.Drawing.Point(32, 180);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
-            this.dataGridViewEtelek.Size = new System.Drawing.Size(403, 117);
+            this.dataGridViewEtelek.Size = new System.Drawing.Size(406, 117);
             this.dataGridViewEtelek.TabIndex = 32;
-            this.dataGridViewEtelek.SelectionChanged += new System.EventHandler(this.dataGridViewEtelek_SelectionChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(65, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 34;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(171, 78);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 27);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Keres";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonUjEtel
             // 
@@ -137,11 +119,11 @@
             this.buttonUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUjEtel.ForeColor = System.Drawing.Color.White;
-            this.buttonUjEtel.Location = new System.Drawing.Point(252, 78);
+            this.buttonUjEtel.Location = new System.Drawing.Point(261, 75);
             this.buttonUjEtel.Name = "buttonUjEtel";
-            this.buttonUjEtel.Size = new System.Drawing.Size(75, 27);
+            this.buttonUjEtel.Size = new System.Drawing.Size(117, 27);
             this.buttonUjEtel.TabIndex = 36;
-            this.buttonUjEtel.Text = "Új étel";
+            this.buttonUjEtel.Text = "Étel hozzáadás";
             this.buttonUjEtel.UseVisualStyleBackColor = false;
             this.buttonUjEtel.Click += new System.EventHandler(this.buttonUjEtel_Click);
             // 
@@ -160,9 +142,9 @@
             this.panelEtel.Controls.Add(this.label4);
             this.panelEtel.Controls.Add(this.label3);
             this.panelEtel.Controls.Add(this.label2);
-            this.panelEtel.Location = new System.Drawing.Point(460, 121);
+            this.panelEtel.Location = new System.Drawing.Point(461, 180);
             this.panelEtel.Name = "panelEtel";
-            this.panelEtel.Size = new System.Drawing.Size(214, 201);
+            this.panelEtel.Size = new System.Drawing.Size(214, 221);
             this.panelEtel.TabIndex = 37;
             // 
             // buttonSaveUjEtel
@@ -172,7 +154,7 @@
             this.buttonSaveUjEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveUjEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSaveUjEtel.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveUjEtel.Location = new System.Drawing.Point(7, 170);
+            this.buttonSaveUjEtel.Location = new System.Drawing.Point(66, 174);
             this.buttonSaveUjEtel.Name = "buttonSaveUjEtel";
             this.buttonSaveUjEtel.Size = new System.Drawing.Size(75, 27);
             this.buttonSaveUjEtel.TabIndex = 38;
@@ -289,23 +271,33 @@
             this.buttonUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUjEtkezes.ForeColor = System.Drawing.Color.White;
-            this.buttonUjEtkezes.Location = new System.Drawing.Point(333, 78);
+            this.buttonUjEtkezes.Location = new System.Drawing.Point(505, 75);
             this.buttonUjEtkezes.Name = "buttonUjEtkezes";
-            this.buttonUjEtkezes.Size = new System.Drawing.Size(86, 27);
+            this.buttonUjEtkezes.Size = new System.Drawing.Size(144, 27);
             this.buttonUjEtkezes.TabIndex = 42;
-            this.buttonUjEtkezes.Text = "Új étkezés";
+            this.buttonUjEtkezes.Text = "Étkezés hozzáadás";
             this.buttonUjEtkezes.UseVisualStyleBackColor = false;
             this.buttonUjEtkezes.Click += new System.EventHandler(this.buttonUjEtkezes_Click);
             // 
             // panelEtkezes
             // 
+            this.panelEtkezes.Controls.Add(this.label9);
             this.panelEtkezes.Controls.Add(this.buttonSaveUjEtkezes);
             this.panelEtkezes.Controls.Add(this.label8);
             this.panelEtkezes.Controls.Add(this.dateTimePickerIdopont);
-            this.panelEtkezes.Location = new System.Drawing.Point(32, 254);
+            this.panelEtkezes.Location = new System.Drawing.Point(32, 303);
             this.panelEtkezes.Name = "panelEtkezes";
-            this.panelEtkezes.Size = new System.Drawing.Size(403, 68);
+            this.panelEtkezes.Size = new System.Drawing.Size(403, 78);
             this.panelEtkezes.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 24);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Válassz időpontot";
             // 
             // buttonSaveUjEtkezes
             // 
@@ -314,7 +306,7 @@
             this.buttonSaveUjEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveUjEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonSaveUjEtkezes.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveUjEtkezes.Location = new System.Drawing.Point(195, 18);
+            this.buttonSaveUjEtkezes.Location = new System.Drawing.Point(190, 41);
             this.buttonSaveUjEtkezes.Name = "buttonSaveUjEtkezes";
             this.buttonSaveUjEtkezes.Size = new System.Drawing.Size(75, 27);
             this.buttonSaveUjEtkezes.TabIndex = 39;
@@ -326,7 +318,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label8.Location = new System.Drawing.Point(8, 23);
+            this.label8.Location = new System.Drawing.Point(3, 47);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 1;
@@ -336,22 +328,62 @@
             // 
             this.dateTimePickerIdopont.CustomFormat = "yyyy-MM-dd hh:mm";
             this.dateTimePickerIdopont.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerIdopont.Location = new System.Drawing.Point(66, 19);
+            this.dateTimePickerIdopont.Location = new System.Drawing.Point(61, 42);
             this.dateTimePickerIdopont.Name = "dateTimePickerIdopont";
             this.dateTimePickerIdopont.Size = new System.Drawing.Size(123, 20);
             this.dateTimePickerIdopont.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(32, 161);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 16);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Kiválasztott ételek";
+            // 
+            // comboBoxEtel
+            // 
+            this.comboBoxEtel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxEtel.FormattingEnabled = true;
+            this.comboBoxEtel.Location = new System.Drawing.Point(134, 78);
+            this.comboBoxEtel.Name = "comboBoxEtel";
+            this.comboBoxEtel.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxEtel.TabIndex = 45;
+            this.comboBoxEtel.SelectedIndexChanged += new System.EventHandler(this.comboBoxEtel_SelectedIndexChanged);
+            // 
+            // buttonDeleteEtel
+            // 
+            this.buttonDeleteEtel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonDeleteEtel.FlatAppearance.BorderSize = 0;
+            this.buttonDeleteEtel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteEtel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonDeleteEtel.ForeColor = System.Drawing.Color.White;
+            this.buttonDeleteEtel.Location = new System.Drawing.Point(384, 75);
+            this.buttonDeleteEtel.Name = "buttonDeleteEtel";
+            this.buttonDeleteEtel.Size = new System.Drawing.Size(84, 27);
+            this.buttonDeleteEtel.TabIndex = 41;
+            this.buttonDeleteEtel.Text = "Étel törlés";
+            this.buttonDeleteEtel.UseVisualStyleBackColor = false;
+            this.buttonDeleteEtel.Click += new System.EventHandler(this.buttonDeleteEtel_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Etelek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 438);
+            this.Controls.Add(this.buttonDeleteEtel);
+            this.Controls.Add(this.comboBoxEtel);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.panelEtkezes);
             this.Controls.Add(this.buttonUjEtkezes);
             this.Controls.Add(this.panelEtel);
             this.Controls.Add(this.buttonUjEtel);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridViewEtelek);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
@@ -365,6 +397,7 @@
             this.panelEtel.PerformLayout();
             this.panelEtkezes.ResumeLayout(false);
             this.panelEtkezes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,8 +409,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewEtelek;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonUjEtel;
         private System.Windows.Forms.Panel panelEtel;
         private System.Windows.Forms.TextBox textBoxMennyiseg;
@@ -398,5 +429,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePickerIdopont;
         private System.Windows.Forms.Button buttonSaveUjEtkezes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxEtel;
+        private System.Windows.Forms.Button buttonDeleteEtel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -76,5 +76,10 @@ namespace byb
             double eredmeny = Math.Round(bmi, 1);
             textBox2.Text = eredmeny.ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

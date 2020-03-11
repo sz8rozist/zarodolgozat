@@ -26,6 +26,7 @@ namespace byb.Repository
             {
                 Etel etel = etelek.Find(x => x.Etelid == e.Etelid);
                 EtkezesView ev = new EtkezesView(
+                        e.Etkezesekid,
                         etel.Enev,
                         e.Idopont,
                         etel.Feherje,
@@ -92,6 +93,14 @@ namespace byb.Repository
             {
                 throw new RepositoryException("Az étkezésviewn hozzáadása nem sikerült");
             }
+        }
+        public void deleteEtkezesViewnFromList(int id)
+        {
+            EtkezesView p = etkezesekviewn.Find(x => x.Etkezesid == id);
+            if (p != null)
+                etkezesekviewn.Remove(p);
+            else
+                throw new RepositoryException("Az etkezesviewn listából a törlés sikertelen.");
         }
     }
 }

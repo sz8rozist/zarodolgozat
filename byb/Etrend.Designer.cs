@@ -43,8 +43,12 @@
             this.labelSzenhidrat = new System.Windows.Forms.Label();
             this.labelZsír = new System.Windows.Forms.Label();
             this.labelKaloraBevitel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonTorolEtkezes = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewEtkezesek
@@ -80,7 +84,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(686, 56);
+            this.panel3.Size = new System.Drawing.Size(716, 56);
             this.panel3.TabIndex = 27;
             // 
             // label1
@@ -116,7 +120,7 @@
             // 
             this.labelFeherje.AutoSize = true;
             this.labelFeherje.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFeherje.Location = new System.Drawing.Point(143, 392);
+            this.labelFeherje.Location = new System.Drawing.Point(127, 31);
             this.labelFeherje.Name = "labelFeherje";
             this.labelFeherje.Size = new System.Drawing.Size(0, 16);
             this.labelFeherje.TabIndex = 38;
@@ -125,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(29, 389);
+            this.label4.Location = new System.Drawing.Point(13, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 16);
             this.label4.TabIndex = 39;
@@ -135,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(29, 437);
+            this.label3.Location = new System.Drawing.Point(13, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 16);
             this.label3.TabIndex = 40;
@@ -145,7 +149,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(30, 421);
+            this.label5.Location = new System.Drawing.Point(14, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 16);
             this.label5.TabIndex = 41;
@@ -155,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(30, 405);
+            this.label6.Location = new System.Drawing.Point(14, 44);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 16);
             this.label6.TabIndex = 42;
@@ -165,7 +169,7 @@
             // 
             this.labelSzenhidrat.AutoSize = true;
             this.labelSzenhidrat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSzenhidrat.Location = new System.Drawing.Point(163, 408);
+            this.labelSzenhidrat.Location = new System.Drawing.Point(147, 47);
             this.labelSzenhidrat.Name = "labelSzenhidrat";
             this.labelSzenhidrat.Size = new System.Drawing.Size(0, 16);
             this.labelSzenhidrat.TabIndex = 43;
@@ -174,7 +178,7 @@
             // 
             this.labelZsír.AutoSize = true;
             this.labelZsír.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelZsír.Location = new System.Drawing.Point(122, 421);
+            this.labelZsír.Location = new System.Drawing.Point(106, 60);
             this.labelZsír.Name = "labelZsír";
             this.labelZsír.Size = new System.Drawing.Size(0, 16);
             this.labelZsír.TabIndex = 44;
@@ -183,24 +187,59 @@
             // 
             this.labelKaloraBevitel.AutoSize = true;
             this.labelKaloraBevitel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKaloraBevitel.Location = new System.Drawing.Point(157, 439);
+            this.labelKaloraBevitel.Location = new System.Drawing.Point(141, 78);
             this.labelKaloraBevitel.Name = "labelKaloraBevitel";
             this.labelKaloraBevitel.Size = new System.Drawing.Size(0, 16);
             this.labelKaloraBevitel.TabIndex = 45;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Location = new System.Drawing.Point(12, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 17);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Napi makrotápanyag bevitel";
+            // 
+            // buttonTorolEtkezes
+            // 
+            this.buttonTorolEtkezes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonTorolEtkezes.FlatAppearance.BorderSize = 0;
+            this.buttonTorolEtkezes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTorolEtkezes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonTorolEtkezes.ForeColor = System.Drawing.Color.White;
+            this.buttonTorolEtkezes.Location = new System.Drawing.Point(537, 382);
+            this.buttonTorolEtkezes.Name = "buttonTorolEtkezes";
+            this.buttonTorolEtkezes.Size = new System.Drawing.Size(116, 27);
+            this.buttonTorolEtkezes.TabIndex = 47;
+            this.buttonTorolEtkezes.Text = "Étkezés törlése";
+            this.buttonTorolEtkezes.UseVisualStyleBackColor = false;
+            this.buttonTorolEtkezes.Click += new System.EventHandler(this.buttonTorolEtkezes_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.labelFeherje);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.labelKaloraBevitel);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.labelZsír);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.labelSzenhidrat);
+            this.panel1.Location = new System.Drawing.Point(32, 378);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(239, 99);
+            this.panel1.TabIndex = 48;
             // 
             // Etrend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 475);
-            this.Controls.Add(this.labelKaloraBevitel);
-            this.Controls.Add(this.labelZsír);
-            this.Controls.Add(this.labelSzenhidrat);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.labelFeherje);
+            this.ClientSize = new System.Drawing.Size(716, 475);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.buttonTorolEtkezes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxIdopontok);
             this.Controls.Add(this.label1);
@@ -212,6 +251,8 @@
             this.Text = "Etkezes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtkezesek)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +273,8 @@
         private System.Windows.Forms.Label labelSzenhidrat;
         private System.Windows.Forms.Label labelZsír;
         private System.Windows.Forms.Label labelKaloraBevitel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonTorolEtkezes;
+        private System.Windows.Forms.Panel panel1;
     }
 }
