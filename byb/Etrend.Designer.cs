@@ -99,6 +99,7 @@
             // 
             // comboBoxIdopontok
             // 
+            this.comboBoxIdopontok.FormatString = "yyyy-MM-dd";
             this.comboBoxIdopontok.FormattingEnabled = true;
             this.comboBoxIdopontok.Location = new System.Drawing.Point(136, 72);
             this.comboBoxIdopontok.Name = "comboBoxIdopontok";

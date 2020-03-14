@@ -58,12 +58,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxEtel = new System.Windows.Forms.ComboBox();
             this.buttonDeleteEtel = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEtelNev = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFeherje = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEnevFirstLetter = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMennyiseg = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panelEtel.SuspendLayout();
             this.panelEtkezes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEtelNev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFeherje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEnevFirstLetter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMennyiseg)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -175,6 +181,7 @@
             this.textBoxKaloria.Name = "textBoxKaloria";
             this.textBoxKaloria.Size = new System.Drawing.Size(100, 20);
             this.textBoxKaloria.TabIndex = 11;
+            this.textBoxKaloria.TextChanged += new System.EventHandler(this.textBoxKaloria_TextChanged);
             // 
             // textBoxCh
             // 
@@ -182,6 +189,7 @@
             this.textBoxCh.Name = "textBoxCh";
             this.textBoxCh.Size = new System.Drawing.Size(100, 20);
             this.textBoxCh.TabIndex = 10;
+            this.textBoxCh.TextChanged += new System.EventHandler(this.textBoxCh_TextChanged);
             // 
             // textBoxZsir
             // 
@@ -189,6 +197,7 @@
             this.textBoxZsir.Name = "textBoxZsir";
             this.textBoxZsir.Size = new System.Drawing.Size(100, 20);
             this.textBoxZsir.TabIndex = 9;
+            this.textBoxZsir.TextChanged += new System.EventHandler(this.textBoxZsir_TextChanged);
             // 
             // textBoxEtelNev
             // 
@@ -203,6 +212,7 @@
             this.Feherje.Name = "Feherje";
             this.Feherje.Size = new System.Drawing.Size(100, 20);
             this.Feherje.TabIndex = 7;
+            this.Feherje.TextChanged += new System.EventHandler(this.Feherje_TextChanged);
             // 
             // label7
             // 
@@ -287,7 +297,7 @@
             this.panelEtkezes.Controls.Add(this.dateTimePickerIdopont);
             this.panelEtkezes.Location = new System.Drawing.Point(32, 303);
             this.panelEtkezes.Name = "panelEtkezes";
-            this.panelEtkezes.Size = new System.Drawing.Size(403, 78);
+            this.panelEtkezes.Size = new System.Drawing.Size(406, 78);
             this.panelEtkezes.TabIndex = 43;
             // 
             // label9
@@ -318,7 +328,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.label8.Location = new System.Drawing.Point(3, 47);
+            this.label8.Location = new System.Drawing.Point(3, 46);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 1;
@@ -326,7 +336,7 @@
             // 
             // dateTimePickerIdopont
             // 
-            this.dateTimePickerIdopont.CustomFormat = "yyyy-MM-dd hh:mm";
+            this.dateTimePickerIdopont.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerIdopont.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerIdopont.Location = new System.Drawing.Point(61, 42);
             this.dateTimePickerIdopont.Name = "dateTimePickerIdopont";
@@ -368,9 +378,21 @@
             this.buttonDeleteEtel.UseVisualStyleBackColor = false;
             this.buttonDeleteEtel.Click += new System.EventHandler(this.buttonDeleteEtel_Click);
             // 
-            // errorProvider1
+            // errorProviderEtelNev
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderEtelNev.ContainerControl = this;
+            // 
+            // errorProviderFeherje
+            // 
+            this.errorProviderFeherje.ContainerControl = this;
+            // 
+            // errorProviderEnevFirstLetter
+            // 
+            this.errorProviderEnevFirstLetter.ContainerControl = this;
+            // 
+            // errorProviderMennyiseg
+            // 
+            this.errorProviderMennyiseg.ContainerControl = this;
             // 
             // Etelek
             // 
@@ -397,7 +419,10 @@
             this.panelEtel.PerformLayout();
             this.panelEtkezes.ResumeLayout(false);
             this.panelEtkezes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEtelNev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFeherje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEnevFirstLetter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMennyiseg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,6 +458,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxEtel;
         private System.Windows.Forms.Button buttonDeleteEtel;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderEtelNev;
+        private System.Windows.Forms.ErrorProvider errorProviderFeherje;
+        private System.Windows.Forms.ErrorProvider errorProviderEnevFirstLetter;
+        private System.Windows.Forms.ErrorProvider errorProviderMennyiseg;
     }
 }

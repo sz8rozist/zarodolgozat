@@ -105,6 +105,11 @@
     <Compile Include="Modell\EtkezesView.cs" />
     <Compile Include="Modell\Felhasznalo.cs" />
     <Compile Include="Modell\Login.cs" />
+    <Compile Include="Exceptions\ValidateEnevFirstLetterUpperCaseException.cs" />
+    <Compile Include="Exceptions\ValidateEtelNevIsEmpty.cs" />
+    <Compile Include="Exceptions\ValidateFeherjeIsNegative.cs" />
+    <Compile Include="Exceptions\ValidateMennyisegContainBetuException.cs" />
+    <Compile Include="Exceptions\ValidateMennyisegFirstLetterIsNumberException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />
@@ -112,7 +117,7 @@
     <Compile Include="Repository\EtkezesekViewn.cs" />
     <Compile Include="Repository\Felhasznalok.cs" />
     <Compile Include="Repository\Repo.cs" />
-    <Compile Include="Repository\RepositoryException.cs" />
+    <Compile Include="Exceptions\RepositoryException.cs" />
     <EmbeddedResource Include="Buildyourbody.resx">
       <DependentUpon>Buildyourbody.cs</DependentUpon>
     </EmbeddedResource>

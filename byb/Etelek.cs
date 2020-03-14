@@ -78,26 +78,60 @@ namespace byb
 
         private void buttonSaveUjEtel_Click(object sender, EventArgs e)
         {
-            Etel ujEtel = new Etel(
-                    textBoxEtelNev.Text,
-                    Convert.ToInt32(Feherje.Text),
-                    Convert.ToInt32(textBoxCh.Text),
-                    Convert.ToInt32(textBoxZsir.Text),
-                    Convert.ToInt32(textBoxKaloria.Text),
-                    textBoxMennyiseg.Text
-                );
-            //Beszúrás listába
-            r.addEtelToList(ujEtel);
-            //Beszúrás adatbázisba
-            r.insertEtelToDatabase(ujEtel);
-            //Frissít DataGridView
-            beallitDataGridView();
-            FormSucces fs = new FormSucces("Étel mentése sikeres!");
-            DialogResult result = fs.ShowDialog();
-            if (result == DialogResult.OK)
+            errorProviderEtelNev.Clear();
+            errorProviderFeherje.Clear();
+            errorProviderEnevFirstLetter.Clear();
+            errorProviderMennyiseg.Clear();
+            try
             {
-                panelEtel.Visible = false;
-                fs.Hide();
+                Etel ujEtel = new Etel(
+                  textBoxEtelNev.Text,
+                  Convert.ToInt32(Feherje.Text),
+                  Convert.ToInt32(textBoxCh.Text),
+                  Convert.ToInt32(textBoxZsir.Text),
+                  Convert.ToInt32(textBoxKaloria.Text),
+                  textBoxMennyiseg.Text
+                 );
+                if (!ujEtel.validate())
+                {
+                    return;
+                }
+                else
+                {
+                    //Beszúrás listába
+                    r.addEtelToList(ujEtel);
+                    //Beszúrás adatbázisba
+                    r.insertEtelToDatabase(ujEtel);
+                    //Frissít DataGridView
+                    beallitDataGridView();
+                    FormSucces fs = new FormSucces("Étel mentése sikeres!");
+                    DialogResult result = fs.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        panelEtel.Visible = false;
+                        fs.Hide();
+                    }
+                }
+            }
+            catch(ValidateEtelNevIsEmpty vme)
+            {
+                errorProviderEtelNev.SetError(textBoxEtelNev, vme.Message);
+            }
+            catch (ValidateEnevFirstLetterUpperCaseException vefluce)
+            {
+                errorProviderEnevFirstLetter.SetError(textBoxEtelNev, vefluce.Message);
+            }
+            catch (ValidateFeherjeIsNegative vmee)
+            {
+                errorProviderFeherje.SetError(Feherje, vmee.Message);
+            }
+            catch(ValidateMennyisegFirstLetterIsNumberException vefine)
+            {
+                errorProviderMennyiseg.SetError(textBoxMennyiseg, vefine.Message);
+            }
+            catch(ValidateMennyisegContainBetuException vmcbe)
+            {
+                errorProviderMennyiseg.SetError(textBoxMennyiseg, vmcbe.Message);
             }
         }
 
@@ -158,7 +192,6 @@ namespace byb
         }
         private void buttonDeleteEtel_Click(object sender, EventArgs e)
         {
-            errorProvider1.Clear();
             if (dataGridViewEtelek.Rows == null || dataGridViewEtelek.Rows.Count == 0)
             {
                 FormError fe = new FormError("Ooops...hiba történt!");
@@ -199,6 +232,66 @@ namespace byb
                 {
                     fm.Hide();
                 }
+            }
+        }
+
+        private void Feherje_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(Feherje.Text, "[^0-9]"))
+            {
+                FormError fe = new FormError("Oopss... Betűt nem írhatsz!");
+                DialogResult dr = fe.ShowDialog();
+                if(dr == DialogResult.OK)
+                {
+                    fe.Hide();
+                    Feherje.Text = Feherje.Text.Remove(Feherje.Text.Length - 1);
+                }
+                
+            }
+        }
+
+        private void textBoxCh_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxCh.Text, "[^0-9]"))
+            {
+                FormError fe = new FormError("Oopss... Betűt nem írhatsz!");
+                DialogResult dr = fe.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    fe.Hide();
+                    textBoxCh.Text = textBoxCh.Text.Remove(textBoxCh.Text.Length - 1);
+                }
+
+            }
+        }
+
+        private void textBoxZsir_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxZsir.Text, "[^0-9]"))
+            {
+                FormError fe = new FormError("Oopss... Betűt nem írhatsz!");
+                DialogResult dr = fe.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    fe.Hide();
+                    textBoxZsir.Text = textBoxZsir.Text.Remove(textBoxZsir.Text.Length - 1);
+                }
+
+            }
+        }
+
+        private void textBoxKaloria_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBoxKaloria.Text, "[^0-9]"))
+            {
+                FormError fe = new FormError("Oopss... Betűt nem írhatsz!");
+                DialogResult dr = fe.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    fe.Hide();
+                    textBoxKaloria.Text = textBoxKaloria.Text.Remove(textBoxKaloria.Text.Length - 1);
+                }
+
             }
         }
     }
