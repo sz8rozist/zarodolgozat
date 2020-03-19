@@ -59,6 +59,20 @@ namespace byb.Repository
         {
             return etelek.FindAll(x => x.Enev == etelnev);
         }
+        public List<Etel> getEtelAdatai(string etelnev, int feherje, int ch,int zsir, int kcal,string mennyiseg)
+        {
+            List<Etel> eteladatai = etelek.FindAll(x => x.Enev == etelnev);
+            foreach(Etel e in eteladatai)
+            {
+                feherje += e.Feherje;
+                ch += e.Szenhidrat;
+                zsir += e.Zsir;
+                kcal += e.Kaloria;
+                mennyiseg += e.Mennyiseg;
+            }
+            return eteladatai;
+
+        }
         public List<string> getEtelNevek()
         {
             List<string> nevek = new List<string>();

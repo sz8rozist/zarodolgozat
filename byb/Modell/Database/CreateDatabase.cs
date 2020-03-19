@@ -59,7 +59,7 @@ namespace byb.Database
                 con.Open();
                 string edzesekQuery = "CREATE TABLE IF NOT EXISTS `edzesek` ( " +
                                             " `edzesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ," +
-                                            "`idopont` datetime NOT NULL," +
+                                            "`idopont` date DEFAULT CURRENT_DATE NOT NULL," +
                                             "`f_id` int(11) NOT NULL," +
                                             "`edzesterv_id` int(11) NOT NULL" +
                                             ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";

@@ -110,6 +110,7 @@ namespace byb
                     {
                         panelEtel.Visible = false;
                         fs.Hide();
+                        feltoltComboboxEtelek();
                     }
                 }
             }
