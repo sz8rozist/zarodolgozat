@@ -39,8 +39,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonTesztadatok = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -208,27 +206,6 @@
             this.panel1.Size = new System.Drawing.Size(726, 42);
             this.panel1.TabIndex = 3;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tömegnövelés",
-            "Szálkásítás"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 161);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Válassz egy célt!";
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label11);
@@ -243,7 +220,7 @@
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(354, 137);
+            this.panel2.Location = new System.Drawing.Point(186, 166);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 199);
             this.panel2.TabIndex = 6;
@@ -367,7 +344,7 @@
             this.buttonMutatBMIPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMutatBMIPanel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMutatBMIPanel.ForeColor = System.Drawing.Color.White;
-            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(559, 99);
+            this.buttonMutatBMIPanel.Location = new System.Drawing.Point(571, 99);
             this.buttonMutatBMIPanel.Name = "buttonMutatBMIPanel";
             this.buttonMutatBMIPanel.Size = new System.Drawing.Size(143, 32);
             this.buttonMutatBMIPanel.TabIndex = 7;
@@ -384,8 +361,6 @@
             this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonMutatBMIPanel);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -398,7 +373,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -413,8 +387,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonTesztadatok;
         private System.Windows.Forms.Button buttonEtelek;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonMutatBMIPanel;
         private System.Windows.Forms.TextBox textBox3;

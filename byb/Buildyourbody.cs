@@ -53,14 +53,6 @@ namespace byb
             etelek.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(comboBox1.SelectedIndex == 0)
-            {
-               
-            }
-        }
-
         private void buttonMutatBMIPanel_Click(object sender, EventArgs e)
         {
             panel2.Visible = true;
@@ -80,6 +72,7 @@ namespace byb
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            db.torolTesztadatok();
         }
     }
 }
