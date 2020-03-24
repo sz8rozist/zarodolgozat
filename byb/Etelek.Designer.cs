@@ -62,6 +62,7 @@
             this.errorProviderFeherje = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderEnevFirstLetter = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderMennyiseg = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMindenMezo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEtelek)).BeginInit();
             this.panelEtel.SuspendLayout();
@@ -70,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFeherje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEnevFirstLetter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMennyiseg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMindenMezo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -394,6 +396,10 @@
             // 
             this.errorProviderMennyiseg.ContainerControl = this;
             // 
+            // errorProviderMindenMezo
+            // 
+            this.errorProviderMindenMezo.ContainerControl = this;
+            // 
             // Etelek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +429,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFeherje)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEnevFirstLetter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderMennyiseg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMindenMezo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,5 +469,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderFeherje;
         private System.Windows.Forms.ErrorProvider errorProviderEnevFirstLetter;
         private System.Windows.Forms.ErrorProvider errorProviderMennyiseg;
+        private System.Windows.Forms.ErrorProvider errorProviderMindenMezo;
     }
 }

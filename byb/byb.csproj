@@ -110,6 +110,7 @@
     <Compile Include="Exceptions\ValidateFeherjeIsNegative.cs" />
     <Compile Include="Exceptions\ValidateMennyisegContainBetuException.cs" />
     <Compile Include="Exceptions\ValidateMennyisegFirstLetterIsNumberException.cs" />
+    <Compile Include="Exceptions\ValidateMindenMezoKitoltveException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Etelek.cs" />

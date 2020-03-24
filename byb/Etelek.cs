@@ -78,6 +78,7 @@ namespace byb
 
         private void buttonSaveUjEtel_Click(object sender, EventArgs e)
         {
+            errorProviderMindenMezo.Clear();
             errorProviderEtelNev.Clear();
             errorProviderFeherje.Clear();
             errorProviderEnevFirstLetter.Clear();
@@ -92,27 +93,39 @@ namespace byb
                   Convert.ToInt32(textBoxKaloria.Text),
                   textBoxMennyiseg.Text
                  );
-                if (!ujEtel.validate())
+                if(textBoxEtelNev.Text == string.Empty || Feherje.Text == string.Empty || textBoxCh.Text == string.Empty || textBoxZsir.Text == string.Empty || textBoxKaloria.Text == string.Empty || textBoxMennyiseg.Text == string.Empty)
                 {
-                    return;
+                    errorProviderMindenMezo.SetError(buttonSaveUjEtel, "Minden mező kitöltése kötelező!");
                 }
                 else
                 {
-                    //Beszúrás listába
-                    r.addEtelToList(ujEtel);
-                    //Beszúrás adatbázisba
-                    r.insertEtelToDatabase(ujEtel);
-                    //Frissít DataGridView
-                    beallitDataGridView();
-                    FormSucces fs = new FormSucces("Étel mentése sikeres!");
-                    DialogResult result = fs.ShowDialog();
-                    if (result == DialogResult.OK)
+                    if (!ujEtel.validate())
                     {
-                        panelEtel.Visible = false;
-                        fs.Hide();
-                        feltoltComboboxEtelek();
+                        return;
+                    }
+                    else
+                    {
+                        //Beszúrás listába
+                        r.addEtelToList(ujEtel);
+                        //Beszúrás adatbázisba
+                        r.insertEtelToDatabase(ujEtel);
+                        //Frissít DataGridView
+                        beallitDataGridView();
+                        FormSucces fs = new FormSucces("Étel mentése sikeres!");
+                        DialogResult result = fs.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            panelEtel.Visible = false;
+                            fs.Hide();
+                            feltoltComboboxEtelek();
+                        }
                     }
                 }
+                
+            }
+            catch(ValidateMindenMezoKitoltveException vmmke)
+            {
+                errorProviderMindenMezo.SetError(buttonSaveUjEtel, vmmke.Message);
             }
             catch(ValidateEtelNevIsEmpty vme)
             {

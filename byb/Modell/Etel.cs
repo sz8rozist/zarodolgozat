@@ -48,10 +48,23 @@ namespace byb.Modell
                 throw new ValidateMennyisegFirstLetterIsNumberException("Az első karakter csak szám lehet!");
             if (!mennyisegVanBenneBetu())
                 throw new ValidateMennyisegContainBetuException("Nem adtál meg mértékegységet(gr,kg ..stb)!");
+            if (!mindeMezoKitoltve())
+                throw new ValidateMindenMezoKitoltveException("Új étel mentéséhez minden adatot ki kell tölts!");
             
             return true;
         }
 
+        public bool mindeMezoKitoltve()
+        {
+           if(Enev!=string.Empty || Mennyiseg !=string.Empty || Feherje > 0 || Zsir > 0 || Szenhidrat > 0 || Kaloria > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private bool mennyisegVanBenneBetu()
         {
             for(int i=0;i<Mennyiseg.Length; i++)

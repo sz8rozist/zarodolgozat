@@ -106,5 +106,23 @@ namespace byb.Modell.Tests
                 Assert.Fail("Van benne betű de mégis hibát dob!");
             }
         }
+
+        //Jó teszteset
+        [TestMethod()]
+        public void validateTestMindenMezoKitoltve()
+        {
+            try
+            {
+                Etel e = new Etel("Csirkemell", 23, 23, 23, 23, "43gr");
+                if (e.validate())
+                {
+
+                }
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Minden ki van töltve de mégis hibát dob!");
+            }
+        }
     }
 }
