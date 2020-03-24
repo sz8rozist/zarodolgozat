@@ -141,6 +141,10 @@ namespace byb.Repository
                 throw new RepositoryException("Sikertelen törlés az adatbázisból.");
             }
         }
+        public int getNextEtelID()
+        {
+            return etelek.Max(x => x.Etelid) + 1;
+        }
 
     }
 }

@@ -85,20 +85,23 @@ namespace byb
             errorProviderMennyiseg.Clear();
             try
             {
-                Etel ujEtel = new Etel(
-                  textBoxEtelNev.Text,
-                  Convert.ToInt32(Feherje.Text),
-                  Convert.ToInt32(textBoxCh.Text),
-                  Convert.ToInt32(textBoxZsir.Text),
-                  Convert.ToInt32(textBoxKaloria.Text),
-                  textBoxMennyiseg.Text
-                 );
+              
+               
                 if(textBoxEtelNev.Text == string.Empty || Feherje.Text == string.Empty || textBoxCh.Text == string.Empty || textBoxZsir.Text == string.Empty || textBoxKaloria.Text == string.Empty || textBoxMennyiseg.Text == string.Empty)
                 {
                     errorProviderMindenMezo.SetError(buttonSaveUjEtel, "Minden mező kitöltése kötelező!");
                 }
                 else
                 {
+                    Etel ujEtel = new Etel(
+                   r.getNextEtelID(),
+                   textBoxEtelNev.Text,
+                 Convert.ToInt32(Feherje.Text),
+                 Convert.ToInt32(textBoxCh.Text),
+                 Convert.ToInt32(textBoxZsir.Text),
+                 Convert.ToInt32(textBoxKaloria.Text),
+                 textBoxMennyiseg.Text
+                   );
                     if (!ujEtel.validate())
                     {
                         return;

@@ -92,7 +92,7 @@ namespace byb.Repository
                 connection.Close();
                 Debug.WriteLine(e.Message);
                 Debug.WriteLine(ujEtkezes + " étkezés beszúrása adatbázisba nem sikerült.");
-                throw new RepositoryException("Sikertelen beszúrás az adatbázisból.");
+                throw new RepositoryException("Sikertelen beszúrás az adatbázisba.");
             }
         }
         public void deleteEtkezesFromDataBase(int id)
