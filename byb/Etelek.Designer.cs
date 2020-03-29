@@ -113,7 +113,7 @@
             // 
             // dataGridViewEtelek
             // 
-            this.dataGridViewEtelek.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEtelek.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewEtelek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtelek.Location = new System.Drawing.Point(32, 180);
             this.dataGridViewEtelek.Name = "dataGridViewEtelek";
@@ -137,6 +137,7 @@
             // 
             // panelEtel
             // 
+            this.panelEtel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelEtel.Controls.Add(this.buttonSaveUjEtel);
             this.panelEtel.Controls.Add(this.textBoxMennyiseg);
             this.panelEtel.Controls.Add(this.textBoxKaloria);
@@ -293,6 +294,7 @@
             // 
             // panelEtkezes
             // 
+            this.panelEtkezes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelEtkezes.Controls.Add(this.label9);
             this.panelEtkezes.Controls.Add(this.buttonSaveUjEtkezes);
             this.panelEtkezes.Controls.Add(this.label8);
@@ -404,6 +406,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(713, 438);
             this.Controls.Add(this.buttonDeleteEtel);
             this.Controls.Add(this.comboBoxEtel);

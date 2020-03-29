@@ -208,6 +208,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -356,7 +357,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(726, 489);
             this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonMutatBMIPanel);

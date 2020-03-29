@@ -53,7 +53,7 @@
             // 
             // dataGridViewEtkezesek
             // 
-            this.dataGridViewEtkezesek.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewEtkezesek.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridViewEtkezesek.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEtkezesek.Location = new System.Drawing.Point(32, 104);
             this.dataGridViewEtkezesek.Name = "dataGridViewEtkezesek";
@@ -219,6 +219,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelFeherje);
             this.panel1.Controls.Add(this.label7);
@@ -237,6 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(716, 475);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonTorolEtkezes);

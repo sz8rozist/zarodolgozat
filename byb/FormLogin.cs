@@ -48,15 +48,9 @@ namespace byb
                 loggedID = l.getLoginId();
                 loggedTsuly = l.Tsuly;
                 loggedTmagassag = l.Tmagassag;
-                FormSucces fs = new FormSucces("Sikeres Bejelentkezés!");
-                DialogResult result = fs.ShowDialog();
-                if(result == DialogResult.OK)
-                {
                     Buildyourbody b = new Buildyourbody();
                     b.Show();
                     this.Hide();
-                    fs.Hide();
-                }
 
             }
             else

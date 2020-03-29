@@ -27,6 +27,14 @@ namespace byb
             buttonTorolEtkezes.Visible = false;
             feltöltComboboxIdopontokkal();
             panel1.Visible = false;
+            if(comboBoxIdopontok.Items.Count == 0)
+            {
+                comboBoxIdopontok.Visible = false;
+            }
+            else
+            {
+                comboBoxIdopontok.Visible = true;
+            }
             repo.setEtkezesekViewn(repo.getEtkezesekViewraFelhasznaloAlapjan(FormLogin.loggedID, repo.getEtelek(), repo.getEtkezesek()));
         }
         private void feltöltComboboxIdopontokkal()

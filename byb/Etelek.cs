@@ -25,6 +25,8 @@ namespace byb
             panelEtkezes.Visible = false;
             buttonUjEtel.Visible = false;
             buttonUjEtkezes.Visible = false;
+            buttonDeleteEtel.Visible = false;
+            label10.Visible = false;
             feltoltComboboxEtelek();
         }
         public void feltoltComboboxEtelek()
@@ -206,6 +208,8 @@ namespace byb
             dataGridViewEtelek.Visible = true;
             buttonUjEtel.Visible = true;
             buttonUjEtkezes.Visible = true;
+            label10.Visible = true;
+            buttonDeleteEtel.Visible = true;
         }
         private void buttonDeleteEtel_Click(object sender, EventArgs e)
         {
