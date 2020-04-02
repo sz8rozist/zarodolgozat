@@ -31,7 +31,6 @@ namespace byb.Repository
                 {
                     pontok.Add(e.Idopont);
                 }
-                
             }
             return pontok;
         }
