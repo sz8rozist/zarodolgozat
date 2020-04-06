@@ -30,22 +30,6 @@ namespace byb
             d.Show();
             this.Hide();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-            db.torolTesztadatok();
-        }
-
-        private void buttonGyakorlatok_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void buttonTesztadatok_Click(object sender, EventArgs e)
-        {
-            db.tesztadatokFeltoltese();
-        }
-
         private void buttonEtelek_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -23,7 +23,7 @@ namespace byb
             db.createDataBase();
             db.createDataBaseTable();
             db.felhasznaloTesztAdatok();
-            repo.setFelhasznalok(repo.getFelhasznalokAdatbazisbol());
+            db.tesztadatokFeltoltese();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -42,11 +42,6 @@ namespace byb
         private void FormLoad_Load(object sender, EventArgs e)
         {
             timer1.Start();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

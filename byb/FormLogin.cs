@@ -66,11 +66,5 @@ namespace byb
                 //MessageBox.Show("Sikertelen Belépés", "Belépés", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-            
-        }
     }
 }

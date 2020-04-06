@@ -37,7 +37,6 @@
             this.buttonEtrend = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.buttonTesztadatok = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -177,24 +176,6 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonTesztadatok
-            // 
-            this.buttonTesztadatok.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.buttonTesztadatok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonTesztadatok.FlatAppearance.BorderSize = 0;
-            this.buttonTesztadatok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTesztadatok.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonTesztadatok.ForeColor = System.Drawing.Color.Transparent;
-            this.buttonTesztadatok.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonTesztadatok.Location = new System.Drawing.Point(15, 98);
-            this.buttonTesztadatok.Name = "buttonTesztadatok";
-            this.buttonTesztadatok.Size = new System.Drawing.Size(86, 32);
-            this.buttonTesztadatok.TabIndex = 29;
-            this.buttonTesztadatok.Text = "Tesztadatok";
-            this.buttonTesztadatok.UseVisualStyleBackColor = false;
-            this.buttonTesztadatok.Click += new System.EventHandler(this.buttonTesztadatok_Click);
             // 
             // panel1
             // 
@@ -342,6 +323,7 @@
             // buttonMutatBMIPanel
             // 
             this.buttonMutatBMIPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.buttonMutatBMIPanel.FlatAppearance.BorderSize = 0;
             this.buttonMutatBMIPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMutatBMIPanel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonMutatBMIPanel.ForeColor = System.Drawing.Color.White;
@@ -359,7 +341,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(726, 489);
-            this.Controls.Add(this.buttonTesztadatok);
             this.Controls.Add(this.buttonMutatBMIPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelSlideMenu);
@@ -387,7 +368,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonTesztadatok;
         private System.Windows.Forms.Button buttonEtelek;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonMutatBMIPanel;

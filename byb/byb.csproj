@@ -103,7 +103,6 @@
     <Compile Include="Modell\Etel.cs" />
     <Compile Include="Modell\Etkezes.cs" />
     <Compile Include="Modell\EtkezesView.cs" />
-    <Compile Include="Modell\Felhasznalo.cs" />
     <Compile Include="Modell\Login.cs" />
     <Compile Include="Exceptions\ValidateEnevFirstLetterUpperCaseException.cs" />
     <Compile Include="Exceptions\ValidateEtelNevIsEmpty.cs" />
@@ -116,7 +115,6 @@
     <Compile Include="Repository\Etelek.cs" />
     <Compile Include="Repository\Etkezesek.cs" />
     <Compile Include="Repository\EtkezesekViewn.cs" />
-    <Compile Include="Repository\Felhasznalok.cs" />
     <Compile Include="Repository\Repo.cs" />
     <Compile Include="Exceptions\RepositoryException.cs" />
     <EmbeddedResource Include="Buildyourbody.resx">

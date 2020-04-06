@@ -17,7 +17,6 @@ namespace byb.Repository
             //Repositoryban connectionString példányosítása
             connectionString = cs.getConnectionString();
             //Listák példányosítása a repoban
-            users = new List<Felhasznalo>();
             etelek = new List<Etel>();
             etkezesek = new List<Etkezes>();
             etkezesekviewn = new List<EtkezesView>();
