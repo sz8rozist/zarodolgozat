@@ -59,7 +59,7 @@ namespace byb.Database
                 con.Open();
                 string edzesekQuery = "CREATE TABLE IF NOT EXISTS `edzesek` ( " +
                                             " `edzesek_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT ," +
-                                            "`idopont` date DEFAULT CURRENT_DATE NOT NULL," +
+                                            "`idopont` date NOT NULL," +
                                             "`f_id` int(11) NOT NULL," +
                                             "`edzesterv_id` int(11) NOT NULL" +
                                             ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_hungarian_ci; ";
@@ -173,9 +173,9 @@ namespace byb.Database
                 con.Open();
                 string TesztAdatokFelhasznalok = "INSERT INTO `felhasznalok` (`f_id`, `fname`, `jelszo`, `teljesnev`, `email`, `tsuly`, `tmagassag`) VALUES" +
                     "(NULL, 'sz8rozist', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '196')," +
-                    "(NULL, 'admin', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '196')," +
-                    "(NULL, 'Valami', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '193')," +
-                    "(NULL, 'Adam', '12345', 'Rózsa István', 'ristvan98@gmail.com', '110', '194');";
+                    "(NULL, 'tesztelek', 'elek12345', 'Teszt Elek', 'elek@gmail.com', '90', '172')," +
+                    "(NULL, 'kondistvan', 'eros12', 'Erős István', 'eros56@freemail.hu', '110', '193')," +
+                    "(NULL, 'ugrobela', 'bela65', 'Ugró Béla', 'bela65@gmail.com', '80', '210');";
                 MySqlCommand cmdTesztAdatokFelhasznalok = new MySqlCommand(TesztAdatokFelhasznalok, con);
                 cmdTesztAdatokFelhasznalok.ExecuteNonQuery();
                 con.Close();

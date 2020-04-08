@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Ápr 08. 10:31
+-- Létrehozás ideje: 2020. Ápr 08. 12:29
 -- Kiszolgáló verziója: 10.4.8-MariaDB
 -- PHP verzió: 7.1.32
 
@@ -32,7 +32,7 @@ USE `buildyourbody`;
 
 CREATE TABLE `edzesek` (
   `edzesek_id` int(11) NOT NULL,
-  `idopont` date NOT NULL DEFAULT curdate(),
+  `idopont` date NOT NULL,
   `f_id` int(11) NOT NULL,
   `edzesterv_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
@@ -112,7 +112,12 @@ INSERT INTO `edzesek` (`edzesek_id`, `idopont`, `f_id`, `edzesterv_id`) VALUES
 (68, '2020-03-19', 1, 11),
 (69, '2020-03-19', 2, 8),
 (70, '2020-03-19', 3, 7),
-(71, '2020-03-19', 4, 6);
+(71, '2020-03-19', 4, 6),
+(73, '2020-04-19', 4, 35),
+(74, '2020-04-10', 4, 36),
+(75, '2020-04-06', 4, 37),
+(76, '2020-04-18', 4, 38),
+(77, '2020-04-19', 4, 39);
 
 -- --------------------------------------------------------
 
@@ -164,7 +169,12 @@ INSERT INTO `edzestervek` (`edzesterv_id`, `gyakorlat_id`, `sorozatszam`, `ismet
 (30, 4, 1, 2),
 (31, 4, 1, 2),
 (32, 6, 1, 2),
-(33, 1, 1, 2);
+(33, 1, 1, 2),
+(35, 19, 3, 34),
+(36, 14, 3, 34),
+(37, 36, 34, 34),
+(38, 12, 3, 3),
+(39, 12, 33, 33);
 
 -- --------------------------------------------------------
 
@@ -301,9 +311,9 @@ CREATE TABLE `felhasznalok` (
 
 INSERT INTO `felhasznalok` (`f_id`, `fname`, `jelszo`, `teljesnev`, `email`, `tsuly`, `tmagassag`) VALUES
 (1, 'sz8rozist', '12345', 'Rózsa István', 'ristvan98@gmail.com', 110, 196),
-(2, 'admin', '12345', 'Rózsa István', 'ristvan98@gmail.com', 110, 196),
-(3, 'Valami', '12345', 'Rózsa István', 'ristvan98@gmail.com', 110, 193),
-(4, 'Adam', '12345', 'Rózsa István', 'ristvan98@gmail.com', 110, 194);
+(2, 'tesztelek', 'elek12345', 'Teszt Elek', 'elek@gmail.com', 90, 172),
+(3, 'kondistvan', 'eros12', 'Erős István', 'eros56@freemail.hu', 110, 193),
+(4, 'ugrobela', 'bela65', 'Ugró Béla', 'bela65@gmail.com', 80, 210);
 
 -- --------------------------------------------------------
 
@@ -457,13 +467,13 @@ ALTER TABLE `izomcsoportok`
 -- AUTO_INCREMENT a táblához `edzesek`
 --
 ALTER TABLE `edzesek`
-  MODIFY `edzesek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `edzesek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT a táblához `edzestervek`
 --
 ALTER TABLE `edzestervek`
-  MODIFY `edzesterv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `edzesterv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT a táblához `etelek`
