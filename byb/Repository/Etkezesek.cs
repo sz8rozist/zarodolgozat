@@ -25,7 +25,8 @@ namespace byb.Repository
         public List<string> getIdopontok()
         {
             List<string> pontok = new List<string>();
-            foreach(Etkezes e in etkezesek)
+            List<Etkezes> felhasznaloEtkezese = etkezesek.FindAll(x => x.Fid == FormLogin.loggedID);
+            foreach(Etkezes e in felhasznaloEtkezese)
             {
                 if (!pontok.Contains(e.Idopont))
                 {
